@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fortune Logistics — Website Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', sans-serif; background: #F0F2F5; color: #111827; font-size: 13.5px; line-height: 1.65; }
+
+/* Layout */
+.page { max-width: 860px; margin: 40px auto; background: #fff; box-shadow: 0 4px 32px rgba(0,0,0,0.10); }
+
+/* Cover */
+.cover { background: #111827; padding: 60px 56px 52px; color: #fff; position: relative; overflow: hidden; }
+.cover::before { content: ''; position: absolute; width: 500px; height: 500px; border-radius: 50%; background: rgba(0,174,239,0.06); top: -200px; right: -100px; }
+.cover-ps { font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.4); letter-spacing: .12em; text-transform: uppercase; margin-bottom: 32px; }
+.cover-label { font-size: 11px; font-weight: 700; color: #00AEEF; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 10px; }
+.cover-title { font-size: 38px; font-weight: 900; color: #fff; letter-spacing: -1.5px; line-height: 1.0; margin-bottom: 6px; }
+.cover-sub { font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.55); letter-spacing: .02em; margin-bottom: 36px; }
+.cover-rule { height: 1px; background: linear-gradient(90deg, #00AEEF, rgba(0,174,239,0.1)); margin-bottom: 28px; }
+.cover-meta { display: flex; gap: 40px; }
+.cover-meta-item .label { font-size: 10px; font-weight: 600; color: rgba(255,255,255,0.35); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 3px; }
+.cover-meta-item .value { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.85); }
+
+/* Body */
+.body { padding: 0 56px 56px; }
+
+/* Section */
+.section { padding-top: 44px; border-top: 1px solid #F3F4F6; margin-top: 44px; }
+.section:first-child { border-top: none; }
+.section-num { font-size: 10px; font-weight: 800; color: #00AEEF; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 6px; }
+.section-title { font-size: 22px; font-weight: 800; color: #111827; letter-spacing: -0.5px; margin-bottom: 14px; }
+.section-intro { color: #4B5563; margin-bottom: 24px; max-width: 680px; }
+
+/* TOC */
+.toc { background: #F9FAFB; border-radius: 10px; padding: 22px 24px; margin-bottom: 0; }
+.toc-title { font-size: 10px; font-weight: 700; color: #9CA3AF; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 14px; }
+.toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 24px; }
+.toc-item { display: flex; align-items: baseline; gap: 8px; padding: 5px 0; border-bottom: 1px solid #F3F4F6; font-size: 12.5px; color: #374151; }
+.toc-item:last-child { border-bottom: none; }
+.toc-n { font-size: 10px; font-weight: 700; color: #D1D5DB; width: 16px; flex-shrink: 0; }
+
+/* Page cards */
+.page-cards { display: flex; flex-direction: column; gap: 16px; }
+.page-card { border: 1px solid #E5E7EB; border-radius: 10px; overflow: hidden; }
+.page-card-header { display: flex; align-items: center; gap: 12px; padding: 14px 18px; background: #F9FAFB; border-bottom: 1px solid #E5E7EB; }
+.page-card-num { font-size: 10px; font-weight: 800; color: #9CA3AF; width: 22px; flex-shrink: 0; }
+.page-card-title { font-size: 14px; font-weight: 700; color: #111827; flex: 1; }
+.page-card-slug { font-size: 11px; color: #9CA3AF; font-family: monospace; }
+.page-card-body { padding: 16px 18px; }
+.page-card-purpose { font-size: 12.5px; color: #4B5563; margin-bottom: 12px; }
+.page-card-sections { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.section-item { background: #F3F4F6; border-radius: 5px; padding: 6px 9px; font-size: 11.5px; color: #374151; }
+.section-item strong { font-weight: 600; color: #111827; }
+.page-card-note { margin-top: 10px; font-size: 11.5px; color: #6B7280; font-style: italic; }
+
+/* Feature table */
+.ftable { width: 100%; border-collapse: collapse; font-size: 13px; }
+.ftable thead th { background: #111827; color: #fff; text-align: left; padding: 10px 14px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+.ftable tbody tr { border-bottom: 1px solid #F3F4F6; }
+.ftable tbody tr:hover { background: #FAFAFA; }
+.ftable tbody td { padding: 10px 14px; vertical-align: top; color: #374151; }
+.ftable tbody td:first-child { font-weight: 600; color: #111827; }
+.badge { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 100px; }
+.badge-core { background: #DBEAFE; color: #1D4ED8; }
+.badge-enhanced { background: #D1FAE5; color: #065F46; }
+.badge-optional { background: #F3F4F6; color: #6B7280; }
+.badge-p1 { background: #FEE2E2; color: #991B1B; }
+.badge-p2 { background: #FEF9C3; color: #854D0E; }
+.badge-p3 { background: #D1FAE5; color: #065F46; }
+
+/* Tech stack */
+.stack-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+.stack-card { border: 1px solid #E5E7EB; border-radius: 8px; padding: 14px 14px 12px; }
+.stack-card-label { font-size: 9.5px; font-weight: 700; color: #9CA3AF; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 5px; }
+.stack-card-value { font-size: 13px; font-weight: 700; color: #111827; margin-bottom: 4px; }
+.stack-card-desc { font-size: 11px; color: #6B7280; line-height: 1.5; }
+
+/* Timeline */
+.phases { display: flex; flex-direction: column; gap: 0; }
+.phase { display: flex; gap: 0; }
+.phase-left { display: flex; flex-direction: column; align-items: center; width: 44px; flex-shrink: 0; }
+.phase-dot { width: 12px; height: 12px; border-radius: 50%; background: #00AEEF; flex-shrink: 0; margin-top: 3px; }
+.phase-line { width: 2px; flex: 1; background: #E5E7EB; margin-top: 4px; }
+.phase:last-child .phase-line { display: none; }
+.phase-body { padding: 0 0 28px 12px; flex: 1; }
+.phase-label { font-size: 10px; font-weight: 700; color: #00AEEF; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 4px; }
+.phase-title { font-size: 14px; font-weight: 700; color: #111827; margin-bottom: 4px; }
+.phase-duration { font-size: 11.5px; color: #9CA3AF; margin-bottom: 8px; }
+.phase-items { display: flex; flex-wrap: wrap; gap: 5px; }
+.phase-item { font-size: 11px; background: #F3F4F6; color: #374151; padding: 3px 9px; border-radius: 100px; }
+
+/* Sitemap */
+.sitemap { font-size: 12.5px; }
+.sitemap-root { display: flex; flex-direction: column; gap: 0; }
+.sitemap-row { display: flex; align-items: stretch; gap: 0; padding: 8px 0; border-bottom: 1px solid #F3F4F6; }
+.sitemap-row:last-child { border-bottom: none; }
+.sitemap-depth0 { font-weight: 700; color: #111827; }
+.sitemap-depth1 { padding-left: 20px; color: #374151; }
+.sitemap-depth2 { padding-left: 40px; color: #6B7280; font-size: 11.5px; }
+.sitemap-slug { font-family: monospace; font-size: 11px; color: #9CA3AF; margin-left: auto; }
+.sitemap-type { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 100px; margin-left: 10px; }
+.type-static { background: #F3F4F6; color: #6B7280; }
+.type-dynamic { background: #DBEAFE; color: #1D4ED8; }
+.type-form { background: #FEF9C3; color: #854D0E; }
+
+/* Content req table */
+.creq { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.creq thead th { background: #F9FAFB; color: #374151; text-align: left; padding: 9px 13px; font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; border-bottom: 2px solid #E5E7EB; }
+.creq tbody td { padding: 10px 13px; vertical-align: top; border-bottom: 1px solid #F3F4F6; }
+.creq tbody td:first-child { font-weight: 600; color: #111827; }
+.owner-client { display: inline-block; font-size: 10px; font-weight: 700; background: #FEF9C3; color: #854D0E; padding: 1px 7px; border-radius: 100px; }
+.owner-ps { display: inline-block; font-size: 10px; font-weight: 700; background: #DBEAFE; color: #1D4ED8; padding: 1px 7px; border-radius: 100px; }
+
+/* Investment table */
+.inv-table { width: 100%; border-collapse: collapse; }
+.inv-table thead th { background: #111827; color: #fff; padding: 10px 16px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; text-align: left; }
+.inv-table thead th:last-child { text-align: right; }
+.inv-table tbody tr { border-bottom: 1px solid #F3F4F6; }
+.inv-table tbody td { padding: 11px 16px; color: #374151; font-size: 13px; vertical-align: top; }
+.inv-table tbody td:last-child { text-align: right; font-weight: 700; color: #111827; white-space: nowrap; }
+.inv-table tfoot td { padding: 12px 16px; background: #111827; color: #fff; font-weight: 800; font-size: 15px; }
+.inv-table tfoot td:last-child { text-align: right; }
+
+/* Helpers */
+.rule { height: 1px; background: #F3F4F6; margin: 28px 0; }
+ul.plain { padding-left: 16px; color: #4B5563; }
+ul.plain li { margin-bottom: 5px; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.info-box { background: #F0F9FF; border-left: 3px solid #00AEEF; border-radius: 0 6px 6px 0; padding: 14px 16px; font-size: 12.5px; color: #1E3A5F; }
+.warn-box { background: #FFFBEB; border-left: 3px solid #F59E0B; border-radius: 0 6px 6px 0; padding: 14px 16px; font-size: 12.5px; color: #78350F; }
+
+/* Footer */
+.doc-footer { background: #F9FAFB; border-top: 1px solid #E5E7EB; padding: 22px 56px; display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: #9CA3AF; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ─── COVER ─────────────────────────────────────────── -->
+<div class="cover">
+  <div class="cover-ps">Perfskills Private Limited — Website Plan</div>
+  <div class="cover-label">Proposal Document</div>
+  <div class="cover-title">Fortune Logistics<br>Website Plan</div>
+  <div class="cover-sub">Full-fledged B2B corporate website — scope, structure, features & timeline</div>
+  <div class="cover-rule"></div>
+  <div class="cover-meta">
+    <div class="cover-meta-item"><div class="label">Prepared by</div><div class="value">Perfskills Private Limited</div></div>
+    <div class="cover-meta-item"><div class="label">Prepared for</div><div class="value">M/s. Fortune Logistics</div></div>
+    <div class="cover-meta-item"><div class="label">Date</div><div class="value">August 2026</div></div>
+    <div class="cover-meta-item"><div class="label">Version</div><div class="value">v1.0</div></div>
+  </div>
+</div>
+
+<!-- ─── BODY ──────────────────────────────────────────── -->
+<div class="body">
+
+<!-- TABLE OF CONTENTS -->
+<div class="section" style="border-top:none;padding-top:36px;">
+  <div class="toc">
+    <div class="toc-title">Contents</div>
+    <div class="toc-grid">
+      <div class="toc-item"><span class="toc-n">01</span>Objective & Overview</div>
+      <div class="toc-item"><span class="toc-n">06</span>Content Requirements</div>
+      <div class="toc-item"><span class="toc-n">02</span>Site Architecture & Sitemap</div>
+      <div class="toc-item"><span class="toc-n">07</span>Technical Stack</div>
+      <div class="toc-item"><span class="toc-n">03</span>Page-by-page Breakdown</div>
+      <div class="toc-item"><span class="toc-n">08</span>SEO & Performance</div>
+      <div class="toc-item"><span class="toc-n">04</span>Features & Functionality</div>
+      <div class="toc-item"><span class="toc-n">09</span>Project Timeline</div>
+      <div class="toc-item"><span class="toc-n">05</span>Design Direction</div>
+      <div class="toc-item"><span class="toc-n">10</span>Investment Summary</div>
+    </div>
+  </div>
+</div>
+
+<!-- 01 OBJECTIVE -->
+<div class="section">
+  <div class="section-num">01</div>
+  <div class="section-title">Objective & Overview</div>
+  <div class="section-intro">Fortune Logistics needs a B2B corporate website that generates qualified freight enquiries and communicates reliability to logistics buyers — procurement heads, supply chain managers, and fleet managers at mid-to-large companies across India.</div>
+
+  <div class="two-col" style="margin-bottom:18px;">
+    <div style="border:1px solid #E5E7EB;border-radius:8px;padding:16px;">
+      <div style="font-size:10px;font-weight:700;color:#9CA3AF;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;">The Problem</div>
+      <ul class="plain">
+        <li>No digital presence to back up sales pitches</li>
+        <li>Buyers can't verify capabilities before calling</li>
+        <li>No channel for inbound RFQs from new clients</li>
+        <li>Competitors with websites win at first impression</li>
+      </ul>
+    </div>
+    <div style="border:1px solid #E5E7EB;border-radius:8px;padding:16px;">
+      <div style="font-size:10px;font-weight:700;color:#9CA3AF;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;">The Website Does</div>
+      <ul class="plain">
+        <li>Builds credibility before the first call</li>
+        <li>Shows fleet, coverage, and services in detail</li>
+        <li>Captures RFQs from buyers actively searching</li>
+        <li>Surfaces on Google for freight-related searches</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <strong>Primary goal:</strong> Every page should answer one question — "Can Fortune Logistics handle my shipment?" — and end with a clear path to contact or request a quote.
+  </div>
+</div>
+
+<!-- 02 SITEMAP -->
+<div class="section">
+  <div class="section-num">02</div>
+  <div class="section-title">Site Architecture & Sitemap</div>
+  <div class="section-intro">9 primary pages plus supporting pages. Clean URL structure, all crawlable, all interlinked through a persistent navigation bar.</div>
+
+  <div class="sitemap">
+    <div class="sitemap-root">
+
+      <div class="sitemap-row">
+        <span class="sitemap-depth0">Homepage</span>
+        <span class="sitemap-type type-static">Static</span>
+        <span class="sitemap-slug">/</span>
+      </div>
+      <div class="sitemap-row">
+        <span class="sitemap-depth0">About Us</span>
+        <span class="sitemap-type type-static">Static</span>
+        <span class="sitemap-slug">/about</span>
+      </div>
+      <div class="sitemap-row">
+        <span class="sitemap-depth0">Services</span>
+        <span class="sitemap-type type-static">Static</span>
+        <span class="sitemap-slug">/services</span>
+      </div>
+      <div class="sitemap-row">
+        <span class="sitemap-depth1">↳ Full Truck Load (FTL)</span>
+        <span class="sitemap-type type-static">Static</span>
+        <span class="sitemap-slug">/services/ftl</span>
+      </div>
+      <div class="sitemap-row">
+        <span class="sitemap-depth1">↳ Part Truck Load (PTL)</span>
+        <span class="sitemap-type type-static">Static</span>
+        <span class="sitemap-slug">/services/ptl</span>
+      </div>
+      <div class="sitemap-row">
+        <span class="sitemap-depth1">↳ ODC / Project Cargo</span>
+        <span class="sitemap-type type-static">Static</span>
+        <span class="sitemap-slug">/services/odc</span>
+      </div>
+      <div class="sitemap-row">
+        <span class="sitemap-depth1">↳ Packaging Solutions</span>
+        <span class="sitemap-type type-static">Static</span>
+        <span class="sitemap-slug">/services/packaging</span>
+      </div>
+      <div class="sitemap-row">
+        <span class="sitemap-depth0">Fleet & Capabilities</span>
+        <span class="sitemap-type type-static">Static</span>
+        <span class="sitemap-slug">/fleet</span>
+      </div>
+      <div class="sitemap-row">
+        <span class="sitemap-depth0">Industries Served</span>
+        <span class="sitemap-type type-static">Static</span>
+        <span class="sitemap-slug">/industries</span>
+      </div>
+      <div class="sitemap-row">
+        <span class="sitemap-depth1">↳ Automotive</span>
+        <span class="sitemap-type type-static">Static</span>
+        <span class="sitemap-slug">/industries/automotive</span>
+      </div>
+      <div class="sitemap-row">
+        <span class="sitemap-depth1">↳ FMCG</span>
+        <span class="sitemap-type type-static">Static</span>
+        <span class="sitemap-slug">/industries/fmcg</span>
+      </div>
+      <div class="sitemap-row">
+        <span class="sitemap-depth1">↳ Pharmaceuticals</span>
+        <span class="sitemap-type type-static">Static</span>
+        <span class="sitemap-slug">/industries/pharma</span>
+      </div>
+      <div class="sitemap-row">
+        <span class="sitemap-depth1">↳ Industrial / Manufacturing</span>
+        <span class="sitemap-type type-static">Static</span>
+        <span class="sitemap-slug">/industries/industrial</span>
+      </div>
+      <div class="sitemap-row">
+        <span class="sitemap-depth0">Our Network</span>
+        <span class="sitemap-type type-dynamic">Interactive</span>
+        <span class="sitemap-slug">/network</span>
+      </div>
+      <div class="sitemap-row">
+        <span class="sitemap-depth0">Why Fortune</span>
+        <span class="sitemap-type type-static">Static</span>
+        <span class="sitemap-slug">/why-fortune</span>
+      </div>
+      <div class="sitemap-row">
+        <span class="sitemap-depth0">Contact & Request a Quote</span>
+        <span class="sitemap-type type-form">Form</span>
+        <span class="sitemap-slug">/contact</span>
+      </div>
+      <div class="sitemap-row">
+        <span class="sitemap-depth1">↳ Thank You page</span>
+        <span class="sitemap-type type-static">Static</span>
+        <span class="sitemap-slug">/contact/thank-you</span>
+      </div>
+      <div class="sitemap-row">
+        <span class="sitemap-depth0">Privacy Policy</span>
+        <span class="sitemap-type type-static">Static</span>
+        <span class="sitemap-slug">/privacy</span>
+      </div>
+
+    </div>
+  </div>
+
+  <div style="display:flex;gap:10px;margin-top:14px;font-size:11px;align-items:center;">
+    <span class="sitemap-type type-static">Static</span><span style="color:#6B7280;">Standard content page</span>
+    <span style="width:16px;"></span>
+    <span class="sitemap-type type-dynamic">Interactive</span><span style="color:#6B7280;">JavaScript-enhanced</span>
+    <span style="width:16px;"></span>
+    <span class="sitemap-type type-form">Form</span><span style="color:#6B7280;">Form + backend handling</span>
+  </div>
+</div>
+
+<!-- 03 PAGE BREAKDOWN -->
+<div class="section">
+  <div class="section-num">03</div>
+  <div class="section-title">Page-by-page Breakdown</div>
+  <div class="section-intro">What goes on each page and what it is designed to accomplish.</div>
+
+  <div class="page-cards">
+
+    <!-- Homepage -->
+    <div class="page-card">
+      <div class="page-card-header">
+        <div class="page-card-num">P1</div>
+        <div class="page-card-title">Homepage</div>
+        <div class="page-card-slug">/</div>
+      </div>
+      <div class="page-card-body">
+        <div class="page-card-purpose">The first impression for every visitor. Must communicate who Fortune Logistics is, what they carry, where they operate, and give a clear next step — all above the fold on mobile.</div>
+        <div class="page-card-sections">
+          <div class="section-item"><strong>Hero</strong> — Headline, subhead, CTA button (Get a Quote), background image of fleet</div>
+          <div class="section-item"><strong>Stats Bar</strong> — 50+ cities · 120+ fleet · 98% on-time · 500+ clients (animated counters)</div>
+          <div class="section-item"><strong>Services Overview</strong> — 4-card grid: FTL · PTL · ODC · Packaging, each linking to service sub-page</div>
+          <div class="section-item"><strong>Industries Strip</strong> — Horizontal icon+name strip: Automotive, FMCG, Pharma, Industrial</div>
+          <div class="section-item"><strong>Network Teaser</strong> — India map thumbnail with "50+ cities" overlay + "See Network" link</div>
+          <div class="section-item"><strong>Why Fortune</strong> — 3 differentiators: GPS tracking, on-time commitment, dedicated account manager</div>
+          <div class="section-item"><strong>Testimonials</strong> — 2–3 client quotes with company name (if client provides)</div>
+          <div class="section-item"><strong>CTA Banner</strong> — Full-width banner: "Ready to move your freight?" + quote button</div>
+        </div>
+        <div class="page-card-note">Hero image: Fortune's own truck photos strongly preferred over stock. Single most impactful piece of photography for the site.</div>
+      </div>
+    </div>
+
+    <!-- About Us -->
+    <div class="page-card">
+      <div class="page-card-header">
+        <div class="page-card-num">P2</div>
+        <div class="page-card-title">About Us</div>
+        <div class="page-card-slug">/about</div>
+      </div>
+      <div class="page-card-body">
+        <div class="page-card-purpose">Humanizes the company. Buyers choosing a logistics partner want to know who they're trusting with their cargo. This page turns Fortune from a vendor into a company with a story and values.</div>
+        <div class="page-card-sections">
+          <div class="section-item"><strong>Origin Story</strong> — Who founded it, why, and what was the gap they saw</div>
+          <div class="section-item"><strong>Mission & Values</strong> — 3–4 values with short descriptions (reliability, transparency, etc.)</div>
+          <div class="section-item"><strong>Timeline / Milestones</strong> — Year-by-year growth (2019 founded → cities → fleet → 2026)</div>
+          <div class="section-item"><strong>Leadership</strong> — Founder / key team with photo, name, short bio (1–2 people)</div>
+          <div class="section-item"><strong>Certifications</strong> — Any GST, ISO, or government freight permits</div>
+          <div class="section-item"><strong>Office / Location</strong> — Registered office address, embedded Google Map</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services Hub -->
+    <div class="page-card">
+      <div class="page-card-header">
+        <div class="page-card-num">P3</div>
+        <div class="page-card-title">Services (Hub + 4 Sub-pages)</div>
+        <div class="page-card-slug">/services + /services/ftl /ptl /odc /packaging</div>
+      </div>
+      <div class="page-card-body">
+        <div class="page-card-purpose">The hub page gives a quick overview. Each sub-page goes deep into one service — what it is, who it's for, how it works, and why Fortune does it well. Sub-pages are critical for SEO: "FTL transport Pune" and similar searches land here.</div>
+        <div class="page-card-sections">
+          <div class="section-item"><strong>Hub: Service Grid</strong> — 4 cards, each with icon, name, 1-line description, Read More link</div>
+          <div class="section-item"><strong>Hub: CTA</strong> — "Not sure which service you need? Talk to us."</div>
+          <div class="section-item"><strong>FTL Sub-page</strong> — What is FTL, capacity (tons/volume), vehicle types, loading process, pricing model, when to use FTL vs PTL</div>
+          <div class="section-item"><strong>PTL Sub-page</strong> — Consolidated freight, how it works, minimum weight, transit times, tracking</div>
+          <div class="section-item"><strong>ODC Sub-page</strong> — Oversized & project cargo, special permits, escort vehicles, equipment types handled</div>
+          <div class="section-item"><strong>Packaging Sub-page</strong> — Materials offered, transit protection, customization, photos of packaged goods</div>
+        </div>
+        <div class="page-card-note">Each sub-page ends with an inline quote request form so visitors don't have to navigate away to enquire.</div>
+      </div>
+    </div>
+
+    <!-- Fleet -->
+    <div class="page-card">
+      <div class="page-card-header">
+        <div class="page-card-num">P4</div>
+        <div class="page-card-title">Fleet & Capabilities</div>
+        <div class="page-card-slug">/fleet</div>
+      </div>
+      <div class="page-card-body">
+        <div class="page-card-purpose">Buyers evaluating logistics partners want to see the actual vehicles — type, capacity, age, and technology. This is a trust-builder. Most local logistics companies don't publish this — Fortune doing so is a differentiator.</div>
+        <div class="page-card-sections">
+          <div class="section-item"><strong>Fleet Grid</strong> — Cards for each vehicle type: name, capacity (tons), load volume (CBM), photo</div>
+          <div class="section-item"><strong>Vehicle Types</strong> — Mini truck · 3-ton · 7-ton · 10-ton · 14-ton · 20-ton trailer (based on actual fleet)</div>
+          <div class="section-item"><strong>Capabilities Table</strong> — Filterable table: vehicle × payload × dimensions × best for</div>
+          <div class="section-item"><strong>Technology</strong> — GPS real-time tracking, digital POD, SIM-based tracking if applicable</div>
+          <div class="section-item"><strong>Fleet Stats</strong> — Total owned vehicles, average fleet age, maintenance schedule</div>
+          <div class="section-item"><strong>Special Equipment</strong> — Flatbed for ODC, open body, closed body, refrigerated (if any)</div>
+        </div>
+        <div class="page-card-note">Needs actual vehicle photos from Fortune. Even basic phone photos work better than stock here — authenticity matters.</div>
+      </div>
+    </div>
+
+    <!-- Industries -->
+    <div class="page-card">
+      <div class="page-card-header">
+        <div class="page-card-num">P5</div>
+        <div class="page-card-title">Industries Served (Hub + 4 Sub-pages)</div>
+        <div class="page-card-slug">/industries + /automotive /fmcg /pharma /industrial</div>
+      </div>
+      <div class="page-card-body">
+        <div class="page-card-purpose">Industry-specific pages let a pharma company see that Fortune understands their constraints (temperature, documentation) without reading through generic logistics content. These pages also rank for niche SEO terms like "pharma logistics Pune."</div>
+        <div class="page-card-sections">
+          <div class="section-item"><strong>Automotive</strong> — Auto parts, CKD/SKD, JIT delivery, OEM supply chain context</div>
+          <div class="section-item"><strong>FMCG</strong> — High-volume distribution, cold chain awareness, seasonal surge handling</div>
+          <div class="section-item"><strong>Pharmaceuticals</strong> — Temperature compliance, documentation, GDP-aware handling</div>
+          <div class="section-item"><strong>Industrial / Mfg</strong> — Machinery, heavy goods, ODC-linked, factory-to-factory</div>
+          <div class="section-item"><strong>Per-page structure</strong> — Challenge → Fortune's approach → Key services used → Client type served</div>
+          <div class="section-item"><strong>Cross-links</strong> — Each industry page links to relevant service sub-pages</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Network -->
+    <div class="page-card">
+      <div class="page-card-header">
+        <div class="page-card-num">P6</div>
+        <div class="page-card-title">Our Network</div>
+        <div class="page-card-slug">/network</div>
+      </div>
+      <div class="page-card-body">
+        <div class="page-card-purpose">Answers the buyer's first question: "Do you cover my lane?" An interactive map showing all 50+ cities served, major route corridors, and hub locations turns this into the most engaging page on the site.</div>
+        <div class="page-card-sections">
+          <div class="section-item"><strong>Interactive India Map</strong> — Dot markers for all served cities, click to see city name + lane options</div>
+          <div class="section-item"><strong>Route Corridors</strong> — Line overlays for key lanes (Pune–Mumbai, Pune–Delhi, etc.)</div>
+          <div class="section-item"><strong>City List</strong> — Searchable A–Z list of all cities served (fallback if map fails)</div>
+          <div class="section-item"><strong>Hub Locations</strong> — Fortune's depot/hub cities highlighted differently</div>
+          <div class="section-item"><strong>Coverage Stats</strong> — States covered, pin-codes served, transit day estimates by zone</div>
+          <div class="section-item"><strong>"Don't see your city?"</strong> — Inline CTA: "We may still cover it. Ask us." → contact form</div>
+        </div>
+        <div class="page-card-note">Map built with SVG or Leaflet.js. City data populated from a JSON list Fortune provides — easy to update without code changes.</div>
+      </div>
+    </div>
+
+    <!-- Why Fortune -->
+    <div class="page-card">
+      <div class="page-card-header">
+        <div class="page-card-num">P7</div>
+        <div class="page-card-title">Why Fortune</div>
+        <div class="page-card-slug">/why-fortune</div>
+      </div>
+      <div class="page-card-body">
+        <div class="page-card-purpose">The sales page without being a sales page. Converts a visitor who is comparing multiple logistics companies — gives them specific, verifiable reasons to pick Fortune over generic providers.</div>
+        <div class="page-card-sections">
+          <div class="section-item"><strong>Key Differentiators</strong> — 5–6 cards with icon, heading, 2-line description (GPS tracking, dedicated PoC, real-time updates, etc.)</div>
+          <div class="section-item"><strong>On-time Commitment</strong> — 98% on-time rate with context: how it's measured, what happens if late</div>
+          <div class="section-item"><strong>Transparency</strong> — Live tracking, digital POD, WhatsApp updates</div>
+          <div class="section-item"><strong>Client Testimonials</strong> — 3–5 real quotes with name, company, cargo type</div>
+          <div class="section-item"><strong>Comparison Table</strong> — Fortune vs. unorganized broker: GPS, real POD, fixed rates, accountability</div>
+          <div class="section-item"><strong>Certifications / Memberships</strong> — Any trade body memberships, GST compliance badge</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="page-card">
+      <div class="page-card-header">
+        <div class="page-card-num">P8</div>
+        <div class="page-card-title">Contact & Request a Quote</div>
+        <div class="page-card-slug">/contact</div>
+      </div>
+      <div class="page-card-body">
+        <div class="page-card-purpose">The conversion page. Every page on the site funnels here. The form should be short enough to complete in 90 seconds and specific enough to give Fortune the information they need to respond with a real quote.</div>
+        <div class="page-card-sections">
+          <div class="section-item"><strong>RFQ Form Fields</strong> — Name · Company · Phone · Email · Origin city · Destination city · Service type · Cargo description · Approx weight · Target date</div>
+          <div class="section-item"><strong>Form Submission</strong> — Email notification to Fortune's inbox + auto-reply to enquirer</div>
+          <div class="section-item"><strong>WhatsApp Button</strong> — Prominent "Chat on WhatsApp" with pre-filled opening message</div>
+          <div class="section-item"><strong>Direct Call</strong> — Phone number large and tappable on mobile</div>
+          <div class="section-item"><strong>Office Info</strong> — Address with Google Maps embed</div>
+          <div class="section-item"><strong>Business Hours</strong> — When to expect a response</div>
+        </div>
+        <div class="page-card-note">After submission, redirect to /contact/thank-you with a message like "We'll get back within 4 business hours." Set the response expectation explicitly.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 04 FEATURES -->
+<div class="section">
+  <div class="section-num">04</div>
+  <div class="section-title">Features & Functionality</div>
+  <div class="section-intro">All features below are categorized by whether they are core (must-have), enhanced (recommended additions), or optional (phase 2 considerations).</div>
+
+  <table class="ftable">
+    <thead>
+      <tr>
+        <th style="width:200px;">Feature</th>
+        <th>Description</th>
+        <th style="width:90px;">Category</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Responsive Design</td><td>Mobile-first layout. All pages fully functional and readable on phone, tablet, and desktop</td><td><span class="badge badge-core">Core</span></td></tr>
+      <tr><td>RFQ / Enquiry Form</td><td>Multi-field quote request form with email notification to Fortune + auto-reply to enquirer</td><td><span class="badge badge-core">Core</span></td></tr>
+      <tr><td>WhatsApp Integration</td><td>Floating WhatsApp button on all pages with pre-filled message template. Taps open WhatsApp directly on mobile</td><td><span class="badge badge-core">Core</span></td></tr>
+      <tr><td>Click-to-Call</td><td>Phone number in header and footer is a tappable tel: link. Critical for mobile users</td><td><span class="badge badge-core">Core</span></td></tr>
+      <tr><td>Sticky Navigation</td><td>Nav bar stays visible on scroll. Includes "Get a Quote" CTA button on all pages</td><td><span class="badge badge-core">Core</span></td></tr>
+      <tr><td>Google Analytics 4</td><td>Traffic tracking — pages visited, enquiries submitted, button clicks, WhatsApp taps</td><td><span class="badge badge-core">Core</span></td></tr>
+      <tr><td>On-page SEO</td><td>Meta titles + descriptions, proper H1/H2/H3 hierarchy, canonical tags, alt text on all images</td><td><span class="badge badge-core">Core</span></td></tr>
+      <tr><td>sitemap.xml + robots.txt</td><td>Submitted to Google Search Console for faster indexing</td><td><span class="badge badge-core">Core</span></td></tr>
+      <tr><td>SSL Certificate</td><td>HTTPS on all pages (included with Hostinger)</td><td><span class="badge badge-core">Core</span></td></tr>
+      <tr><td>Performance Optimization</td><td>Compressed images (WebP), lazy loading, minified CSS/JS. Target: 90+ Lighthouse score</td><td><span class="badge badge-core">Core</span></td></tr>
+      <tr><td>India Network Map</td><td>SVG-based interactive map with city markers, route lines, hover tooltips. No paid API required</td><td><span class="badge badge-enhanced">Enhanced</span></td></tr>
+      <tr><td>Fleet Showcase</td><td>Vehicle cards with photo, specs, and payload capacity. Can be filtered by vehicle type</td><td><span class="badge badge-enhanced">Enhanced</span></td></tr>
+      <tr><td>Stat Counters</td><td>Animated count-up for key numbers (50+ cities, 120+ fleet) when they scroll into view</td><td><span class="badge badge-enhanced">Enhanced</span></td></tr>
+      <tr><td>Email CMS (Formspree)</td><td>Form submissions go directly to Fortune's inbox. No server setup. View all enquiries in dashboard</td><td><span class="badge badge-enhanced">Enhanced</span></td></tr>
+      <tr><td>Business Email</td><td>info@fortunelogistics.in (included with Hostinger business hosting)</td><td><span class="badge badge-enhanced">Enhanced</span></td></tr>
+      <tr><td>OG / Social Meta Tags</td><td>WhatsApp / LinkedIn link previews show Fortune's logo and description when a page is shared</td><td><span class="badge badge-enhanced">Enhanced</span></td></tr>
+      <tr><td>Google Reviews Widget</td><td>Live Google Business reviews pulled via API — social proof without managing testimonials</td><td><span class="badge badge-optional">Optional</span></td></tr>
+      <tr><td>Live Chat (Tawk.to)</td><td>Free real-time chat widget. Fortune team answers from phone app. Replaces WhatsApp for web-first users</td><td><span class="badge badge-optional">Optional</span></td></tr>
+      <tr><td>Blog / Resources</td><td>Logistics tips, route guides, industry news — builds SEO authority over time</td><td><span class="badge badge-optional">Optional</span></td></tr>
+      <tr><td>Client Login Portal</td><td>Existing clients log in to track shipments, download invoices, view delivery history</td><td><span class="badge badge-optional">Optional</span></td></tr>
+      <tr><td>Freight Rate Calculator</td><td>Approximate rate estimator by origin/destination/weight — drives engagement and pre-qualifies leads</td><td><span class="badge badge-optional">Optional</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 05 DESIGN DIRECTION -->
+<div class="section">
+  <div class="section-num">05</div>
+  <div class="section-title">Design Direction</div>
+  <div class="section-intro">The website design will follow Fortune Logistics brand guidelines. Two full brochure directions have already been built — the website will extend one of these.</div>
+
+  <div class="two-col">
+    <div style="border:2px solid #111827;border-radius:10px;padding:18px;">
+      <div style="font-size:10px;font-weight:700;color:#9CA3AF;letter-spacing:.1em;margin-bottom:6px;">OPTION A — DARK PREMIUM</div>
+      <div style="font-size:13px;font-weight:700;color:#111827;margin-bottom:8px;">Dark corporate with cyan accent</div>
+      <div style="background:#111827;border-radius:6px;padding:10px;margin-bottom:10px;">
+        <div style="display:flex;gap:6px;margin-bottom:6px;">
+          <div style="width:18px;height:18px;border-radius:4px;background:#111827;border:1px solid rgba(255,255,255,0.3);"></div>
+          <div style="width:18px;height:18px;border-radius:4px;background:#00AEEF;"></div>
+          <div style="width:18px;height:18px;border-radius:4px;background:#F47920;"></div>
+          <div style="width:18px;height:18px;border-radius:4px;background:#fff;"></div>
+        </div>
+        <div style="font-size:7px;color:rgba(255,255,255,0.5);">Dark bg · Cyan accent · Orange CTA · White text</div>
+      </div>
+      <ul class="plain" style="font-size:12px;">
+        <li>Premium, enterprise feel</li>
+        <li>Stands out vs. most Indian logistics sites (all light)</li>
+        <li>Strong visual hierarchy, high contrast</li>
+        <li>Already built as brochure v2</li>
+      </ul>
+    </div>
+    <div style="border:2px solid #00AEEF;border-radius:10px;padding:18px;">
+      <div style="font-size:10px;font-weight:700;color:#9CA3AF;letter-spacing:.1em;margin-bottom:6px;">OPTION B — CLEAN CORPORATE</div>
+      <div style="font-size:13px;font-weight:700;color:#111827;margin-bottom:8px;">Light, professional, high readability</div>
+      <div style="background:#F9FAFB;border-radius:6px;padding:10px;margin-bottom:10px;border:1px solid #E5E7EB;">
+        <div style="display:flex;gap:6px;margin-bottom:6px;">
+          <div style="width:18px;height:18px;border-radius:4px;background:#fff;border:1px solid #E5E7EB;"></div>
+          <div style="width:18px;height:18px;border-radius:4px;background:#00AEEF;"></div>
+          <div style="width:18px;height:18px;border-radius:4px;background:#F47920;"></div>
+          <div style="width:18px;height:18px;border-radius:4px;background:#111827;"></div>
+        </div>
+        <div style="font-size:7px;color:#9CA3AF;">White bg · Cyan accent · Orange CTA · Dark text</div>
+      </div>
+      <ul class="plain" style="font-size:12px;">
+        <li>Familiar, trusted corporate look</li>
+        <li>Very readable on all screen types</li>
+        <li>Easier content photography (any bg works)</li>
+        <li>Already built as brochure v2-Light</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="info-box" style="margin-top:16px;">
+    <strong>Recommendation:</strong> Option A (Dark Premium) for the homepage hero and navigation, switching to a lighter content background for inner pages. This gives Fortune a strong first impression while keeping body content easy to read.
+  </div>
+</div>
+
+<!-- 06 CONTENT REQUIREMENTS -->
+<div class="section">
+  <div class="section-num">06</div>
+  <div class="section-title">Content Requirements</div>
+  <div class="section-intro">What needs to come from Fortune Logistics vs. what Perfskills will write/create. Content is the only blocker that delays delivery — the earlier Fortune can share these, the faster the site goes live.</div>
+
+  <table class="creq">
+    <thead>
+      <tr>
+        <th style="width:200px;">Content Item</th>
+        <th>Details</th>
+        <th style="width:80px;">Owner</th>
+        <th style="width:80px;">Priority</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Company story / founder bio</td>
+        <td>Founding year, founder name, why Fortune was started, key milestones. 2–4 paragraphs or a 20-min call</td>
+        <td><span class="owner-client">FL Team</span></td>
+        <td><span class="badge badge-p1">High</span></td>
+      </tr>
+      <tr>
+        <td>Truck / fleet photos</td>
+        <td>5–10 photos of actual Fortune trucks. Phone camera is fine. Exterior + interior/load area</td>
+        <td><span class="owner-client">FL Team</span></td>
+        <td><span class="badge badge-p1">High</span></td>
+      </tr>
+      <tr>
+        <td>Fleet list</td>
+        <td>Vehicle types owned, count per type, payload capacity, any special equipment</td>
+        <td><span class="owner-client">FL Team</span></td>
+        <td><span class="badge badge-p1">High</span></td>
+      </tr>
+      <tr>
+        <td>List of cities / routes served</td>
+        <td>All origin-destination pairs or at minimum all cities. Used to build the network map</td>
+        <td><span class="owner-client">FL Team</span></td>
+        <td><span class="badge badge-p1">High</span></td>
+      </tr>
+      <tr>
+        <td>Client testimonials</td>
+        <td>2–5 real client quotes. Name + company + cargo type. Even WhatsApp screenshots work</td>
+        <td><span class="owner-client">FL Team</span></td>
+        <td><span class="badge badge-p2">Medium</span></td>
+      </tr>
+      <tr>
+        <td>Team / founder photo</td>
+        <td>Professional or semi-professional. Used on About page. Background doesn't matter much</td>
+        <td><span class="owner-client">FL Team</span></td>
+        <td><span class="badge badge-p2">Medium</span></td>
+      </tr>
+      <tr>
+        <td>GST / registration certificate</td>
+        <td>To display on Why Fortune page as trust signal. Just the certificate number is enough if not sharing the doc</td>
+        <td><span class="owner-client">FL Team</span></td>
+        <td><span class="badge badge-p2">Medium</span></td>
+      </tr>
+      <tr>
+        <td>Certifications / memberships</td>
+        <td>ISO, FFFAI, or any transport body memberships if applicable</td>
+        <td><span class="owner-client">FL Team</span></td>
+        <td><span class="badge badge-p3">Low</span></td>
+      </tr>
+      <tr>
+        <td>Website copy (all pages)</td>
+        <td>Headlines, section text, service descriptions, industry content — all pages written from scratch</td>
+        <td><span class="owner-ps">Perfskills</span></td>
+        <td><span class="badge badge-p1">High</span></td>
+      </tr>
+      <tr>
+        <td>Logo files</td>
+        <td>Original logo in SVG or PNG (high-res). Already have JPEG — SVG preferred</td>
+        <td><span class="owner-client">FL Team</span></td>
+        <td><span class="badge badge-p1">High</span></td>
+      </tr>
+      <tr>
+        <td>Contact details</td>
+        <td>Phone, WhatsApp number, business email, registered address, working hours</td>
+        <td><span class="owner-client">FL Team</span></td>
+        <td><span class="badge badge-p1">High</span></td>
+      </tr>
+      <tr>
+        <td>Google Business Profile</td>
+        <td>Existing profile URL if any. If none, we set it up as part of onboarding</td>
+        <td><span class="owner-client">FL Team</span></td>
+        <td><span class="badge badge-p2">Medium</span></td>
+      </tr>
+      <tr>
+        <td>Stock/supplementary images</td>
+        <td>Roads, warehouses, cargo — licensed commercial imagery to fill gaps where real photos aren't available</td>
+        <td><span class="owner-ps">Perfskills</span></td>
+        <td><span class="badge badge-p2">Medium</span></td>
+      </tr>
+      <tr>
+        <td>Favicons + social OG images</td>
+        <td>Browser tab icon + WhatsApp/LinkedIn preview images when links are shared</td>
+        <td><span class="owner-ps">Perfskills</span></td>
+        <td><span class="badge badge-p2">Medium</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div style="margin-top:10px;display:flex;gap:10px;font-size:11.5px;align-items:center;flex-wrap:wrap;">
+    <span class="badge badge-p1">High</span><span style="color:#6B7280;">Needed before dev starts</span>
+    <span style="width:10px;"></span>
+    <span class="badge badge-p2">Medium</span><span style="color:#6B7280;">Needed before launch</span>
+    <span style="width:10px;"></span>
+    <span class="badge badge-p3">Low</span><span style="color:#6B7280;">Nice to have at launch</span>
+  </div>
+</div>
+
+<!-- 07 TECH STACK -->
+<div class="section">
+  <div class="section-num">07</div>
+  <div class="section-title">Technical Stack</div>
+  <div class="section-intro">Chosen for reliability, low maintenance cost, and easy content updates by Fortune Logistics without developer dependency.</div>
+
+  <div class="stack-grid">
+    <div class="stack-card">
+      <div class="stack-card-label">Frontend</div>
+      <div class="stack-card-value">HTML5 / CSS3 / Vanilla JS</div>
+      <div class="stack-card-desc">No heavy framework. Fast, reliable, no dependency updates. Works on all browsers without issues.</div>
+    </div>
+    <div class="stack-card">
+      <div class="stack-card-label">Hosting</div>
+      <div class="stack-card-value">Hostinger Shared Hosting</div>
+      <div class="stack-card-desc">Already in invoice. Includes SSL, business email, daily backups, 99.9% uptime.</div>
+    </div>
+    <div class="stack-card">
+      <div class="stack-card-label">Domain</div>
+      <div class="stack-card-value">fortunelogistics.in</div>
+      <div class="stack-card-desc">Indian domain, preferred for local SEO. Registered for 1 year (renewal Aug 2027).</div>
+    </div>
+    <div class="stack-card">
+      <div class="stack-card-label">Form Handling</div>
+      <div class="stack-card-value">Formspree (Free tier)</div>
+      <div class="stack-card-desc">RFQ form submissions land in Fortune's inbox. Dashboard to view all submissions. No server code required.</div>
+    </div>
+    <div class="stack-card">
+      <div class="stack-card-label">Network Map</div>
+      <div class="stack-card-value">Leaflet.js + OpenStreetMap</div>
+      <div class="stack-card-desc">Free, open-source. Interactive India map with custom city markers and route lines. No Google Maps API cost.</div>
+    </div>
+    <div class="stack-card">
+      <div class="stack-card-label">Analytics</div>
+      <div class="stack-card-value">Google Analytics 4</div>
+      <div class="stack-card-desc">Traffic, enquiry tracking, WhatsApp button clicks. Free. Fortune admin access provided.</div>
+    </div>
+    <div class="stack-card">
+      <div class="stack-card-label">Fonts</div>
+      <div class="stack-card-value">Inter + DM Serif Display</div>
+      <div class="stack-card-desc">Google Fonts, free. Consistent with brochure typography system.</div>
+    </div>
+    <div class="stack-card">
+      <div class="stack-card-label">Images</div>
+      <div class="stack-card-value">WebP format, optimized</div>
+      <div class="stack-card-desc">All images compressed to WebP. Lazy-loaded. Ensures fast mobile load times across 4G networks.</div>
+    </div>
+    <div class="stack-card">
+      <div class="stack-card-label">Business Email</div>
+      <div class="stack-card-value">Hostinger Email</div>
+      <div class="stack-card-desc">info@fortunelogistics.in. Accessible from Gmail via IMAP or directly from Hostinger webmail.</div>
+    </div>
+  </div>
+
+  <div class="warn-box" style="margin-top:16px;">
+    <strong>No WordPress.</strong> WordPress adds maintenance overhead — plugin updates, security patches, hosting costs. For a brochure site of this scope, plain HTML is faster, cheaper to host, and more secure. If Fortune needs a blog later, we add one then.
+  </div>
+</div>
+
+<!-- 08 SEO -->
+<div class="section">
+  <div class="section-num">08</div>
+  <div class="section-title">SEO & Performance Strategy</div>
+  <div class="section-intro">The goal is to rank for freight and logistics searches in Fortune's key markets within 3–6 months of launch.</div>
+
+  <div class="two-col" style="margin-bottom:20px;">
+    <div>
+      <div style="font-size:11px;font-weight:700;color:#111827;letter-spacing:.04em;margin-bottom:10px;text-transform:uppercase;">Target Keywords</div>
+      <ul class="plain">
+        <li>Truck transport Pune</li>
+        <li>FTL transport Maharashtra</li>
+        <li>PTL logistics Pune to Mumbai</li>
+        <li>ODC cargo transport India</li>
+        <li>Logistics company Pune</li>
+        <li>Freight service Pune</li>
+        <li>Automotive logistics Pune</li>
+        <li>Pharma transport Pune</li>
+        <li>Full truck load hire Maharashtra</li>
+        <li>Freight company India B2B</li>
+      </ul>
+    </div>
+    <div>
+      <div style="font-size:11px;font-weight:700;color:#111827;letter-spacing:.04em;margin-bottom:10px;text-transform:uppercase;">What We Do for SEO</div>
+      <ul class="plain">
+        <li>Unique meta title + description per page</li>
+        <li>H1/H2 with keyword placement</li>
+        <li>LocalBusiness schema markup (JSON-LD)</li>
+        <li>Google Search Console setup + sitemap submit</li>
+        <li>Google Business Profile setup / claim</li>
+        <li>City-specific content on network page</li>
+        <li>Image alt text for all photos</li>
+        <li>Internal linking between related pages</li>
+        <li>Page speed: target 90+ on Lighthouse</li>
+        <li>Mobile-first indexing compliant</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <strong>Realistic expectation:</strong> A new domain takes 3–6 months to build authority. The site will be indexed within days of launch. Ranking on page 1 for competitive terms takes consistent content and links — the foundation we build at launch makes that possible. Local and long-tail terms ("FTL Pune to Nagpur") can rank faster — sometimes within weeks.
+  </div>
+</div>
+
+<!-- 09 TIMELINE -->
+<div class="section">
+  <div class="section-num">09</div>
+  <div class="section-title">Project Timeline</div>
+  <div class="section-intro">5-phase delivery over approximately 6–8 weeks from content sign-off. Timeline starts when Fortune provides the high-priority content items.</div>
+
+  <div class="phases">
+
+    <div class="phase">
+      <div class="phase-left"><div class="phase-dot"></div><div class="phase-line"></div></div>
+      <div class="phase-body">
+        <div class="phase-label">Phase 1</div>
+        <div class="phase-title">Discovery & Content Collection</div>
+        <div class="phase-duration">Week 1 — Kickoff call + content handover</div>
+        <div class="phase-items">
+          <span class="phase-item">Kickoff call with Fortune team</span>
+          <span class="phase-item">Content brief sent to client</span>
+          <span class="phase-item">Fleet photos + city list collected</span>
+          <span class="phase-item">Logo files in SVG format</span>
+          <span class="phase-item">Contact details confirmed</span>
+          <span class="phase-item">Design direction finalized (A or B)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-left"><div class="phase-dot" style="background:#F47920;"></div><div class="phase-line"></div></div>
+      <div class="phase-body">
+        <div class="phase-label">Phase 2</div>
+        <div class="phase-title">Design & Copywriting</div>
+        <div class="phase-duration">Weeks 2–3 — Design system + all page copy</div>
+        <div class="phase-items">
+          <span class="phase-item">Homepage wireframe for approval</span>
+          <span class="phase-item">All 9 pages copy written (Perfskills)</span>
+          <span class="phase-item">Component design system</span>
+          <span class="phase-item">Mobile layout designs</span>
+          <span class="phase-item">Copy review + sign-off from Fortune</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-left"><div class="phase-dot" style="background:#00AEEF;"></div><div class="phase-line"></div></div>
+      <div class="phase-body">
+        <div class="phase-label">Phase 3</div>
+        <div class="phase-title">Development</div>
+        <div class="phase-duration">Weeks 3–5 — Build all pages + features</div>
+        <div class="phase-items">
+          <span class="phase-item">Homepage</span>
+          <span class="phase-item">About + Why Fortune</span>
+          <span class="phase-item">Services hub + 4 sub-pages</span>
+          <span class="phase-item">Fleet page with vehicle cards</span>
+          <span class="phase-item">Industries hub + 4 sub-pages</span>
+          <span class="phase-item">Network map (Leaflet.js)</span>
+          <span class="phase-item">Contact + RFQ form</span>
+          <span class="phase-item">WhatsApp + call integration</span>
+          <span class="phase-item">GA4 + Formspree setup</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-left"><div class="phase-dot" style="background:#10B981;"></div><div class="phase-line"></div></div>
+      <div class="phase-body">
+        <div class="phase-label">Phase 4</div>
+        <div class="phase-title">Review & QA</div>
+        <div class="phase-duration">Week 6 — Testing + client review</div>
+        <div class="phase-items">
+          <span class="phase-item">Cross-browser testing (Chrome, Safari, Firefox)</span>
+          <span class="phase-item">Mobile QA (iOS + Android)</span>
+          <span class="phase-item">Form submission test</span>
+          <span class="phase-item">WhatsApp link test</span>
+          <span class="phase-item">Lighthouse performance audit</span>
+          <span class="phase-item">Fortune internal review round</span>
+          <span class="phase-item">Up to 2 rounds of revisions</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-left"><div class="phase-dot" style="background:#6366F1;"></div></div>
+      <div class="phase-body">
+        <div class="phase-label">Phase 5</div>
+        <div class="phase-title">Launch & Handover</div>
+        <div class="phase-duration">Week 7–8 — Go-live + 30-day support</div>
+        <div class="phase-items">
+          <span class="phase-item">Domain DNS configuration</span>
+          <span class="phase-item">SSL activation</span>
+          <span class="phase-item">Business email setup</span>
+          <span class="phase-item">Google Search Console submission</span>
+          <span class="phase-item">Google Business Profile link</span>
+          <span class="phase-item">Admin handover + walkthrough call</span>
+          <span class="phase-item">30-day post-launch bug support</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="warn-box" style="margin-top:20px;">
+    <strong>Timeline depends on content.</strong> The most common delay is waiting for photos and city lists from the client. Sharing these in Week 1 keeps us on schedule. We will build with placeholder content in parallel so development is never blocked.
+  </div>
+</div>
+
+<!-- 10 INVESTMENT -->
+<div class="section">
+  <div class="section-num">10</div>
+  <div class="section-title">Investment Summary</div>
+  <div class="section-intro">Pricing for the full-fledged website as described in this plan. Core features from the invoice already cover the base scope. Items marked Optional require a separate quote if Fortune wishes to add them.</div>
+
+  <table class="inv-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Item</th>
+        <th style="text-align:right;">Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="color:#9CA3AF;font-weight:600;width:36px;">01</td>
+        <td>
+          <div style="font-weight:600;color:#111827;margin-bottom:3px;">Website Design & Development</div>
+          <div style="font-size:12px;color:#6B7280;">9 primary pages (Homepage, About, Services hub + 4 sub-pages, Fleet, Industries hub + 4 sub-pages, Network, Why Fortune, Contact). All copy written by Perfskills. RFQ form, WhatsApp, call integration, GA4, network map, fleet showcase, SEO on-page, responsive design.</div>
+        </td>
+        <td>₹ 30,000</td>
+      </tr>
+      <tr>
+        <td style="color:#9CA3AF;font-weight:600;">02</td>
+        <td>
+          <div style="font-weight:600;color:#111827;margin-bottom:3px;">Domain + Hosting — Annual (Hostinger)</div>
+          <div style="font-size:12px;color:#6B7280;">fortunelogistics.in domain (1 year) + shared hosting with SSL, business email, daily backups. Renewal due August 2027.</div>
+        </td>
+        <td>₹ 4,800</td>
+      </tr>
+      <tr>
+        <td style="color:#9CA3AF;font-weight:600;">03</td>
+        <td>
+          <div style="font-weight:600;color:#111827;margin-bottom:3px;">30-day Post-launch Support</div>
+          <div style="font-size:12px;color:#6B7280;">Bug fixes, minor content updates, form adjustments, Google Search Console monitoring.</div>
+        </td>
+        <td style="color:#2E7D32;font-size:12px;">Included</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="2"><strong>Total (Invoice PER-FL-0001)</strong></td>
+        <td><strong>₹ 34,800</strong></td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <div style="margin-top:16px;background:#F9FAFB;border-radius:8px;padding:16px 18px;">
+    <div style="font-size:11px;font-weight:700;color:#9CA3AF;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px;">Optional Add-ons (separate quote)</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:12.5px;color:#374151;">
+      <div>• Live chat widget setup (Tawk.to)</div>
+      <div>• Google Reviews integration</div>
+      <div>• Freight rate calculator</div>
+      <div>• Blog / content section</div>
+      <div>• Client login portal</div>
+      <div>• Annual maintenance retainer</div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /body -->
+
+<!-- FOOTER -->
+<div class="doc-footer">
+  <div>Perfskills Private Limited · CIN U74910PN2019PTC188663 · pratikgade@perfectskills.in</div>
+  <div>Fortune Logistics Website Plan · v1.0 · August 2026</div>
+</div>
+
+</div><!-- /page -->
+</body>
+</html>
