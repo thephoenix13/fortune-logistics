@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fortune Logistics — Design Directions</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #EAECF0; font-family: 'Inter', sans-serif; padding: 48px 24px; }
+.showcase { max-width: 1020px; margin: 0 auto; }
+.pg-title { font-size: 22px; font-weight: 800; color: #111827; margin-bottom: 4px; }
+.pg-sub { font-size: 13px; color: #6B7280; margin-bottom: 44px; }
+.design-block { background: #fff; border-radius: 14px; padding: 26px 28px 30px; margin-bottom: 32px; box-shadow: 0 1px 5px rgba(0,0,0,0.08); }
+.design-meta { display: flex; align-items: baseline; gap: 10px; margin-bottom: 4px; }
+.dnum { font-size: 11px; font-weight: 700; color: #9CA3AF; letter-spacing: .1em; }
+.dname { font-size: 16px; font-weight: 800; color: #111827; }
+.built { font-size: 10px; font-weight: 700; background: #D1FAE5; color: #065F46; padding: 2px 8px; border-radius: 100px; vertical-align: middle; margin-left: 6px; }
+.tags { display: flex; gap: 6px; margin-bottom: 18px; }
+.tag { font-size: 10px; font-weight: 600; padding: 2px 9px; border-radius: 100px; background: #F3F4F6; color: #6B7280; }
+.pages-row { display: flex; gap: 20px; flex-wrap: wrap; }
+.pw { flex: 0 0 auto; }
+.plabel { font-size: 9px; font-weight: 700; color: #9CA3AF; text-align: center; margin-bottom: 7px; text-transform: uppercase; letter-spacing: .08em; }
+.mp { width: 230px; height: 325px; overflow: hidden; border-radius: 5px; box-shadow: 0 3px 16px rgba(0,0,0,0.18); position: relative; flex-shrink: 0; font-family: 'Inter', sans-serif; }
+.ln { border-radius: 2px; display: block; }
+</style>
+</head>
+<body>
+<div class="showcase">
+
+<div class="pg-title">Fortune Logistics — Design Directions</div>
+<p class="pg-sub">10 visual concepts · Each shows Cover · About Us · Services spread</p>
+
+
+<!-- ══════════════════════════════════════════
+  01 BOLD GEOMETRY
+  Layout: Diagonal cyan slash on dark field.
+  About: Left full-height cyan stripe + content right.
+  Services: Dark cards with strong left border.
+══════════════════════════════════════════ -->
+<div class="design-block">
+  <div class="design-meta"><span class="dnum">01</span><span class="dname">Bold Geometry</span></div>
+  <div class="tags"><span class="tag">Dark</span><span class="tag">Dynamic</span><span class="tag">High-impact</span></div>
+  <div class="pages-row">
+
+    <!-- COVER: diagonal slash, company name pinned bottom-left -->
+    <div class="pw"><div class="plabel">Cover</div>
+    <div class="mp" style="background:#0F1419;">
+      <div style="position:absolute;top:0;left:0;right:0;height:24px;display:flex;align-items:center;justify-content:space-between;padding:0 12px;">
+        <span style="font-size:9px;font-weight:900;color:#00AEEF;letter-spacing:.1em;">FL</span>
+        <div style="display:flex;gap:8px;"><div style="width:20px;height:1.5px;background:rgba(255,255,255,0.25);"></div><div style="width:14px;height:1.5px;background:rgba(255,255,255,0.25);"></div><div style="width:17px;height:1.5px;background:rgba(255,255,255,0.25);"></div></div>
+      </div>
+      <!-- Diagonal slash – solid cyan band -->
+      <div style="position:absolute;width:380px;height:70px;background:#00AEEF;transform:rotate(-35deg);top:60px;left:-70px;"></div>
+      <!-- Thin orange line offset from slash -->
+      <div style="position:absolute;width:380px;height:5px;background:#F47920;transform:rotate(-35deg);top:126px;left:-70px;"></div>
+      <!-- Company name pinned bottom-left -->
+      <div style="position:absolute;bottom:44px;left:14px;">
+        <div style="font-size:6px;font-weight:700;color:rgba(0,174,239,0.8);letter-spacing:.2em;margin-bottom:5px;">FREIGHT &amp; LOGISTICS</div>
+        <div style="font-size:20px;font-weight:900;color:#fff;line-height:1.0;letter-spacing:-1px;">FORTUNE<br>LOGISTICS</div>
+      </div>
+      <div style="position:absolute;bottom:20px;left:14px;right:14px;display:flex;align-items:center;gap:8px;">
+        <div style="height:2px;width:24px;background:#F47920;"></div>
+        <div style="font-size:5.5px;color:rgba(255,255,255,0.4);letter-spacing:.1em;">MOVING FREIGHT THAT MATTERS</div>
+      </div>
+    </div></div>
+
+    <!-- ABOUT: full-height left cyan stripe, content right -->
+    <div class="pw"><div class="plabel">About Us</div>
+    <div class="mp" style="background:#0F1419;display:flex;">
+      <div style="width:32px;background:#00AEEF;display:flex;align-items:flex-end;justify-content:center;padding-bottom:14px;flex-shrink:0;">
+        <span style="font-size:6px;font-weight:800;color:#fff;writing-mode:vertical-rl;transform:rotate(180deg);letter-spacing:.15em;">ABOUT</span>
+      </div>
+      <div style="flex:1;padding:18px 12px 14px 10px;">
+        <div style="font-size:12px;font-weight:800;color:#fff;margin-bottom:3px;line-height:1.1;">Who We Are</div>
+        <div style="height:2px;width:20px;background:#F47920;margin-bottom:10px;"></div>
+        <span class="ln" style="height:4px;width:95%;background:rgba(255,255,255,0.14);margin-bottom:4px;"></span>
+        <span class="ln" style="height:4px;width:85%;background:rgba(255,255,255,0.14);margin-bottom:4px;"></span>
+        <span class="ln" style="height:4px;width:90%;background:rgba(255,255,255,0.14);margin-bottom:4px;"></span>
+        <span class="ln" style="height:4px;width:70%;background:rgba(255,255,255,0.14);margin-bottom:16px;"></span>
+        <div style="display:flex;flex-direction:column;gap:7px;">
+          <div style="background:rgba(0,174,239,0.15);border:1px solid rgba(0,174,239,0.3);border-radius:3px;padding:6px 8px;display:flex;justify-content:space-between;align-items:center;">
+            <div style="font-size:5.5px;color:rgba(255,255,255,0.5);letter-spacing:.08em;">CITIES</div>
+            <div style="font-size:12px;font-weight:800;color:#00AEEF;">50+</div>
+          </div>
+          <div style="background:rgba(0,174,239,0.15);border:1px solid rgba(0,174,239,0.3);border-radius:3px;padding:6px 8px;display:flex;justify-content:space-between;align-items:center;">
+            <div style="font-size:5.5px;color:rgba(255,255,255,0.5);letter-spacing:.08em;">FLEET</div>
+            <div style="font-size:12px;font-weight:800;color:#00AEEF;">120+</div>
+          </div>
+          <div style="background:rgba(244,121,32,0.15);border:1px solid rgba(244,121,32,0.3);border-radius:3px;padding:6px 8px;display:flex;justify-content:space-between;align-items:center;">
+            <div style="font-size:5.5px;color:rgba(255,255,255,0.5);letter-spacing:.08em;">ON-TIME</div>
+            <div style="font-size:12px;font-weight:800;color:#F47920;">98%</div>
+          </div>
+        </div>
+        <span class="ln" style="height:4px;width:90%;background:rgba(255,255,255,0.08);margin-top:12px;margin-bottom:4px;"></span>
+        <span class="ln" style="height:4px;width:74%;background:rgba(255,255,255,0.08);"></span>
+      </div>
+    </div></div>
+
+    <!-- SERVICES: dark cards with left border, no nav bar -->
+    <div class="pw"><div class="plabel">Services</div>
+    <div class="mp" style="background:#0F1419;padding:20px 14px 16px;">
+      <div style="font-size:6px;font-weight:700;color:#00AEEF;letter-spacing:.18em;margin-bottom:5px;">WHAT WE DO</div>
+      <div style="font-size:14px;font-weight:900;color:#fff;margin-bottom:3px;">Full Service<br>Logistics.</div>
+      <div style="height:3px;width:26px;background:#F47920;margin-bottom:14px;"></div>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div style="border-left:4px solid #00AEEF;padding:8px 10px;background:rgba(255,255,255,0.04);">
+          <div style="font-size:8px;font-weight:700;color:#fff;">Full Truck Load (FTL)</div>
+          <span class="ln" style="height:3px;width:80%;background:rgba(255,255,255,0.15);margin-top:4px;"></span>
+        </div>
+        <div style="border-left:4px solid #F47920;padding:8px 10px;background:rgba(255,255,255,0.04);">
+          <div style="font-size:8px;font-weight:700;color:#fff;">Part Truck Load (PTL)</div>
+          <span class="ln" style="height:3px;width:68%;background:rgba(255,255,255,0.15);margin-top:4px;"></span>
+        </div>
+        <div style="border-left:4px solid #00AEEF;padding:8px 10px;background:rgba(255,255,255,0.04);">
+          <div style="font-size:8px;font-weight:700;color:#fff;">ODC / Project Cargo</div>
+          <span class="ln" style="height:3px;width:74%;background:rgba(255,255,255,0.15);margin-top:4px;"></span>
+        </div>
+        <div style="border-left:4px solid #F47920;padding:8px 10px;background:rgba(255,255,255,0.04);">
+          <div style="font-size:8px;font-weight:700;color:#fff;">Packaging Solutions</div>
+          <span class="ln" style="height:3px;width:60%;background:rgba(255,255,255,0.15);margin-top:4px;"></span>
+        </div>
+      </div>
+      <div style="position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#00AEEF,#F47920);"></div>
+    </div></div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+  02 DARK PREMIUM  ✓ Built
+  Layout: Centered text + horizontal gradient rules.
+  About: 4-cell stat grid top, body text below.
+  Services: Full-width rows with dot marker + top border.
+══════════════════════════════════════════ -->
+<div class="design-block">
+  <div class="design-meta"><span class="dnum">02</span><span class="dname">Dark Premium<span class="built">✓ Built</span></span></div>
+  <div class="tags"><span class="tag">Dark</span><span class="tag">Brand-accurate</span><span class="tag">Premium</span></div>
+  <div class="pages-row">
+
+    <!-- COVER: centered, gradient rules, full-page dark -->
+    <div class="pw"><div class="plabel">Cover</div>
+    <div class="mp" style="background:#111827;">
+      <div style="position:absolute;top:12px;left:14px;right:14px;display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-size:7px;font-weight:700;color:rgba(255,255,255,0.3);letter-spacing:.15em;">FORTUNE LOGISTICS</span>
+        <div style="display:flex;gap:7px;"><div style="width:18px;height:1.5px;background:rgba(255,255,255,0.15);"></div><div style="width:13px;height:1.5px;background:rgba(255,255,255,0.15);"></div></div>
+      </div>
+      <!-- Cyan top strip -->
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#00AEEF,rgba(0,174,239,0.3));"></div>
+      <!-- Centered content -->
+      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-55%);text-align:center;width:88%;">
+        <div style="font-size:26px;font-weight:900;color:#fff;letter-spacing:-1.5px;line-height:.95;">FORTUNE</div>
+        <div style="height:1px;background:linear-gradient(90deg,transparent,#00AEEF,transparent);margin:10px 0;"></div>
+        <div style="font-size:9px;font-weight:300;color:rgba(255,255,255,0.6);letter-spacing:.45em;">LOGISTICS</div>
+        <div style="margin-top:14px;font-size:6px;color:rgba(0,174,239,0.7);letter-spacing:.12em;">MOVING FREIGHT THAT MATTERS</div>
+      </div>
+      <div style="position:absolute;bottom:14px;left:14px;right:14px;display:flex;justify-content:center;gap:20px;">
+        <span style="font-size:5px;color:rgba(255,255,255,0.2);letter-spacing:.1em;">PUNE</span>
+        <span style="font-size:5px;color:rgba(255,255,255,0.2);">·</span>
+        <span style="font-size:5px;color:rgba(255,255,255,0.2);letter-spacing:.1em;">PAN-INDIA</span>
+        <span style="font-size:5px;color:rgba(255,255,255,0.2);">·</span>
+        <span style="font-size:5px;color:rgba(255,255,255,0.2);letter-spacing:.1em;">EST. 2019</span>
+      </div>
+      <div style="position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,rgba(244,121,32,0.5),#F47920,rgba(244,121,32,0.3));"></div>
+    </div></div>
+
+    <!-- ABOUT: 4-cell stat grid at top, then body -->
+    <div class="pw"><div class="plabel">About Us</div>
+    <div class="mp" style="background:#111827;padding:18px 14px 16px;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#00AEEF,rgba(0,174,239,0.3));"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-bottom:14px;">
+        <div style="background:rgba(0,174,239,0.12);border-radius:4px;padding:8px;text-align:center;">
+          <div style="font-size:13px;font-weight:900;color:#00AEEF;">50+</div>
+          <div style="font-size:5px;color:rgba(255,255,255,0.4);margin-top:2px;letter-spacing:.08em;">CITIES</div>
+        </div>
+        <div style="background:rgba(0,174,239,0.12);border-radius:4px;padding:8px;text-align:center;">
+          <div style="font-size:13px;font-weight:900;color:#00AEEF;">120+</div>
+          <div style="font-size:5px;color:rgba(255,255,255,0.4);margin-top:2px;letter-spacing:.08em;">FLEET</div>
+        </div>
+        <div style="background:rgba(244,121,32,0.12);border-radius:4px;padding:8px;text-align:center;">
+          <div style="font-size:13px;font-weight:900;color:#F47920;">98%</div>
+          <div style="font-size:5px;color:rgba(255,255,255,0.4);margin-top:2px;letter-spacing:.08em;">ON-TIME</div>
+        </div>
+        <div style="background:rgba(244,121,32,0.12);border-radius:4px;padding:8px;text-align:center;">
+          <div style="font-size:13px;font-weight:900;color:#F47920;">500+</div>
+          <div style="font-size:5px;color:rgba(255,255,255,0.4);margin-top:2px;letter-spacing:.08em;">CLIENTS</div>
+        </div>
+      </div>
+      <div style="font-size:6px;font-weight:700;color:#00AEEF;letter-spacing:.15em;margin-bottom:5px;">WHO WE ARE</div>
+      <div style="font-size:11px;font-weight:800;color:#fff;margin-bottom:8px;">Built on trust.<br>Delivered on time.</div>
+      <span class="ln" style="height:4px;width:92%;background:rgba(255,255,255,0.1);margin-bottom:4px;"></span>
+      <span class="ln" style="height:4px;width:84%;background:rgba(255,255,255,0.1);margin-bottom:4px;"></span>
+      <span class="ln" style="height:4px;width:88%;background:rgba(255,255,255,0.1);margin-bottom:4px;"></span>
+      <span class="ln" style="height:4px;width:68%;background:rgba(255,255,255,0.1);"></span>
+      <div style="position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,rgba(244,121,32,0.5),#F47920,rgba(244,121,32,0.3));"></div>
+    </div></div>
+
+    <!-- SERVICES: full-width rows -->
+    <div class="pw"><div class="plabel">Services</div>
+    <div class="mp" style="background:#111827;padding:18px 14px 16px;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#00AEEF,rgba(0,174,239,0.3));"></div>
+      <div style="font-size:6px;font-weight:700;color:#00AEEF;letter-spacing:.15em;margin-bottom:5px;">OUR SERVICES</div>
+      <div style="font-size:12px;font-weight:800;color:#fff;margin-bottom:3px;">Full service logistics.</div>
+      <div style="height:2px;width:24px;background:#F47920;margin-bottom:14px;"></div>
+      <div style="display:flex;flex-direction:column;gap:0;">
+        <div style="padding:10px 0;border-top:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;gap:9px;">
+          <div style="width:7px;height:7px;border-radius:50%;background:#F47920;flex-shrink:0;"></div>
+          <div><div style="font-size:8px;font-weight:700;color:#fff;">Full Truck Load (FTL)</div><span class="ln" style="height:3px;width:85%;background:rgba(255,255,255,0.1);margin-top:3px;"></span></div>
+        </div>
+        <div style="padding:10px 0;border-top:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;gap:9px;">
+          <div style="width:7px;height:7px;border-radius:50%;background:#00AEEF;flex-shrink:0;"></div>
+          <div><div style="font-size:8px;font-weight:700;color:#fff;">Part Truck Load (PTL)</div><span class="ln" style="height:3px;width:72%;background:rgba(255,255,255,0.1);margin-top:3px;"></span></div>
+        </div>
+        <div style="padding:10px 0;border-top:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;gap:9px;">
+          <div style="width:7px;height:7px;border-radius:50%;background:#F47920;flex-shrink:0;"></div>
+          <div><div style="font-size:8px;font-weight:700;color:#fff;">ODC / Project Cargo</div><span class="ln" style="height:3px;width:78%;background:rgba(255,255,255,0.1);margin-top:3px;"></span></div>
+        </div>
+        <div style="padding:10px 0;border-top:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;gap:9px;">
+          <div style="width:7px;height:7px;border-radius:50%;background:#00AEEF;flex-shrink:0;"></div>
+          <div><div style="font-size:8px;font-weight:700;color:#fff;">Packaging Solutions</div><span class="ln" style="height:3px;width:65%;background:rgba(255,255,255,0.1);margin-top:3px;"></span></div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+  03 CLEAN CORPORATE  ✓ Built
+  Layout: Two-panel (white left + cyan right).
+  About: White with top accent strip + 3-col stat row.
+  Services: 2×2 card grid on white.
+══════════════════════════════════════════ -->
+<div class="design-block">
+  <div class="design-meta"><span class="dnum">03</span><span class="dname">Clean Corporate<span class="built">✓ Built</span></span></div>
+  <div class="tags"><span class="tag">Light</span><span class="tag">Professional</span><span class="tag">Print-ready</span></div>
+  <div class="pages-row">
+
+    <!-- COVER: left panel white + right panel cyan (vertical text) -->
+    <div class="pw"><div class="plabel">Cover</div>
+    <div class="mp" style="display:flex;">
+      <div style="flex:1;background:#fff;padding:22px 14px;display:flex;flex-direction:column;justify-content:space-between;">
+        <div style="font-size:7px;font-weight:800;color:#111827;letter-spacing:.08em;">FORTUNE<br>LOGISTICS</div>
+        <div>
+          <div style="font-size:16px;font-weight:900;color:#111827;letter-spacing:-1px;line-height:1.0;margin-bottom:8px;">FORTUNE<br>LOGISTICS</div>
+          <div style="height:3px;width:28px;background:#F47920;margin-bottom:6px;"></div>
+          <div style="font-size:5.5px;color:#6B7280;letter-spacing:.06em;">FREIGHT ACROSS INDIA</div>
+        </div>
+        <div style="font-size:5px;color:#D1D5DB;">fortunelogistics.in</div>
+      </div>
+      <!-- Right cyan vertical panel -->
+      <div style="width:76px;background:#00AEEF;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;">
+        <div style="font-size:22px;font-weight:900;color:#fff;writing-mode:vertical-lr;transform:rotate(180deg);letter-spacing:-1px;line-height:1;">FREIGHT</div>
+        <div style="height:30px;width:2px;background:rgba(255,255,255,0.35);"></div>
+        <div style="font-size:6px;font-weight:600;color:rgba(255,255,255,0.8);writing-mode:vertical-lr;transform:rotate(180deg);letter-spacing:.15em;">SOLUTIONS</div>
+      </div>
+    </div></div>
+
+    <!-- ABOUT: horizontal top accent strip, inline stats row -->
+    <div class="pw"><div class="plabel">About Us</div>
+    <div class="mp" style="background:#fff;">
+      <div style="height:6px;background:#00AEEF;"></div>
+      <div style="padding:14px 14px 12px;">
+        <div style="font-size:6px;font-weight:700;color:#00AEEF;letter-spacing:.15em;margin-bottom:5px;">ABOUT US</div>
+        <div style="font-size:13px;font-weight:800;color:#111827;margin-bottom:8px;">Fortune Logistics</div>
+        <span class="ln" style="height:4px;width:92%;background:#E5E7EB;margin-bottom:4px;"></span>
+        <span class="ln" style="height:4px;width:84%;background:#E5E7EB;margin-bottom:4px;"></span>
+        <span class="ln" style="height:4px;width:88%;background:#E5E7EB;margin-bottom:4px;"></span>
+        <span class="ln" style="height:4px;width:70%;background:#E5E7EB;margin-bottom:14px;"></span>
+        <!-- Inline stat strip -->
+        <div style="background:#F0F9FF;border-radius:6px;padding:10px 8px;display:flex;justify-content:space-around;">
+          <div style="text-align:center;"><div style="font-size:12px;font-weight:800;color:#00AEEF;">50+</div><div style="font-size:5px;color:#6B7280;margin-top:2px;letter-spacing:.06em;">CITIES</div></div>
+          <div style="width:1px;background:#D1E9F7;"></div>
+          <div style="text-align:center;"><div style="font-size:12px;font-weight:800;color:#00AEEF;">120+</div><div style="font-size:5px;color:#6B7280;margin-top:2px;letter-spacing:.06em;">FLEET</div></div>
+          <div style="width:1px;background:#D1E9F7;"></div>
+          <div style="text-align:center;"><div style="font-size:12px;font-weight:800;color:#F47920;">98%</div><div style="font-size:5px;color:#6B7280;margin-top:2px;letter-spacing:.06em;">ON-TIME</div></div>
+        </div>
+        <span class="ln" style="height:4px;width:88%;background:#E5E7EB;margin-top:12px;margin-bottom:4px;"></span>
+        <span class="ln" style="height:4px;width:72%;background:#E5E7EB;"></span>
+      </div>
+      <div style="position:absolute;bottom:0;left:0;right:0;height:4px;background:#F47920;"></div>
+    </div></div>
+
+    <!-- SERVICES: 2×2 card grid -->
+    <div class="pw"><div class="plabel">Services</div>
+    <div class="mp" style="background:#fff;">
+      <div style="height:6px;background:#00AEEF;"></div>
+      <div style="padding:14px 14px 12px;">
+        <div style="font-size:6px;font-weight:700;color:#00AEEF;letter-spacing:.15em;margin-bottom:5px;">OUR SERVICES</div>
+        <div style="font-size:13px;font-weight:800;color:#111827;margin-bottom:12px;">What We Do</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <div style="background:#F9FAFB;border-radius:6px;padding:10px 8px;border-top:3px solid #00AEEF;">
+            <div style="font-size:7px;font-weight:700;color:#111827;margin-bottom:5px;">Full Truck Load</div>
+            <span class="ln" style="height:3px;width:90%;background:#E5E7EB;margin-bottom:3px;"></span>
+            <span class="ln" style="height:3px;width:70%;background:#E5E7EB;"></span>
+          </div>
+          <div style="background:#F9FAFB;border-radius:6px;padding:10px 8px;border-top:3px solid #F47920;">
+            <div style="font-size:7px;font-weight:700;color:#111827;margin-bottom:5px;">Part Truck Load</div>
+            <span class="ln" style="height:3px;width:90%;background:#E5E7EB;margin-bottom:3px;"></span>
+            <span class="ln" style="height:3px;width:70%;background:#E5E7EB;"></span>
+          </div>
+          <div style="background:#F9FAFB;border-radius:6px;padding:10px 8px;border-top:3px solid #00AEEF;">
+            <div style="font-size:7px;font-weight:700;color:#111827;margin-bottom:5px;">ODC Cargo</div>
+            <span class="ln" style="height:3px;width:90%;background:#E5E7EB;margin-bottom:3px;"></span>
+            <span class="ln" style="height:3px;width:70%;background:#E5E7EB;"></span>
+          </div>
+          <div style="background:#F9FAFB;border-radius:6px;padding:10px 8px;border-top:3px solid #F47920;">
+            <div style="font-size:7px;font-weight:700;color:#111827;margin-bottom:5px;">Packaging</div>
+            <span class="ln" style="height:3px;width:90%;background:#E5E7EB;margin-bottom:3px;"></span>
+            <span class="ln" style="height:3px;width:70%;background:#E5E7EB;"></span>
+          </div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+  04 MIDNIGHT NAVY + GOLD
+  Layout: Inner frame border, centered title with gold rules.
+  About: Centered single-column content, gold ruled dividers.
+  Services: Numbered list with gold numerals.
+══════════════════════════════════════════ -->
+<div class="design-block">
+  <div class="design-meta"><span class="dnum">04</span><span class="dname">Midnight Navy + Gold</span></div>
+  <div class="tags"><span class="tag">Dark</span><span class="tag">Luxury</span><span class="tag">Executive</span></div>
+  <div class="pages-row">
+
+    <!-- COVER: inner frame border, centered + gold rules -->
+    <div class="pw"><div class="plabel">Cover</div>
+    <div class="mp" style="background:#0D1B2E;">
+      <!-- Outer edge gold lines -->
+      <div style="position:absolute;top:0;left:0;right:0;height:2px;background:#C9A84C;"></div>
+      <div style="position:absolute;bottom:0;left:0;right:0;height:2px;background:#C9A84C;"></div>
+      <div style="position:absolute;top:0;left:0;bottom:0;width:2px;background:#C9A84C;"></div>
+      <div style="position:absolute;top:0;right:0;bottom:0;width:2px;background:#C9A84C;"></div>
+      <!-- Inner frame lines -->
+      <div style="position:absolute;top:10px;left:10px;right:10px;height:1px;background:rgba(201,168,76,0.3);"></div>
+      <div style="position:absolute;bottom:10px;left:10px;right:10px;height:1px;background:rgba(201,168,76,0.3);"></div>
+      <!-- Centered content -->
+      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;width:85%;">
+        <div style="font-size:6px;font-weight:300;color:#C9A84C;letter-spacing:.4em;margin-bottom:10px;">FORTUNE</div>
+        <div style="height:1px;background:linear-gradient(90deg,transparent,#C9A84C,transparent);margin-bottom:10px;"></div>
+        <div style="font-size:24px;font-weight:800;color:#fff;letter-spacing:-1px;line-height:1.0;">LOGISTICS</div>
+        <div style="height:1px;background:linear-gradient(90deg,transparent,#C9A84C,transparent);margin:10px 0;"></div>
+        <div style="font-size:5.5px;color:rgba(201,168,76,0.6);letter-spacing:.25em;">INDIA'S TRUSTED FREIGHT PARTNER</div>
+      </div>
+      <div style="position:absolute;bottom:18px;left:50%;transform:translateX(-50%);font-size:5px;color:rgba(201,168,76,0.3);letter-spacing:.2em;white-space:nowrap;">EST. 2019 · PUNE</div>
+    </div></div>
+
+    <!-- ABOUT: centered content, gold ruled dividers -->
+    <div class="pw"><div class="plabel">About Us</div>
+    <div class="mp" style="background:#0D1B2E;">
+      <div style="position:absolute;top:0;left:0;right:0;height:2px;background:#C9A84C;"></div>
+      <div style="position:absolute;bottom:0;left:0;right:0;height:2px;background:#C9A84C;"></div>
+      <div style="padding:22px 18px 18px;text-align:center;">
+        <div style="font-size:6px;font-weight:400;color:#C9A84C;letter-spacing:.25em;margin-bottom:8px;">ABOUT US</div>
+        <div style="height:1px;background:linear-gradient(90deg,transparent,#C9A84C,transparent);margin-bottom:10px;"></div>
+        <div style="font-size:13px;font-weight:800;color:#fff;margin-bottom:10px;">Who We Are</div>
+        <span class="ln" style="height:4px;width:90%;background:rgba(255,255,255,0.1);margin:0 auto 4px;"></span>
+        <span class="ln" style="height:4px;width:82%;background:rgba(255,255,255,0.1);margin:0 auto 4px;"></span>
+        <span class="ln" style="height:4px;width:88%;background:rgba(255,255,255,0.1);margin:0 auto 12px;"></span>
+        <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,0.4),transparent);margin-bottom:12px;"></div>
+        <div style="display:flex;justify-content:space-around;">
+          <div><div style="font-size:13px;font-weight:800;color:#C9A84C;">50+</div><div style="font-size:5px;color:rgba(255,255,255,0.4);margin-top:2px;letter-spacing:.1em;">CITIES</div></div>
+          <div style="width:1px;background:rgba(201,168,76,0.2);"></div>
+          <div><div style="font-size:13px;font-weight:800;color:#C9A84C;">120+</div><div style="font-size:5px;color:rgba(255,255,255,0.4);margin-top:2px;letter-spacing:.1em;">FLEET</div></div>
+          <div style="width:1px;background:rgba(201,168,76,0.2);"></div>
+          <div><div style="font-size:13px;font-weight:800;color:#C9A84C;">98%</div><div style="font-size:5px;color:rgba(255,255,255,0.4);margin-top:2px;letter-spacing:.1em;">ONTIME</div></div>
+        </div>
+        <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,0.4),transparent);margin:12px 0;"></div>
+        <span class="ln" style="height:4px;width:90%;background:rgba(255,255,255,0.07);margin:0 auto 4px;"></span>
+        <span class="ln" style="height:4px;width:74%;background:rgba(255,255,255,0.07);margin:0 auto 4px;"></span>
+        <span class="ln" style="height:4px;width:82%;background:rgba(255,255,255,0.07);margin:0 auto;"></span>
+      </div>
+    </div></div>
+
+    <!-- SERVICES: numbered list with large gold numerals -->
+    <div class="pw"><div class="plabel">Services</div>
+    <div class="mp" style="background:#0D1B2E;padding:20px 18px;">
+      <div style="position:absolute;top:0;left:0;right:0;height:2px;background:#C9A84C;"></div>
+      <div style="position:absolute;bottom:0;left:0;right:0;height:2px;background:#C9A84C;"></div>
+      <div style="font-size:6px;font-weight:400;color:#C9A84C;letter-spacing:.25em;margin-bottom:5px;">OUR SERVICES</div>
+      <div style="height:1px;background:linear-gradient(90deg,#C9A84C,transparent);margin-bottom:10px;"></div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div style="display:flex;align-items:flex-start;gap:10px;">
+          <div style="font-size:20px;font-weight:800;color:rgba(201,168,76,0.3);line-height:1;flex-shrink:0;width:20px;">01</div>
+          <div style="padding-top:3px;"><div style="font-size:8px;font-weight:700;color:#fff;margin-bottom:3px;">Full Truck Load</div><span class="ln" style="height:3px;width:90%;background:rgba(255,255,255,0.1);"></span></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;">
+          <div style="font-size:20px;font-weight:800;color:rgba(201,168,76,0.3);line-height:1;flex-shrink:0;width:20px;">02</div>
+          <div style="padding-top:3px;"><div style="font-size:8px;font-weight:700;color:#fff;margin-bottom:3px;">Part Truck Load</div><span class="ln" style="height:3px;width:80%;background:rgba(255,255,255,0.1);"></span></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;">
+          <div style="font-size:20px;font-weight:800;color:rgba(201,168,76,0.3);line-height:1;flex-shrink:0;width:20px;">03</div>
+          <div style="padding-top:3px;"><div style="font-size:8px;font-weight:700;color:#fff;margin-bottom:3px;">ODC / Project Cargo</div><span class="ln" style="height:3px;width:85%;background:rgba(255,255,255,0.1);"></span></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;">
+          <div style="font-size:20px;font-weight:800;color:rgba(201,168,76,0.3);line-height:1;flex-shrink:0;width:20px;">04</div>
+          <div style="padding-top:3px;"><div style="font-size:8px;font-weight:700;color:#fff;margin-bottom:3px;">Packaging Solutions</div><span class="ln" style="height:3px;width:75%;background:rgba(255,255,255,0.1);"></span></div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+  05 INDUSTRIAL ORANGE
+  Layout: Bold orange horizontal band across dark cover.
+  About: Two-column — orange left sidebar + white right.
+  Services: Dark bg, bold orange service name headings.
+══════════════════════════════════════════ -->
+<div class="design-block">
+  <div class="design-meta"><span class="dnum">05</span><span class="dname">Industrial Orange</span></div>
+  <div class="tags"><span class="tag">Bold</span><span class="tag">Industrial</span><span class="tag">Energy</span></div>
+  <div class="pages-row">
+
+    <!-- COVER: orange full-width horizontal band, white text on dark -->
+    <div class="pw"><div class="plabel">Cover</div>
+    <div class="mp" style="background:#1A1A1A;">
+      <!-- Orange band mid-page -->
+      <div style="position:absolute;top:95px;left:0;right:0;height:80px;background:#F47920;display:flex;align-items:center;padding:0 14px;">
+        <div style="font-size:18px;font-weight:900;color:#fff;letter-spacing:-1px;line-height:1.0;">FORTUNE<br>LOGISTICS</div>
+      </div>
+      <!-- Top area -->
+      <div style="position:absolute;top:16px;left:14px;right:14px;display:flex;justify-content:space-between;align-items:center;">
+        <div style="font-size:7px;font-weight:900;color:#F47920;letter-spacing:.15em;">FL</div>
+        <div style="font-size:6px;color:rgba(255,255,255,0.3);letter-spacing:.1em;">FREIGHT &amp; LOGISTICS</div>
+      </div>
+      <!-- Bottom tag line -->
+      <div style="position:absolute;bottom:20px;left:14px;right:14px;">
+        <div style="font-size:5.5px;color:rgba(255,255,255,0.4);letter-spacing:.12em;margin-bottom:4px;">MOVING INDIA FORWARD</div>
+        <div style="display:flex;gap:6px;"><div style="width:16px;height:2px;background:#F47920;"></div><div style="flex:1;height:2px;background:rgba(255,255,255,0.1);"></div></div>
+      </div>
+    </div></div>
+
+    <!-- ABOUT: orange left sidebar, white right content -->
+    <div class="pw"><div class="plabel">About Us</div>
+    <div class="mp" style="display:flex;background:#fff;">
+      <div style="width:52px;background:#F47920;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:16px 6px;">
+        <span style="font-size:7px;font-weight:900;color:#fff;writing-mode:vertical-lr;transform:rotate(180deg);letter-spacing:.12em;">ABOUT US</span>
+      </div>
+      <div style="flex:1;padding:16px 10px;">
+        <div style="font-size:11px;font-weight:800;color:#1A1A1A;margin-bottom:3px;">Who We Are</div>
+        <div style="height:3px;width:20px;background:#F47920;margin-bottom:10px;"></div>
+        <span class="ln" style="height:4px;width:95%;background:#E5E7EB;margin-bottom:4px;"></span>
+        <span class="ln" style="height:4px;width:86%;background:#E5E7EB;margin-bottom:4px;"></span>
+        <span class="ln" style="height:4px;width:90%;background:#E5E7EB;margin-bottom:4px;"></span>
+        <span class="ln" style="height:4px;width:72%;background:#E5E7EB;margin-bottom:14px;"></span>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <div style="display:flex;align-items:center;gap:7px;">
+            <div style="width:22px;height:22px;background:#F47920;border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:800;color:#fff;flex-shrink:0;">50+</div>
+            <div style="font-size:6px;color:#374151;font-weight:500;">Cities Covered</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:7px;">
+            <div style="width:22px;height:22px;background:#1A1A1A;border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:800;color:#fff;flex-shrink:0;">120+</div>
+            <div style="font-size:6px;color:#374151;font-weight:500;">Fleet Vehicles</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:7px;">
+            <div style="width:22px;height:22px;background:#F47920;border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:800;color:#fff;flex-shrink:0;">98%</div>
+            <div style="font-size:6px;color:#374151;font-weight:500;">On-time Delivery</div>
+          </div>
+        </div>
+      </div>
+    </div></div>
+
+    <!-- SERVICES: dark bg, large orange service headings -->
+    <div class="pw"><div class="plabel">Services</div>
+    <div class="mp" style="background:#1A1A1A;padding:18px 14px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;">
+        <div style="width:4px;height:28px;background:#F47920;"></div>
+        <div>
+          <div style="font-size:5.5px;font-weight:700;color:rgba(255,255,255,0.4);letter-spacing:.15em;margin-bottom:3px;">OUR SERVICES</div>
+          <div style="font-size:12px;font-weight:900;color:#fff;letter-spacing:-0.5px;">What We Move.</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:0;">
+        <div style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.07);">
+          <div style="font-size:10px;font-weight:800;color:#F47920;margin-bottom:3px;">Full Truck Load</div>
+          <span class="ln" style="height:3px;width:75%;background:rgba(255,255,255,0.12);"></span>
+        </div>
+        <div style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.07);">
+          <div style="font-size:10px;font-weight:800;color:#fff;margin-bottom:3px;">Part Truck Load</div>
+          <span class="ln" style="height:3px;width:68%;background:rgba(255,255,255,0.12);"></span>
+        </div>
+        <div style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.07);">
+          <div style="font-size:10px;font-weight:800;color:#F47920;margin-bottom:3px;">ODC / Project Cargo</div>
+          <span class="ln" style="height:3px;width:72%;background:rgba(255,255,255,0.12);"></span>
+        </div>
+        <div style="padding:10px 0;">
+          <div style="font-size:10px;font-weight:800;color:#fff;margin-bottom:3px;">Packaging Solutions</div>
+          <span class="ln" style="height:3px;width:62%;background:rgba(255,255,255,0.12);"></span>
+        </div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+  06 PURE MINIMALIST
+  Layout: White, single-weight thin rule at top/bottom. No nav.
+  About: White, generous whitespace, stat numbers left-aligned large.
+  Services: White, services as plain text list.
+══════════════════════════════════════════ -->
+<div class="design-block">
+  <div class="design-meta"><span class="dnum">06</span><span class="dname">Pure Minimalist</span></div>
+  <div class="tags"><span class="tag">Light</span><span class="tag">Clean</span><span class="tag">Refined</span></div>
+  <div class="pages-row">
+
+    <!-- COVER: NO nav bar, thin top/bottom rule, max whitespace -->
+    <div class="pw"><div class="plabel">Cover</div>
+    <div class="mp" style="background:#fff;">
+      <div style="position:absolute;top:0;left:0;right:0;height:1.5px;background:#111;"></div>
+      <div style="position:absolute;bottom:0;left:0;right:0;height:1.5px;background:#111;"></div>
+      <!-- Wordmark top-left -->
+      <div style="position:absolute;top:16px;left:16px;right:16px;display:flex;justify-content:space-between;align-items:center;">
+        <div style="font-size:7px;font-weight:300;color:#111;letter-spacing:.2em;">FORTUNE LOGISTICS</div>
+        <div style="font-size:6px;font-weight:300;color:#BBBBBB;letter-spacing:.1em;">2019—</div>
+      </div>
+      <!-- Main type block at 40% down -->
+      <div style="position:absolute;top:80px;left:16px;right:16px;">
+        <div style="font-size:26px;font-weight:900;color:#111;letter-spacing:-2px;line-height:.9;margin-bottom:10px;">Fortune<br>Logistics.</div>
+        <div style="height:1px;width:44px;background:#111;margin-bottom:10px;"></div>
+        <div style="font-size:6.5px;color:#888;line-height:1.7;letter-spacing:.03em;">Freight & logistics across India.<br>No shortcuts. No excuses.</div>
+      </div>
+      <!-- Bottom contact -->
+      <div style="position:absolute;bottom:16px;left:16px;right:16px;display:flex;justify-content:space-between;align-items:center;">
+        <div style="font-size:5.5px;color:#CCCCCC;letter-spacing:.08em;">fortunelogistics.in</div>
+        <div style="width:22px;height:22px;border:1.5px solid #111;border-radius:50%;display:flex;align-items:center;justify-content:center;">
+          <span style="font-size:7px;font-weight:700;color:#111;">FL</span>
+        </div>
+      </div>
+    </div></div>
+
+    <!-- ABOUT: large left-aligned stat numbers, minimal text -->
+    <div class="pw"><div class="plabel">About Us</div>
+    <div class="mp" style="background:#fff;">
+      <div style="position:absolute;top:0;left:0;right:0;height:1.5px;background:#111;"></div>
+      <div style="position:absolute;bottom:0;left:0;right:0;height:1.5px;background:#111;"></div>
+      <div style="position:absolute;top:18px;left:16px;right:16px;display:flex;justify-content:space-between;align-items:center;">
+        <div style="font-size:7px;font-weight:300;color:#111;letter-spacing:.2em;">FORTUNE LOGISTICS</div>
+        <div style="font-size:6px;color:#CCC;">About</div>
+      </div>
+      <div style="padding:44px 16px 16px;">
+        <div style="font-size:6px;font-weight:400;color:#AAAAAA;letter-spacing:.2em;margin-bottom:10px;">ABOUT</div>
+        <div style="font-size:16px;font-weight:800;color:#111;letter-spacing:-0.5px;margin-bottom:8px;">Who We Are</div>
+        <div style="height:1px;width:36px;background:#111;margin-bottom:14px;"></div>
+        <span class="ln" style="height:3px;width:92%;background:#EBEBEB;margin-bottom:5px;"></span>
+        <span class="ln" style="height:3px;width:84%;background:#EBEBEB;margin-bottom:5px;"></span>
+        <span class="ln" style="height:3px;width:88%;background:#EBEBEB;margin-bottom:20px;"></span>
+        <!-- Large stat numbers left-aligned -->
+        <div style="display:flex;gap:0;border-top:1px solid #EEE;">
+          <div style="flex:1;padding-top:10px;">
+            <div style="font-size:16px;font-weight:800;color:#111;letter-spacing:-1px;">50+</div>
+            <div style="font-size:5px;color:#AAAAAA;letter-spacing:.12em;margin-top:2px;">CITIES</div>
+          </div>
+          <div style="flex:1;padding-top:10px;border-left:1px solid #EEE;padding-left:10px;">
+            <div style="font-size:16px;font-weight:800;color:#111;letter-spacing:-1px;">120+</div>
+            <div style="font-size:5px;color:#AAAAAA;letter-spacing:.12em;margin-top:2px;">FLEET</div>
+          </div>
+          <div style="flex:1;padding-top:10px;border-left:1px solid #EEE;padding-left:10px;">
+            <div style="font-size:16px;font-weight:800;color:#111;letter-spacing:-1px;">98%</div>
+            <div style="font-size:5px;color:#AAAAAA;letter-spacing:.12em;margin-top:2px;">ON-TIME</div>
+          </div>
+        </div>
+      </div>
+    </div></div>
+
+    <!-- SERVICES: bare text list, no color decoration -->
+    <div class="pw"><div class="plabel">Services</div>
+    <div class="mp" style="background:#fff;">
+      <div style="position:absolute;top:0;left:0;right:0;height:1.5px;background:#111;"></div>
+      <div style="position:absolute;bottom:0;left:0;right:0;height:1.5px;background:#111;"></div>
+      <div style="position:absolute;top:18px;left:16px;right:16px;display:flex;justify-content:space-between;align-items:center;">
+        <div style="font-size:7px;font-weight:300;color:#111;letter-spacing:.2em;">FORTUNE LOGISTICS</div>
+        <div style="font-size:6px;color:#CCC;">Services</div>
+      </div>
+      <div style="padding:44px 16px 16px;">
+        <div style="font-size:6px;font-weight:400;color:#AAAAAA;letter-spacing:.2em;margin-bottom:10px;">SERVICES</div>
+        <div style="font-size:16px;font-weight:800;color:#111;letter-spacing:-0.5px;margin-bottom:8px;">What We Do</div>
+        <div style="height:1px;width:36px;background:#111;margin-bottom:14px;"></div>
+        <div style="display:flex;flex-direction:column;gap:0;">
+          <div style="padding:11px 0;border-bottom:1px solid #F0F0F0;"><div style="font-size:9px;font-weight:600;color:#111;">Full Truck Load</div></div>
+          <div style="padding:11px 0;border-bottom:1px solid #F0F0F0;"><div style="font-size:9px;font-weight:600;color:#111;">Part Truck Load</div></div>
+          <div style="padding:11px 0;border-bottom:1px solid #F0F0F0;"><div style="font-size:9px;font-weight:600;color:#111;">ODC / Project Cargo</div></div>
+          <div style="padding:11px 0;"><div style="font-size:9px;font-weight:600;color:#111;">Packaging Solutions</div></div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+  07 SPLIT SCREEN
+  Layout: Literal 50/50 dark-left / white-right on every page.
+══════════════════════════════════════════ -->
+<div class="design-block">
+  <div class="design-meta"><span class="dnum">07</span><span class="dname">Split Screen</span></div>
+  <div class="tags"><span class="tag">Contrast</span><span class="tag">Modern</span><span class="tag">Bold</span></div>
+  <div class="pages-row">
+
+    <!-- COVER: left dark "FORTUNE", right white "LOGISTICS" + tagline -->
+    <div class="pw"><div class="plabel">Cover</div>
+    <div class="mp" style="display:flex;">
+      <div style="width:115px;background:#111827;display:flex;flex-direction:column;justify-content:center;padding:20px 14px;">
+        <div style="font-size:20px;font-weight:900;color:#fff;line-height:.9;letter-spacing:-1.5px;">FOR-<br>TUNE</div>
+        <div style="height:3px;width:28px;background:#00AEEF;margin:12px 0 8px;"></div>
+        <div style="font-size:5px;color:rgba(255,255,255,0.35);letter-spacing:.15em;">FREIGHT</div>
+      </div>
+      <div style="flex:1;background:#fff;display:flex;flex-direction:column;justify-content:center;padding:20px 12px;">
+        <div style="font-size:11px;font-weight:900;color:#111827;letter-spacing:-0.5px;margin-bottom:6px;">LOGISTICS</div>
+        <div style="height:2px;width:22px;background:#F47920;margin-bottom:10px;"></div>
+        <span class="ln" style="height:3.5px;width:90%;background:#E5E7EB;margin-bottom:4px;"></span>
+        <span class="ln" style="height:3.5px;width:76%;background:#E5E7EB;margin-bottom:4px;"></span>
+        <span class="ln" style="height:3.5px;width:84%;background:#E5E7EB;margin-bottom:14px;"></span>
+        <div style="font-size:5.5px;color:#00AEEF;font-weight:700;letter-spacing:.1em;">EST. 2019 · PUNE</div>
+      </div>
+    </div></div>
+
+    <!-- ABOUT: left dark (heading + stats), right white (body text) -->
+    <div class="pw"><div class="plabel">About Us</div>
+    <div class="mp" style="display:flex;">
+      <div style="width:90px;background:#111827;padding:18px 12px 14px;display:flex;flex-direction:column;justify-content:space-between;">
+        <div>
+          <div style="font-size:6px;font-weight:700;color:#00AEEF;letter-spacing:.15em;margin-bottom:8px;">ABOUT</div>
+          <div style="font-size:12px;font-weight:800;color:#fff;line-height:1.0;margin-bottom:8px;">Who<br>We Are</div>
+          <div style="height:2px;width:18px;background:#F47920;"></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div><div style="font-size:12px;font-weight:800;color:#00AEEF;">50+</div><div style="font-size:5px;color:rgba(255,255,255,0.35);letter-spacing:.1em;">CITIES</div></div>
+          <div><div style="font-size:12px;font-weight:800;color:#F47920;">120+</div><div style="font-size:5px;color:rgba(255,255,255,0.35);letter-spacing:.1em;">FLEET</div></div>
+          <div><div style="font-size:12px;font-weight:800;color:#00AEEF;">98%</div><div style="font-size:5px;color:rgba(255,255,255,0.35);letter-spacing:.1em;">ONTIME</div></div>
+        </div>
+      </div>
+      <div style="flex:1;background:#fff;padding:18px 10px 14px;">
+        <span class="ln" style="height:4px;width:95%;background:#E5E7EB;margin-bottom:4px;"></span>
+        <span class="ln" style="height:4px;width:86%;background:#E5E7EB;margin-bottom:4px;"></span>
+        <span class="ln" style="height:4px;width:92%;background:#E5E7EB;margin-bottom:4px;"></span>
+        <span class="ln" style="height:4px;width:74%;background:#E5E7EB;margin-bottom:4px;"></span>
+        <span class="ln" style="height:4px;width:88%;background:#E5E7EB;margin-bottom:4px;"></span>
+        <span class="ln" style="height:4px;width:66%;background:#E5E7EB;margin-bottom:16px;"></span>
+        <div style="background:#F9FAFB;border-radius:4px;padding:8px;">
+          <div style="font-size:6px;font-weight:700;color:#111827;margin-bottom:5px;">Our Mission</div>
+          <span class="ln" style="height:3px;width:90%;background:#E0E0E0;margin-bottom:3px;"></span>
+          <span class="ln" style="height:3px;width:76%;background:#E0E0E0;margin-bottom:3px;"></span>
+          <span class="ln" style="height:3px;width:82%;background:#E0E0E0;"></span>
+        </div>
+      </div>
+    </div></div>
+
+    <!-- SERVICES: dark left (service names), white right (descriptions) -->
+    <div class="pw"><div class="plabel">Services</div>
+    <div class="mp" style="display:flex;">
+      <div style="width:100px;background:#111827;padding:18px 10px 14px;">
+        <div style="font-size:6px;font-weight:700;color:#00AEEF;letter-spacing:.15em;margin-bottom:8px;">SERVICES</div>
+        <div style="display:flex;flex-direction:column;gap:0;">
+          <div style="padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.08);">
+            <div style="font-size:7px;font-weight:700;color:#fff;">Full Truck</div>
+          </div>
+          <div style="padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.08);">
+            <div style="font-size:7px;font-weight:700;color:#fff;">Part Truck</div>
+          </div>
+          <div style="padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.08);">
+            <div style="font-size:7px;font-weight:700;color:#fff;">ODC Cargo</div>
+          </div>
+          <div style="padding:9px 0;">
+            <div style="font-size:7px;font-weight:700;color:#fff;">Packaging</div>
+          </div>
+        </div>
+      </div>
+      <div style="flex:1;background:#fff;padding:18px 10px 14px;">
+        <div style="font-size:6px;font-weight:700;color:#F47920;letter-spacing:.1em;margin-bottom:10px;">DETAILS</div>
+        <div style="display:flex;flex-direction:column;gap:0;">
+          <div style="padding:9px 0;border-bottom:1px solid #F3F4F6;">
+            <span class="ln" style="height:3px;width:90%;background:#E5E7EB;margin-bottom:2px;"></span>
+            <span class="ln" style="height:3px;width:72%;background:#E5E7EB;"></span>
+          </div>
+          <div style="padding:9px 0;border-bottom:1px solid #F3F4F6;">
+            <span class="ln" style="height:3px;width:85%;background:#E5E7EB;margin-bottom:2px;"></span>
+            <span class="ln" style="height:3px;width:68%;background:#E5E7EB;"></span>
+          </div>
+          <div style="padding:9px 0;border-bottom:1px solid #F3F4F6;">
+            <span class="ln" style="height:3px;width:88%;background:#E5E7EB;margin-bottom:2px;"></span>
+            <span class="ln" style="height:3px;width:64%;background:#E5E7EB;"></span>
+          </div>
+          <div style="padding:9px 0;">
+            <span class="ln" style="height:3px;width:82%;background:#E5E7EB;margin-bottom:2px;"></span>
+            <span class="ln" style="height:3px;width:60%;background:#E5E7EB;"></span>
+          </div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+  08 TYPE HERO
+  Layout: Giant bold typography IS the design. No nav bar.
+  About: Oversized "About." heading fills top-half, body below.
+  Services: Bold service names stacked large, no sidebar.
+══════════════════════════════════════════ -->
+<div class="design-block">
+  <div class="design-meta"><span class="dnum">08</span><span class="dname">Type Hero</span></div>
+  <div class="tags"><span class="tag">Typography</span><span class="tag">Editorial</span><span class="tag">Distinctive</span></div>
+  <div class="pages-row">
+
+    <!-- COVER: massive type fills two-thirds of page -->
+    <div class="pw"><div class="plabel">Cover</div>
+    <div class="mp" style="background:#F5F0E8;">
+      <div style="position:absolute;top:0;left:0;right:0;height:4px;background:#111;"></div>
+      <div style="position:absolute;top:14px;left:14px;right:14px;display:flex;justify-content:space-between;">
+        <div style="font-size:5.5px;font-weight:400;color:#999;letter-spacing:.15em;">FORTUNE LOGISTICS</div>
+        <div style="font-size:5.5px;color:#999;">2019—</div>
+      </div>
+      <!-- Oversized type -->
+      <div style="position:absolute;top:36px;left:12px;right:0;">
+        <div style="font-size:52px;font-weight:900;color:#111;line-height:.85;letter-spacing:-4px;">FOR-<br>TUNE</div>
+      </div>
+      <!-- Bottom section -->
+      <div style="position:absolute;bottom:14px;left:12px;right:12px;">
+        <div style="height:2px;background:#111;margin-bottom:8px;"></div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;">
+          <div style="font-size:9px;font-weight:300;color:#111;letter-spacing:.35em;">LOGISTICS</div>
+          <div style="font-size:5px;color:#999;letter-spacing:.08em;">FTL · PTL · ODC</div>
+        </div>
+      </div>
+    </div></div>
+
+    <!-- ABOUT: "About." in huge type top-half -->
+    <div class="pw"><div class="plabel">About Us</div>
+    <div class="mp" style="background:#F5F0E8;">
+      <div style="position:absolute;top:0;left:0;right:0;height:4px;background:#111;"></div>
+      <div style="position:absolute;top:14px;left:14px;right:14px;display:flex;justify-content:space-between;">
+        <div style="font-size:5.5px;color:#999;letter-spacing:.15em;">FORTUNE LOGISTICS</div>
+        <div style="font-size:5.5px;color:#999;">About</div>
+      </div>
+      <div style="position:absolute;top:34px;left:12px;right:0;">
+        <div style="font-size:38px;font-weight:900;color:#111;line-height:.85;letter-spacing:-2px;">About.</div>
+      </div>
+      <div style="position:absolute;top:130px;left:12px;right:12px;">
+        <div style="height:2px;background:#111;margin-bottom:10px;"></div>
+        <span class="ln" style="height:4px;width:92%;background:#D8D0BC;margin-bottom:5px;"></span>
+        <span class="ln" style="height:4px;width:84%;background:#D8D0BC;margin-bottom:5px;"></span>
+        <span class="ln" style="height:4px;width:88%;background:#D8D0BC;margin-bottom:16px;"></span>
+        <div style="display:flex;gap:18px;">
+          <div><div style="font-size:14px;font-weight:800;color:#111;">50+</div><div style="font-size:5px;color:#999;letter-spacing:.1em;">CITIES</div></div>
+          <div><div style="font-size:14px;font-weight:800;color:#111;">120+</div><div style="font-size:5px;color:#999;letter-spacing:.1em;">FLEET</div></div>
+          <div><div style="font-size:14px;font-weight:800;color:#111;">98%</div><div style="font-size:5px;color:#999;letter-spacing:.1em;">ON-TIME</div></div>
+        </div>
+      </div>
+    </div></div>
+
+    <!-- SERVICES: service names stacked in large bold type -->
+    <div class="pw"><div class="plabel">Services</div>
+    <div class="mp" style="background:#F5F0E8;">
+      <div style="position:absolute;top:0;left:0;right:0;height:4px;background:#111;"></div>
+      <div style="position:absolute;top:14px;left:14px;right:14px;display:flex;justify-content:space-between;">
+        <div style="font-size:5.5px;color:#999;letter-spacing:.15em;">FORTUNE LOGISTICS</div>
+        <div style="font-size:5.5px;color:#999;">Services</div>
+      </div>
+      <div style="position:absolute;top:34px;left:12px;right:12px;">
+        <div style="font-size:20px;font-weight:900;color:#111;line-height:.85;letter-spacing:-1px;margin-bottom:8px;">What<br>We Do.</div>
+        <div style="height:2px;background:#111;margin-bottom:12px;"></div>
+        <div style="display:flex;flex-direction:column;gap:0;">
+          <div style="padding:9px 0;border-bottom:1px solid #C8BFA8;"><div style="font-size:10px;font-weight:800;color:#111;">Full Truck Load</div></div>
+          <div style="padding:9px 0;border-bottom:1px solid #C8BFA8;"><div style="font-size:10px;font-weight:800;color:#111;">Part Truck Load</div></div>
+          <div style="padding:9px 0;border-bottom:1px solid #C8BFA8;"><div style="font-size:10px;font-weight:800;color:#111;">ODC / Project Cargo</div></div>
+          <div style="padding:9px 0;"><div style="font-size:10px;font-weight:800;color:#111;">Packaging Solutions</div></div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+  09 FULL CYAN
+  Layout: Solid brand cyan everywhere, white inset content cards.
+  About: Cyan bg, full white content card centered.
+  Services: Cyan bg, white pill-style service blocks.
+══════════════════════════════════════════ -->
+<div class="design-block">
+  <div class="design-meta"><span class="dnum">09</span><span class="dname">Full Cyan</span></div>
+  <div class="tags"><span class="tag">Brand-forward</span><span class="tag">Vibrant</span><span class="tag">Confident</span></div>
+  <div class="pages-row">
+
+    <!-- COVER: full cyan, centered white text, orange bars top+bottom -->
+    <div class="pw"><div class="plabel">Cover</div>
+    <div class="mp" style="background:#00AEEF;">
+      <div style="position:absolute;top:0;left:0;right:0;height:6px;background:#F47920;"></div>
+      <div style="position:absolute;bottom:0;left:0;right:0;height:6px;background:#F47920;"></div>
+      <div style="position:absolute;top:16px;left:14px;right:14px;display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-size:9px;font-weight:900;color:#fff;letter-spacing:.1em;">FL</span>
+        <div style="display:flex;gap:8px;"><div style="width:20px;height:1.5px;background:rgba(255,255,255,0.5);"></div><div style="width:14px;height:1.5px;background:rgba(255,255,255,0.5);"></div></div>
+      </div>
+      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;width:90%;">
+        <div style="font-size:24px;font-weight:900;color:#fff;letter-spacing:-1.5px;line-height:.9;margin-bottom:6px;">FORTUNE<br>LOGISTICS</div>
+        <div style="height:4px;width:44px;background:#F47920;margin:10px auto;"></div>
+        <div style="font-size:6.5px;font-weight:600;color:rgba(255,255,255,0.85);letter-spacing:.14em;">MOVING FREIGHT THAT MATTERS</div>
+      </div>
+    </div></div>
+
+    <!-- ABOUT: cyan bg, white card inset -->
+    <div class="pw"><div class="plabel">About Us</div>
+    <div class="mp" style="background:#00AEEF;">
+      <div style="position:absolute;top:0;left:0;right:0;height:6px;background:#F47920;"></div>
+      <div style="position:absolute;bottom:0;left:0;right:0;height:6px;background:#F47920;"></div>
+      <div style="position:absolute;top:18px;left:14px;right:14px;display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-size:9px;font-weight:900;color:#fff;">FL</span>
+        <span style="font-size:6px;color:rgba(255,255,255,0.7);">About</span>
+      </div>
+      <div style="position:absolute;top:44px;left:12px;right:12px;bottom:16px;background:#fff;border-radius:6px;padding:14px 12px;">
+        <div style="font-size:6px;font-weight:700;color:#00AEEF;letter-spacing:.15em;margin-bottom:5px;">ABOUT US</div>
+        <div style="font-size:12px;font-weight:800;color:#111827;margin-bottom:8px;">Who We Are</div>
+        <span class="ln" style="height:4px;width:92%;background:#E5E7EB;margin-bottom:4px;"></span>
+        <span class="ln" style="height:4px;width:84%;background:#E5E7EB;margin-bottom:4px;"></span>
+        <span class="ln" style="height:4px;width:88%;background:#E5E7EB;margin-bottom:10px;"></span>
+        <div style="display:flex;gap:5px;">
+          <div style="flex:1;background:#E6F7FD;border-radius:4px;padding:6px 4px;text-align:center;"><div style="font-size:11px;font-weight:800;color:#00AEEF;">50+</div><div style="font-size:5px;color:#6B7280;margin-top:1px;">CITIES</div></div>
+          <div style="flex:1;background:#E6F7FD;border-radius:4px;padding:6px 4px;text-align:center;"><div style="font-size:11px;font-weight:800;color:#00AEEF;">120+</div><div style="font-size:5px;color:#6B7280;margin-top:1px;">FLEET</div></div>
+          <div style="flex:1;background:#FFF0E6;border-radius:4px;padding:6px 4px;text-align:center;"><div style="font-size:11px;font-weight:800;color:#F47920;">98%</div><div style="font-size:5px;color:#6B7280;margin-top:1px;">ONTIME</div></div>
+        </div>
+        <span class="ln" style="height:4px;width:90%;background:#E5E7EB;margin-top:10px;margin-bottom:4px;"></span>
+        <span class="ln" style="height:4px;width:74%;background:#E5E7EB;"></span>
+      </div>
+    </div></div>
+
+    <!-- SERVICES: cyan bg, white pill/card per service -->
+    <div class="pw"><div class="plabel">Services</div>
+    <div class="mp" style="background:#00AEEF;padding:16px 12px;">
+      <div style="position:absolute;top:0;left:0;right:0;height:6px;background:#F47920;"></div>
+      <div style="position:absolute;bottom:0;left:0;right:0;height:6px;background:#F47920;"></div>
+      <div style="margin-top:6px;font-size:6px;font-weight:700;color:rgba(255,255,255,0.7);letter-spacing:.15em;margin-bottom:4px;">OUR SERVICES</div>
+      <div style="font-size:13px;font-weight:900;color:#fff;margin-bottom:12px;">Full Service<br>Logistics.</div>
+      <div style="display:flex;flex-direction:column;gap:7px;">
+        <div style="background:#fff;border-radius:6px;padding:9px 12px;display:flex;align-items:center;gap:7px;">
+          <div style="width:8px;height:8px;background:#F47920;border-radius:50%;flex-shrink:0;"></div>
+          <div style="font-size:8px;font-weight:700;color:#111;">Full Truck Load (FTL)</div>
+        </div>
+        <div style="background:#fff;border-radius:6px;padding:9px 12px;display:flex;align-items:center;gap:7px;">
+          <div style="width:8px;height:8px;background:#00AEEF;border-radius:50%;flex-shrink:0;"></div>
+          <div style="font-size:8px;font-weight:700;color:#111;">Part Truck Load (PTL)</div>
+        </div>
+        <div style="background:#fff;border-radius:6px;padding:9px 12px;display:flex;align-items:center;gap:7px;">
+          <div style="width:8px;height:8px;background:#F47920;border-radius:50%;flex-shrink:0;"></div>
+          <div style="font-size:8px;font-weight:700;color:#111;">ODC / Project Cargo</div>
+        </div>
+        <div style="background:#fff;border-radius:6px;padding:9px 12px;display:flex;align-items:center;gap:7px;">
+          <div style="width:8px;height:8px;background:#00AEEF;border-radius:50%;flex-shrink:0;"></div>
+          <div style="font-size:8px;font-weight:700;color:#111;">Packaging Solutions</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+  10 WARM EARTH
+  Layout: Dark brown cover with image placeholder + text at bottom.
+  About: Cream bg, photo placeholder left, text right.
+  Services: Cream bg, earth-tone bordered service tiles.
+══════════════════════════════════════════ -->
+<div class="design-block">
+  <div class="design-meta"><span class="dnum">10</span><span class="dname">Warm Earth</span></div>
+  <div class="tags"><span class="tag">Warm</span><span class="tag">Grounded</span><span class="tag">Trustworthy</span></div>
+  <div class="pages-row">
+
+    <!-- COVER: image placeholder top 60%, text + tan rule at bottom -->
+    <div class="pw"><div class="plabel">Cover</div>
+    <div class="mp" style="background:#2C1F14;">
+      <div style="position:absolute;top:0;left:0;right:0;height:4px;background:#C4A882;"></div>
+      <!-- Image placeholder (dark warm tone) -->
+      <div style="position:absolute;top:4px;left:0;right:0;height:170px;background:linear-gradient(160deg,#3D2B1F,#1A110A);display:flex;align-items:center;justify-content:center;">
+        <div style="font-size:7px;color:rgba(196,168,130,0.25);letter-spacing:.2em;text-align:center;">PHOTO<br>PLACEHOLDER</div>
+      </div>
+      <!-- Text block at bottom -->
+      <div style="position:absolute;bottom:14px;left:14px;right:14px;">
+        <div style="font-size:6px;font-weight:400;color:#C4A882;letter-spacing:.25em;margin-bottom:7px;">FREIGHT &amp; LOGISTICS</div>
+        <div style="font-size:18px;font-weight:800;color:#F5EDD9;letter-spacing:-1px;line-height:1.0;margin-bottom:8px;">FORTUNE<br>LOGISTICS</div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div style="height:1.5px;width:28px;background:#C4A882;"></div>
+          <div style="font-size:5px;color:rgba(245,237,217,0.45);letter-spacing:.1em;">PUNE · PAN-INDIA</div>
+        </div>
+      </div>
+      <div style="position:absolute;bottom:0;left:0;right:0;height:4px;background:#C4A882;"></div>
+    </div></div>
+
+    <!-- ABOUT: photo placeholder left half, text right half -->
+    <div class="pw"><div class="plabel">About Us</div>
+    <div class="mp" style="background:#F5EDD9;display:flex;">
+      <!-- Left: image placeholder -->
+      <div style="width:85px;background:linear-gradient(160deg,#C4A882,#8B6B4A);display:flex;align-items:flex-end;padding:12px 8px;flex-shrink:0;">
+        <div>
+          <div style="font-size:10px;font-weight:800;color:#fff;margin-bottom:1px;">50+</div>
+          <div style="font-size:5px;color:rgba(255,255,255,0.65);letter-spacing:.1em;">CITIES</div>
+          <div style="height:1px;background:rgba(255,255,255,0.3);margin:6px 0;"></div>
+          <div style="font-size:10px;font-weight:800;color:#fff;margin-bottom:1px;">120+</div>
+          <div style="font-size:5px;color:rgba(255,255,255,0.65);letter-spacing:.1em;">FLEET</div>
+        </div>
+      </div>
+      <!-- Right: text -->
+      <div style="flex:1;padding:16px 10px;">
+        <div style="font-size:6px;font-weight:700;color:#C4A882;letter-spacing:.18em;margin-bottom:5px;">ABOUT US</div>
+        <div style="font-size:11px;font-weight:800;color:#3D2B1F;margin-bottom:4px;">Who We Are</div>
+        <div style="height:2px;width:20px;background:#C4A882;margin-bottom:10px;"></div>
+        <span class="ln" style="height:4px;width:95%;background:#D6C4A0;margin-bottom:4px;"></span>
+        <span class="ln" style="height:4px;width:86%;background:#D6C4A0;margin-bottom:4px;"></span>
+        <span class="ln" style="height:4px;width:90%;background:#D6C4A0;margin-bottom:4px;"></span>
+        <span class="ln" style="height:4px;width:74%;background:#D6C4A0;margin-bottom:12px;"></span>
+        <div style="background:#EDE0C4;border-radius:3px;padding:6px 7px;">
+          <div style="font-size:9px;font-weight:800;color:#3D2B1F;">98%</div>
+          <div style="font-size:5px;color:#7A6040;margin-top:1px;letter-spacing:.08em;">ON-TIME DELIVERY</div>
+        </div>
+      </div>
+    </div></div>
+
+    <!-- SERVICES: cream bg, earth-tone bordered tiles -->
+    <div class="pw"><div class="plabel">Services</div>
+    <div class="mp" style="background:#F5EDD9;padding:20px 14px 16px;">
+      <div style="position:absolute;top:0;left:0;right:0;height:4px;background:#C4A882;"></div>
+      <div style="position:absolute;bottom:0;left:0;right:0;height:4px;background:#C4A882;"></div>
+      <div style="font-size:6px;font-weight:700;color:#C4A882;letter-spacing:.18em;margin-bottom:5px;">OUR SERVICES</div>
+      <div style="font-size:13px;font-weight:800;color:#3D2B1F;margin-bottom:4px;">What We Do</div>
+      <div style="height:2px;width:26px;background:#C4A882;margin-bottom:14px;"></div>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div style="background:#EDE0C4;border-radius:5px;padding:9px 10px;border-left:4px solid #C4A882;">
+          <div style="font-size:8px;font-weight:700;color:#3D2B1F;">Full Truck Load (FTL)</div>
+          <span class="ln" style="height:3px;width:78%;background:#C4A882;opacity:.35;margin-top:4px;"></span>
+        </div>
+        <div style="background:#EDE0C4;border-radius:5px;padding:9px 10px;border-left:4px solid #3D2B1F;">
+          <div style="font-size:8px;font-weight:700;color:#3D2B1F;">Part Truck Load (PTL)</div>
+          <span class="ln" style="height:3px;width:66%;background:#C4A882;opacity:.35;margin-top:4px;"></span>
+        </div>
+        <div style="background:#EDE0C4;border-radius:5px;padding:9px 10px;border-left:4px solid #C4A882;">
+          <div style="font-size:8px;font-weight:700;color:#3D2B1F;">ODC / Project Cargo</div>
+          <span class="ln" style="height:3px;width:72%;background:#C4A882;opacity:.35;margin-top:4px;"></span>
+        </div>
+        <div style="background:#EDE0C4;border-radius:5px;padding:9px 10px;border-left:4px solid #3D2B1F;">
+          <div style="font-size:8px;font-weight:700;color:#3D2B1F;">Packaging Solutions</div>
+          <span class="ln" style="height:3px;width:60%;background:#C4A882;opacity:.35;margin-top:4px;"></span>
+        </div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+</div>
+</body>
+</html>

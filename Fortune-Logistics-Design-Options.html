@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fortune Logistics — Brochure Design Options</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #F0F2F5;
+    color: #111827;
+    padding: 48px 24px 80px;
+  }
+
+  /* ── Page header ── */
+  .page-header {
+    max-width: 960px;
+    margin: 0 auto 48px;
+  }
+
+  .ph-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #00AEEF;
+    margin-bottom: 10px;
+  }
+
+  .ph-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    color: #111827;
+    margin-bottom: 10px;
+  }
+
+  .ph-sub {
+    font-size: 14px;
+    color: #6B7280;
+    line-height: 1.65;
+    max-width: 560px;
+  }
+
+  .ph-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    background: #FFF8E7;
+    border: 1px solid #FBBF24;
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-size: 12px;
+    color: #92400E;
+    font-weight: 500;
+  }
+
+  /* ── Grid ── */
+  .design-grid {
+    max-width: 960px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .design-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  .design-card:hover {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.14);
+    transform: translateY(-2px);
+  }
+
+  /* A4 ratio = 1:1.4142 — preview at 100% width = ~454px wide, 642px tall */
+  .card-preview {
+    width: 100%;
+    aspect-ratio: 210 / 297;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-info {
+    padding: 18px 22px 20px;
+    border-top: 1px solid #F3F4F6;
+  }
+
+  .ci-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+  }
+
+  .ci-num {
+    font-size: 11px;
+    font-weight: 700;
+    color: #9CA3AF;
+    letter-spacing: 0.1em;
+  }
+
+  .ci-tags {
+    display: flex;
+    gap: 6px;
+  }
+
+  .ci-tag {
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 100px;
+    background: #F3F4F6;
+    color: #6B7280;
+  }
+
+  .ci-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 18px;
+    color: #111827;
+    margin-bottom: 4px;
+  }
+
+  .ci-desc {
+    font-size: 12px;
+    color: #9CA3AF;
+    line-height: 1.5;
+  }
+
+  /* ═══════════════════════════════════════════
+     DESIGN 1 — Bold Geometry (Yellow + Cyan)
+  ═══════════════════════════════════════════ */
+  .d1 { background: #fff; }
+
+  .d1-band-yellow {
+    position: absolute;
+    top: -8%; right: -8%;
+    width: 65%; height: 65%;
+    background: #F4B320;
+    transform: rotate(-12deg);
+    transform-origin: top right;
+  }
+
+  .d1-band-cyan {
+    position: absolute;
+    bottom: 10%; left: -5%;
+    width: 55%; height: 40%;
+    background: #00AEEF;
+    transform: rotate(-12deg);
+    transform-origin: bottom left;
+  }
+
+  .d1-band-dark {
+    position: absolute;
+    bottom: -5%; right: -5%;
+    width: 50%; height: 30%;
+    background: #111827;
+    transform: rotate(-12deg);
+  }
+
+  .d1-content {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 6% 8%;
+    z-index: 10;
+  }
+
+  .d1-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(12px, 3.5vw, 22px);
+    color: #111827;
+    margin-bottom: 4%;
+  }
+  .d1-logo span { color: #00AEEF; }
+
+  .d1-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(14px, 4vw, 28px);
+    line-height: 1.1;
+    color: #111827;
+    margin-bottom: 3%;
+  }
+
+  .d1-sub {
+    font-size: clamp(7px, 1.8vw, 11px);
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.9);
+  }
+
+  /* ═══════════════════════════════════════════
+     DESIGN 2 — Dark Premium (our v2)
+  ═══════════════════════════════════════════ */
+  .d2 { background: #111827; }
+
+  .d2-glow {
+    position: absolute; top: -10%; right: -10%;
+    width: 50%; height: 50%; border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,174,239,0.18) 0%, transparent 70%);
+  }
+
+  .d2-right {
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    width: 40%;
+    background: #00AEEF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6%;
+    gap: 6%;
+  }
+
+  .d2-stat { border-left: 2px solid rgba(255,255,255,0.35); padding-left: 5%; }
+  .d2-stat-n { font-family: 'DM Serif Display', serif; font-size: clamp(12px, 4vw, 26px); color: white; line-height:1; }
+  .d2-stat-l { font-size: clamp(5px, 1.4vw, 9px); font-weight: 700; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 2px; }
+
+  .d2-left {
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 60%;
+    padding: 10% 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
+  }
+
+  .d2-eye { font-size: clamp(5px,1.6vw,10px); font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#00AEEF; margin-bottom:4%; }
+  .d2-title { font-family:'DM Serif Display',serif; font-size:clamp(13px,4.5vw,30px); line-height:1.05; color:white; margin-bottom:4%; }
+  .d2-title em { color:#00AEEF; font-style:normal; }
+  .d2-rule { width:12%; height:2px; background:#F47920; margin-bottom:4%; }
+  .d2-sub { font-size:clamp(5px,1.5vw,10px); color:rgba(255,255,255,0.45); line-height:1.6; }
+  .d2-badge {
+    margin-top:6%;
+    display:inline-flex; align-items:center;
+    background:rgba(0,174,239,0.12); border:1px solid rgba(0,174,239,0.3);
+    border-radius:3px; padding:3px 8px;
+    font-size:clamp(4px,1.2vw,8px); font-weight:700; color:#00AEEF;
+    letter-spacing:0.1em; text-transform:uppercase; width:fit-content;
+  }
+
+  /* ═══════════════════════════════════════════
+     DESIGN 3 — Clean Corporate (our v2 light)
+  ═══════════════════════════════════════════ */
+  .d3 { background: #fff; }
+
+  .d3-right {
+    position: absolute; top:0; right:0; bottom:0; width:40%;
+    background:#00AEEF;
+    display:flex; flex-direction:column; justify-content:center;
+    padding:6%; gap:5%;
+  }
+
+  .d3-stat { border-left:2px solid rgba(255,255,255,0.35); padding-left:5%; }
+  .d3-stat-n { font-family:'DM Serif Display',serif; font-size:clamp(12px,4vw,26px); color:white; line-height:1; }
+  .d3-stat-l { font-size:clamp(4px,1.3vw,8px); font-weight:700; color:rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:0.08em; margin-top:2px; }
+
+  .d3-left {
+    position:absolute; top:0; left:0; bottom:0; width:60%;
+    padding:10% 8%;
+    display:flex; flex-direction:column; justify-content:center;
+  }
+
+  .d3-eye { font-size:clamp(5px,1.4vw,9px); font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#0090C8; margin-bottom:4%; }
+  .d3-title { font-family:'DM Serif Display',serif; font-size:clamp(13px,4.5vw,30px); line-height:1.05; color:#111827; margin-bottom:4%; }
+  .d3-title em { color:#00AEEF; font-style:normal; }
+  .d3-rule { width:12%; height:2px; background:#F47920; margin-bottom:4%; }
+  .d3-sub { font-size:clamp(5px,1.5vw,10px); color:#6B7280; line-height:1.6; }
+
+  /* ═══════════════════════════════════════════
+     DESIGN 4 — Midnight Navy + Gold
+  ═══════════════════════════════════════════ */
+  .d4 { background: #0F1E3A; }
+
+  .d4-gold-bar {
+    position:absolute; top:0; left:0; right:0; height:2%;
+    background: linear-gradient(90deg, #D4AF37, #F0D060, #D4AF37);
+  }
+
+  .d4-gold-lines {
+    position:absolute; top:0; right:0;
+    width:50%; height:100%;
+    background: repeating-linear-gradient(
+      -30deg,
+      transparent,
+      transparent 18px,
+      rgba(212,175,55,0.06) 18px,
+      rgba(212,175,55,0.06) 19px
+    );
+  }
+
+  .d4-circle {
+    position:absolute; bottom:-15%; right:8%;
+    width:55%; aspect-ratio:1;
+    border-radius:50%;
+    border:1px solid rgba(212,175,55,0.15);
+  }
+
+  .d4-circle2 {
+    position:absolute; bottom:-5%; right:18%;
+    width:35%; aspect-ratio:1;
+    border-radius:50%;
+    border:1px solid rgba(212,175,55,0.1);
+  }
+
+  .d4-content {
+    position:absolute; top:0; left:0; bottom:0; right:0;
+    padding:10% 9%;
+    display:flex; flex-direction:column; justify-content:center;
+    z-index:2;
+  }
+
+  .d4-eye { font-size:clamp(4px,1.3vw,8px); font-weight:700; letter-spacing:0.25em; text-transform:uppercase; color:#D4AF37; margin-bottom:5%; }
+  .d4-title { font-family:'DM Serif Display',serif; font-size:clamp(14px,5vw,34px); line-height:1.05; color:#fff; margin-bottom:4%; }
+  .d4-title em { color:#D4AF37; font-style:normal; }
+  .d4-rule { width:10%; height:1px; background:#D4AF37; margin-bottom:4%; }
+  .d4-sub { font-size:clamp(5px,1.5vw,10px); color:rgba(255,255,255,0.45); line-height:1.7; max-width:70%; margin-bottom:8%; }
+
+  .d4-badge {
+    display:inline-flex; align-items:center;
+    background:rgba(212,175,55,0.1); border:1px solid rgba(212,175,55,0.3);
+    border-radius:3px; padding:3px 8px;
+    font-size:clamp(4px,1.1vw,7.5px); font-weight:700; color:#D4AF37;
+    letter-spacing:0.1em; text-transform:uppercase; width:fit-content;
+  }
+
+  .d4-footer {
+    position:absolute; bottom:0; left:0; right:0;
+    padding:4% 9%;
+    border-top:1px solid rgba(255,255,255,0.07);
+    display:flex; justify-content:space-between; align-items:center;
+    z-index:2;
+  }
+
+  .d4-logo { font-family:'DM Serif Display',serif; font-size:clamp(8px,2.4vw,16px); color:white; }
+  .d4-logo span { color:#D4AF37; }
+  .d4-iso { font-size:clamp(4px,1.1vw,7px); color:rgba(255,255,255,0.3); text-align:right; line-height:1.6; }
+
+  /* ═══════════════════════════════════════════
+     DESIGN 5 — Industrial Orange
+  ═══════════════════════════════════════════ */
+  .d5 { background: #1A1A1A; }
+
+  .d5-left-col {
+    position:absolute; top:0; left:0; bottom:0; width:28%;
+    background: #F47920;
+    display:flex; align-items:flex-end;
+    padding:6%;
+  }
+
+  .d5-vertical-text {
+    font-family:'DM Serif Display',serif;
+    font-size:clamp(6px,1.8vw,12px);
+    color:rgba(0,0,0,0.35);
+    writing-mode:vertical-rl;
+    text-orientation:mixed;
+    transform:rotate(180deg);
+    letter-spacing:0.15em;
+    text-transform:uppercase;
+    font-weight:400;
+  }
+
+  .d5-right {
+    position:absolute; top:0; left:28%; bottom:0; right:0;
+    padding:8% 8%;
+    display:flex; flex-direction:column; justify-content:center;
+    z-index:2;
+  }
+
+  .d5-eye { font-size:clamp(4px,1.3vw,8px); font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#F47920; margin-bottom:5%; }
+  .d5-title { font-family:'DM Serif Display',serif; font-size:clamp(13px,4.5vw,30px); line-height:1.05; color:#fff; margin-bottom:3%; }
+  .d5-rule { width:12%; height:2px; background:#F47920; margin-bottom:4%; }
+  .d5-sub { font-size:clamp(5px,1.5vw,10px); color:rgba(255,255,255,0.45); line-height:1.7; margin-bottom:8%; }
+
+  .d5-stats {
+    display:flex; gap:5%;
+  }
+  .d5-stat { }
+  .d5-stat-n { font-family:'DM Serif Display',serif; font-size:clamp(10px,3.2vw,22px); color:#F47920; line-height:1; }
+  .d5-stat-l { font-size:clamp(4px,1.1vw,7.5px); font-weight:700; color:rgba(255,255,255,0.4); text-transform:uppercase; letter-spacing:0.08em; margin-top:2px; }
+
+  .d5-footer {
+    position:absolute; bottom:0; left:28%; right:0;
+    padding:4% 8%;
+    border-top:1px solid rgba(255,255,255,0.08);
+    display:flex; justify-content:space-between; align-items:center;
+    z-index:2;
+  }
+  .d5-logo { font-family:'DM Serif Display',serif; font-size:clamp(7px,2.2vw,14px); color:white; }
+  .d5-logo span { color:#F47920; }
+  .d5-tag { font-size:clamp(3px,1vw,7px); color:rgba(255,255,255,0.3); text-align:right; }
+
+  /* ═══════════════════════════════════════════
+     DESIGN 6 — Pure Minimalist
+  ═══════════════════════════════════════════ */
+  .d6 { background: #FFFFFF; }
+
+  .d6-top-rule {
+    position:absolute; top:12%; left:8%; right:8%;
+    height:1px; background:#E5E7EB;
+  }
+
+  .d6-accent-rule {
+    position:absolute; top:12%; left:8%; width:8%;
+    height:2px; background:#00AEEF;
+    margin-top:-0.5px;
+  }
+
+  .d6-content {
+    position:absolute; top:0; left:0; bottom:0; right:0;
+    padding:18% 8% 8%;
+    display:flex; flex-direction:column; justify-content:center;
+  }
+
+  .d6-eye { font-size:clamp(4px,1.2vw,8px); font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#9CA3AF; margin-bottom:6%; }
+  .d6-title { font-family:'DM Serif Display',serif; font-size:clamp(18px,6.5vw,44px); line-height:1; color:#111827; margin-bottom:4%; font-style:italic; }
+  .d6-title em { color:#00AEEF; font-style:italic; }
+
+  .d6-bottom {
+    position:absolute; bottom:8%; left:8%; right:8%;
+    display:flex; justify-content:space-between; align-items:flex-end;
+  }
+
+  .d6-logo { font-family:'DM Serif Display',serif; font-size:clamp(8px,2.5vw,17px); color:#111827; }
+  .d6-logo span { color:#00AEEF; }
+  .d6-iso { font-size:clamp(4px,1.1vw,7.5px); color:#9CA3AF; text-align:right; line-height:1.6; }
+
+  .d6-rule2 {
+    position:absolute; bottom:16%; left:8%; right:8%;
+    height:1px; background:#E5E7EB;
+  }
+
+  /* ═══════════════════════════════════════════
+     DESIGN 7 — Split Screen
+  ═══════════════════════════════════════════ */
+  .d7 { }
+
+  .d7-left {
+    position:absolute; top:0; left:0; bottom:0; width:50%;
+    background:#111827;
+    padding:8%;
+    display:flex; flex-direction:column; justify-content:space-between;
+  }
+
+  .d7-right {
+    position:absolute; top:0; right:0; bottom:0; width:50%;
+    background:#fff;
+    padding:8%;
+    display:flex; flex-direction:column; justify-content:center;
+  }
+
+  .d7-divider {
+    position:absolute; top:8%; bottom:8%; left:50%;
+    width:3px; background:#00AEEF;
+    z-index:10;
+  }
+
+  .d7-logo { font-family:'DM Serif Display',serif; font-size:clamp(9px,2.8vw,18px); color:white; }
+  .d7-logo span { color:#00AEEF; }
+
+  .d7-tagline {
+    font-family:'DM Serif Display',serif;
+    font-size:clamp(10px,3.5vw,24px);
+    color:white;
+    line-height:1.2;
+  }
+  .d7-tagline em { color:#00AEEF; font-style:normal; }
+
+  .d7-badge {
+    display:inline-flex;
+    background:rgba(0,174,239,0.12); border:1px solid rgba(0,174,239,0.3);
+    border-radius:3px; padding:3px 8px;
+    font-size:clamp(4px,1.2vw,8px); font-weight:700; color:#00AEEF;
+    letter-spacing:0.1em; text-transform:uppercase; width:fit-content;
+  }
+
+  .d7-r-eye { font-size:clamp(4px,1.2vw,8px); font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#9CA3AF; margin-bottom:6%; }
+
+  .d7-r-stats { display:flex; flex-direction:column; gap:5%; }
+  .d7-r-stat { }
+  .d7-r-stat-n { font-family:'DM Serif Display',serif; font-size:clamp(11px,3.8vw,26px); color:#111827; line-height:1; }
+  .d7-r-stat-n span { color:#00AEEF; }
+  .d7-r-stat-l { font-size:clamp(4px,1.2vw,8px); font-weight:600; color:#9CA3AF; text-transform:uppercase; letter-spacing:0.08em; margin-top:1px; }
+
+  .d7-r-contact { margin-top:8%; }
+  .d7-r-url { font-size:clamp(5px,1.4vw,9px); font-weight:700; color:#00AEEF; letter-spacing:0.05em; }
+  .d7-r-addr { font-size:clamp(4px,1.2vw,8px); color:#9CA3AF; line-height:1.6; margin-top:2%; }
+
+  /* ═══════════════════════════════════════════
+     DESIGN 8 — Type Hero / Editorial
+  ═══════════════════════════════════════════ */
+  .d8 { background: #111827; }
+
+  .d8-bg-text {
+    position:absolute;
+    top:50%; left:50%;
+    transform:translate(-50%,-50%);
+    font-family:'DM Serif Display',serif;
+    font-size:clamp(40px,22vw,150px);
+    font-weight:400;
+    color:rgba(255,255,255,0.05);
+    white-space:nowrap;
+    letter-spacing:-0.02em;
+    pointer-events:none;
+    user-select:none;
+  }
+
+  .d8-content {
+    position:absolute; top:0; left:0; bottom:0; right:0;
+    padding:10% 9%;
+    display:flex; flex-direction:column; justify-content:center;
+    z-index:2;
+  }
+
+  .d8-eye { font-size:clamp(4px,1.3vw,9px); font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#F47920; margin-bottom:4%; }
+  .d8-title { font-family:'DM Serif Display',serif; font-size:clamp(15px,5.5vw,36px); line-height:1.05; color:#fff; margin-bottom:3%; }
+  .d8-rule { width:10%; height:2px; background:#00AEEF; margin-bottom:4%; }
+  .d8-sub { font-size:clamp(5px,1.6vw,10.5px); color:rgba(255,255,255,0.45); line-height:1.7; max-width:75%; }
+
+  .d8-footer {
+    position:absolute; bottom:0; left:0; right:0;
+    padding:4% 9%;
+    display:flex; justify-content:space-between; align-items:center;
+    border-top:1px solid rgba(255,255,255,0.08);
+    z-index:2;
+  }
+
+  .d8-logo { font-family:'DM Serif Display',serif; font-size:clamp(7px,2.3vw,15px); color:white; }
+  .d8-logo span { color:#00AEEF; }
+  .d8-badge2 {
+    display:inline-flex;
+    background:rgba(0,174,239,0.1); border:1px solid rgba(0,174,239,0.25);
+    border-radius:3px; padding:3px 8px;
+    font-size:clamp(4px,1.1vw,7px); font-weight:700; color:#00AEEF;
+    letter-spacing:0.1em; text-transform:uppercase;
+  }
+
+  /* ═══════════════════════════════════════════
+     DESIGN 9 — Full Cyan
+  ═══════════════════════════════════════════ */
+  .d9 { background: #00AEEF; }
+
+  .d9-shape1 {
+    position:absolute; top:-10%; right:-10%;
+    width:55%; aspect-ratio:1; border-radius:50%;
+    background:rgba(255,255,255,0.08);
+  }
+
+  .d9-shape2 {
+    position:absolute; bottom:-15%; left:-10%;
+    width:45%; aspect-ratio:1; border-radius:50%;
+    background:rgba(0,0,0,0.08);
+  }
+
+  .d9-content {
+    position:absolute; top:0; left:0; bottom:0; right:0;
+    padding:10% 9%;
+    display:flex; flex-direction:column; justify-content:center;
+    z-index:2;
+  }
+
+  .d9-eye { font-size:clamp(4px,1.3vw,9px); font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:rgba(255,255,255,0.65); margin-bottom:4%; }
+  .d9-title { font-family:'DM Serif Display',serif; font-size:clamp(14px,5vw,34px); line-height:1.05; color:#fff; margin-bottom:3%; }
+  .d9-title em { color:#111827; font-style:normal; }
+  .d9-rule { width:10%; height:2px; background:#111827; margin-bottom:4%; }
+  .d9-sub { font-size:clamp(5px,1.5vw,10px); color:rgba(255,255,255,0.7); line-height:1.7; max-width:78%; margin-bottom:8%; }
+
+  .d9-badge {
+    display:inline-flex;
+    background:rgba(0,0,0,0.15); border:1px solid rgba(0,0,0,0.2);
+    border-radius:3px; padding:3px 8px;
+    font-size:clamp(4px,1.1vw,7.5px); font-weight:700; color:rgba(255,255,255,0.9);
+    letter-spacing:0.1em; text-transform:uppercase; width:fit-content;
+  }
+
+  .d9-stats {
+    position:absolute; bottom:0; left:0; right:0;
+    padding:4% 9%;
+    border-top:1px solid rgba(255,255,255,0.2);
+    display:flex; gap:8%; z-index:2;
+  }
+  .d9-stat-n { font-family:'DM Serif Display',serif; font-size:clamp(10px,3.5vw,23px); color:#111827; line-height:1; }
+  .d9-stat-l { font-size:clamp(4px,1.1vw,7.5px); font-weight:700; color:rgba(255,255,255,0.65); text-transform:uppercase; letter-spacing:0.08em; margin-top:2px; }
+
+  /* ═══════════════════════════════════════════
+     DESIGN 10 — Warm Earth
+  ═══════════════════════════════════════════ */
+  .d10 { background: #FAF7F0; }
+
+  .d10-top-band {
+    position:absolute; top:0; left:0; right:0; height:38%;
+    background: #1B4F5A;
+  }
+
+  .d10-slash {
+    position:absolute; top:28%; left:0; right:0;
+    height:18%;
+    background: #D4830C;
+    clip-path: polygon(0 60%, 100% 0%, 100% 40%, 0 100%);
+  }
+
+  .d10-top-content {
+    position:absolute; top:5%; left:8%; right:8%;
+    z-index:2;
+    display:flex; justify-content:space-between; align-items:flex-start;
+  }
+
+  .d10-logo { font-family:'DM Serif Display',serif; font-size:clamp(9px,2.8vw,18px); color:#fff; }
+  .d10-logo span { color:#D4830C; }
+  .d10-iso { font-size:clamp(4px,1.1vw,7.5px); font-weight:700; color:rgba(255,255,255,0.45); text-align:right; letter-spacing:0.1em; text-transform:uppercase; }
+
+  .d10-mid {
+    position:absolute; top:18%; left:8%;
+    z-index:2;
+  }
+
+  .d10-title { font-family:'DM Serif Display',serif; font-size:clamp(14px,5vw,34px); line-height:1.05; color:#fff; }
+  .d10-title em { color:#D4830C; font-style:normal; }
+
+  .d10-bottom {
+    position:absolute; bottom:5%; left:8%; right:8%;
+    z-index:2;
+  }
+
+  .d10-eye { font-size:clamp(4px,1.2vw,8px); font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#1B4F5A; margin-bottom:3%; }
+  .d10-sub { font-size:clamp(5px,1.5vw,10px); color:#4B5563; line-height:1.7; max-width:80%; margin-bottom:4%; }
+
+  .d10-stats { display:flex; gap:6%; }
+  .d10-stat-n { font-family:'DM Serif Display',serif; font-size:clamp(10px,3.2vw,22px); color:#1B4F5A; line-height:1; }
+  .d10-stat-l { font-size:clamp(4px,1.1vw,7px); font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:0.08em; margin-top:2px; }
+
+  /* ── Footer ── */
+  .page-footer {
+    max-width: 960px;
+    margin: 48px auto 0;
+    padding-top: 24px;
+    border-top: 1px solid #E5E7EB;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #9CA3AF;
+  }
+</style>
+</head>
+<body>
+
+<!-- ── Header ── -->
+<div class="page-header">
+  <div class="ph-eyebrow">Fortune Logistics · Internal Review</div>
+  <h1 class="ph-title">Brochure Design Options</h1>
+  <p class="ph-sub">10 distinct cover directions, each representing a different visual identity and tone. Pick a direction — or mix elements across designs — and the full 8-page brochure will be developed in that style.</p>
+  <div class="ph-note">
+    ★ Designs 2 &amp; 3 are already fully built as the dark and light editions of the current brochure.
+  </div>
+</div>
+
+<!-- ── Grid ── -->
+<div class="design-grid">
+
+  <!-- CARD 1 -->
+  <div class="design-card">
+    <div class="card-preview d1">
+      <div class="d1-band-yellow"></div>
+      <div class="d1-band-cyan"></div>
+      <div class="d1-band-dark"></div>
+      <div class="d1-content">
+        <div class="d1-logo">Fortune <span>Logistics</span></div>
+        <div class="d1-title">Moving freight<br>that matters.</div>
+        <div class="d1-sub">Transportation &amp; Packaging · ISO 9001-2015</div>
+      </div>
+    </div>
+    <div class="card-info">
+      <div class="ci-top">
+        <div class="ci-num">01</div>
+        <div class="ci-tags">
+          <span class="ci-tag">Bold</span>
+          <span class="ci-tag">Geometric</span>
+          <span class="ci-tag">Classic</span>
+        </div>
+      </div>
+      <div class="ci-name">Bold Geometry</div>
+      <div class="ci-desc">Diagonal color blocks in yellow and cyan. High-energy, instantly recognizable as logistics. Strong on print.</div>
+    </div>
+  </div>
+
+  <!-- CARD 2 -->
+  <div class="design-card">
+    <div class="card-preview d2">
+      <div class="d2-glow"></div>
+      <div class="d2-right">
+        <div class="d2-stat"><div class="d2-stat-n">850+</div><div class="d2-stat-l">Own vehicles</div></div>
+        <div class="d2-stat"><div class="d2-stat-n">5,000 MT</div><div class="d2-stat-l">Daily cargo</div></div>
+        <div class="d2-stat"><div class="d2-stat-n">Pan India</div><div class="d2-stat-l">Coverage</div></div>
+        <div class="d2-stat"><div class="d2-stat-n">24/7</div><div class="d2-stat-l">365 days</div></div>
+      </div>
+      <div class="d2-left">
+        <div class="d2-eye">Transportation &amp; Packaging</div>
+        <div class="d2-title">Moving<br>freight<br>that <em>matters.</em></div>
+        <div class="d2-rule"></div>
+        <div class="d2-sub">End-to-end logistics across India. Faster than you expect, safer than you need.</div>
+        <div class="d2-badge">ISO 9001-2015 Certified</div>
+      </div>
+    </div>
+    <div class="card-info">
+      <div class="ci-top">
+        <div class="ci-num">02</div>
+        <div class="ci-tags">
+          <span class="ci-tag">Premium</span>
+          <span class="ci-tag">Dark</span>
+          <span class="ci-tag" style="background:#E6F7FD;color:#0090C8;">✓ Built</span>
+        </div>
+      </div>
+      <div class="ci-name">Dark Premium</div>
+      <div class="ci-desc">Current dark edition. Navy base, cyan stat panel, serif headline. Professional and commanding.</div>
+    </div>
+  </div>
+
+  <!-- CARD 3 -->
+  <div class="design-card">
+    <div class="card-preview d3">
+      <div class="d3-right">
+        <div class="d3-stat"><div class="d3-stat-n">850+</div><div class="d3-stat-l">Own vehicles</div></div>
+        <div class="d3-stat"><div class="d3-stat-n">5,000 MT</div><div class="d3-stat-l">Daily cargo</div></div>
+        <div class="d3-stat"><div class="d3-stat-n">Pan India</div><div class="d3-stat-l">Coverage</div></div>
+        <div class="d3-stat"><div class="d3-stat-n">24/7</div><div class="d3-stat-l">365 days</div></div>
+      </div>
+      <div class="d3-left">
+        <div class="d3-eye">Transportation &amp; Packaging</div>
+        <div class="d3-title">Moving<br>freight<br>that <em>matters.</em></div>
+        <div class="d3-rule"></div>
+        <div class="d3-sub">End-to-end logistics across India. Faster than you expect, safer than you need.</div>
+      </div>
+    </div>
+    <div class="card-info">
+      <div class="ci-top">
+        <div class="ci-num">03</div>
+        <div class="ci-tags">
+          <span class="ci-tag">Corporate</span>
+          <span class="ci-tag">Light</span>
+          <span class="ci-tag" style="background:#E6F7FD;color:#0090C8;">✓ Built</span>
+        </div>
+      </div>
+      <div class="ci-name">Clean Corporate</div>
+      <div class="ci-desc">Current light edition. White base, solid cyan panel. Clean, professional, easy to print in colour or greyscale.</div>
+    </div>
+  </div>
+
+  <!-- CARD 4 -->
+  <div class="design-card">
+    <div class="card-preview d4">
+      <div class="d4-gold-bar"></div>
+      <div class="d4-gold-lines"></div>
+      <div class="d4-circle"></div>
+      <div class="d4-circle2"></div>
+      <div class="d4-content">
+        <div class="d4-eye">Transportation &amp; Packaging · Est. 2022</div>
+        <div class="d4-title">Moving<br>freight<br>that <em>matters.</em></div>
+        <div class="d4-rule"></div>
+        <div class="d4-sub">End-to-end logistics across India. Faster than you expect, safer than you need.</div>
+        <div class="d4-badge">ISO 9001-2015 Certified</div>
+      </div>
+      <div class="d4-footer">
+        <div class="d4-logo">Fortune <span>Logistics</span></div>
+        <div class="d4-iso">fortunelogistics.org<br>Pune, Maharashtra</div>
+      </div>
+    </div>
+    <div class="card-info">
+      <div class="ci-top">
+        <div class="ci-num">04</div>
+        <div class="ci-tags">
+          <span class="ci-tag">Premium</span>
+          <span class="ci-tag">Elegant</span>
+          <span class="ci-tag">Executive</span>
+        </div>
+      </div>
+      <div class="ci-name">Midnight Navy + Gold</div>
+      <div class="ci-desc">Deep navy with gold accents and subtle diagonal line texture. Luxury tier — suited for pitching large enterprise clients.</div>
+    </div>
+  </div>
+
+  <!-- CARD 5 -->
+  <div class="design-card">
+    <div class="card-preview d5">
+      <div class="d5-left-col">
+        <div class="d5-vertical-text">Fortune Logistics</div>
+      </div>
+      <div class="d5-right">
+        <div class="d5-eye">Freight &amp; Logistics · India</div>
+        <div class="d5-title">Moving<br>freight<br>that matters.</div>
+        <div class="d5-rule"></div>
+        <div class="d5-sub">End-to-end transportation and packaging. 850+ vehicles. Pan India coverage.</div>
+        <div class="d5-stats">
+          <div class="d5-stat"><div class="d5-stat-n">850+</div><div class="d5-stat-l">Vehicles</div></div>
+          <div class="d5-stat"><div class="d5-stat-n">5K MT</div><div class="d5-stat-l">Per day</div></div>
+          <div class="d5-stat"><div class="d5-stat-n">24/7</div><div class="d5-stat-l">Always on</div></div>
+        </div>
+      </div>
+      <div class="d5-footer">
+        <div class="d5-logo">Fortune <span>Logistics</span></div>
+        <div class="d5-tag">ISO 9001-2015</div>
+      </div>
+    </div>
+    <div class="card-info">
+      <div class="ci-top">
+        <div class="ci-num">05</div>
+        <div class="ci-tags">
+          <span class="ci-tag">Industrial</span>
+          <span class="ci-tag">Bold</span>
+          <span class="ci-tag">Operational</span>
+        </div>
+      </div>
+      <div class="ci-name">Industrial Orange</div>
+      <div class="ci-desc">Thick orange left column, charcoal base, vertical logo treatment. Gritty, operational — strong for fleet-heavy messaging.</div>
+    </div>
+  </div>
+
+  <!-- CARD 6 -->
+  <div class="design-card">
+    <div class="card-preview d6">
+      <div class="d6-top-rule"></div>
+      <div class="d6-accent-rule"></div>
+      <div class="d6-content">
+        <div class="d6-eye">Fortune Logistics · Transportation &amp; Packaging</div>
+        <div class="d6-title"><em>Moving freight<br>that matters.</em></div>
+      </div>
+      <div class="d6-rule2"></div>
+      <div class="d6-bottom">
+        <div class="d6-logo">Fortune <span>Logistics</span></div>
+        <div class="d6-iso">ISO 9001-2015<br>fortunelogistics.org</div>
+      </div>
+    </div>
+    <div class="card-info">
+      <div class="ci-top">
+        <div class="ci-num">06</div>
+        <div class="ci-tags">
+          <span class="ci-tag">Minimal</span>
+          <span class="ci-tag">Typographic</span>
+          <span class="ci-tag">Refined</span>
+        </div>
+      </div>
+      <div class="ci-name">Pure Minimalist</div>
+      <div class="ci-desc">White canvas, italic serif headline, single cyan rule. Almost no decoration. Makes a strong impression through restraint.</div>
+    </div>
+  </div>
+
+  <!-- CARD 7 -->
+  <div class="design-card">
+    <div class="card-preview d7">
+      <div class="d7-left">
+        <div class="d7-logo">Fortune <span>Logistics</span></div>
+        <div class="d7-tagline">Moving freight<br>that <em>matters.</em></div>
+        <div class="d7-badge">ISO 9001-2015</div>
+      </div>
+      <div class="d7-divider"></div>
+      <div class="d7-right">
+        <div class="d7-r-eye">By the numbers</div>
+        <div class="d7-r-stats">
+          <div class="d7-r-stat"><div class="d7-r-stat-n">850<span>+</span></div><div class="d7-r-stat-l">Self-owned vehicles</div></div>
+          <div class="d7-r-stat"><div class="d7-r-stat-n">5,000<span> MT</span></div><div class="d7-r-stat-l">Cargo per day</div></div>
+          <div class="d7-r-stat"><div class="d7-r-stat-n">Pan <span>India</span></div><div class="d7-r-stat-l">Coverage</div></div>
+        </div>
+        <div class="d7-r-contact">
+          <div class="d7-r-url">fortunelogistics.org</div>
+          <div class="d7-r-addr">Khed · Pune · Maharashtra</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-info">
+      <div class="ci-top">
+        <div class="ci-num">07</div>
+        <div class="ci-tags">
+          <span class="ci-tag">Structural</span>
+          <span class="ci-tag">Split</span>
+          <span class="ci-tag">Modern</span>
+        </div>
+      </div>
+      <div class="ci-name">Split Screen</div>
+      <div class="ci-desc">Hard vertical divide — dark left for brand, white right for stats. Balanced tension, works well at all print sizes.</div>
+    </div>
+  </div>
+
+  <!-- CARD 8 -->
+  <div class="design-card">
+    <div class="card-preview d8">
+      <div class="d8-bg-text">FORTUNE</div>
+      <div class="d8-content">
+        <div class="d8-eye">Transportation &amp; Packaging · India</div>
+        <div class="d8-title">Moving freight<br>that matters.</div>
+        <div class="d8-rule"></div>
+        <div class="d8-sub">End-to-end logistics across India. 850+ self-owned vehicles. Pan India. 24/7.</div>
+      </div>
+      <div class="d8-footer">
+        <div class="d8-logo">Fortune <span>Logistics</span></div>
+        <div class="d8-badge2">ISO 9001-2015</div>
+      </div>
+    </div>
+    <div class="card-info">
+      <div class="ci-top">
+        <div class="ci-num">08</div>
+        <div class="ci-tags">
+          <span class="ci-tag">Editorial</span>
+          <span class="ci-tag">Type-Led</span>
+          <span class="ci-tag">Bold</span>
+        </div>
+      </div>
+      <div class="ci-name">Type Hero</div>
+      <div class="ci-desc">Giant ghosted "FORTUNE" as background texture. Editorial feel, strong on digital — PDFs shared via email or WhatsApp.</div>
+    </div>
+  </div>
+
+  <!-- CARD 9 -->
+  <div class="design-card">
+    <div class="card-preview d9">
+      <div class="d9-shape1"></div>
+      <div class="d9-shape2"></div>
+      <div class="d9-content">
+        <div class="d9-eye">Transportation &amp; Packaging · India</div>
+        <div class="d9-title">Moving freight<br>that <em>matters.</em></div>
+        <div class="d9-rule"></div>
+        <div class="d9-sub">End-to-end logistics across India. Faster than you expect, safer than you need.</div>
+        <div class="d9-badge">ISO 9001-2015 Certified</div>
+      </div>
+      <div class="d9-stats">
+        <div><div class="d9-stat-n">850+</div><div class="d9-stat-l">Own vehicles</div></div>
+        <div><div class="d9-stat-n">5,000 MT</div><div class="d9-stat-l">Daily</div></div>
+        <div><div class="d9-stat-n">Pan India</div><div class="d9-stat-l">Network</div></div>
+      </div>
+    </div>
+    <div class="card-info">
+      <div class="ci-top">
+        <div class="ci-num">09</div>
+        <div class="ci-tags">
+          <span class="ci-tag">Energetic</span>
+          <span class="ci-tag">Vibrant</span>
+          <span class="ci-tag">Stand-out</span>
+        </div>
+      </div>
+      <div class="ci-name">Full Cyan</div>
+      <div class="ci-desc">Solid brand cyan across the full cover. High visibility, impossible to miss in a stack of brochures — bold brand statement.</div>
+    </div>
+  </div>
+
+  <!-- CARD 10 -->
+  <div class="design-card">
+    <div class="card-preview d10">
+      <div class="d10-top-band"></div>
+      <div class="d10-slash"></div>
+      <div class="d10-top-content">
+        <div class="d10-logo">Fortune <span>Logistics</span></div>
+        <div class="d10-iso">ISO 9001-2015</div>
+      </div>
+      <div class="d10-mid">
+        <div class="d10-title">Moving freight<br>that <em>matters.</em></div>
+      </div>
+      <div class="d10-bottom">
+        <div class="d10-eye">Transportation &amp; Packaging · Pune, India</div>
+        <div class="d10-sub">End-to-end logistics across India. Faster than you expect, safer than you need.</div>
+        <div class="d10-stats">
+          <div><div class="d10-stat-n">850+</div><div class="d10-stat-l">Vehicles</div></div>
+          <div><div class="d10-stat-n">5K MT</div><div class="d10-stat-l">Per day</div></div>
+          <div><div class="d10-stat-n">Pan India</div><div class="d10-stat-l">Coverage</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="card-info">
+      <div class="ci-top">
+        <div class="ci-num">10</div>
+        <div class="ci-tags">
+          <span class="ci-tag">Warm</span>
+          <span class="ci-tag">Approachable</span>
+          <span class="ci-tag">Distinctive</span>
+        </div>
+      </div>
+      <div class="ci-name">Warm Earth</div>
+      <div class="ci-desc">Cream base, deep teal and amber — warmer palette, relationship-forward feel. Stands out from typical blue/grey logistics brands.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── Footer ── -->
+<div class="page-footer">
+  <div>Fortune Logistics — Brochure Design Options · 10 Directions</div>
+  <div>Tell us which design to develop into a full 8-page brochure.</div>
+</div>
+
+</body>
+</html>

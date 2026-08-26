@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fortune Logistics — Company Brochure</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+  :root {
+    --cyan: #00AEEF;
+    --cyan-dk: #0090C8;
+    --cyan-lt: #E6F7FD;
+    --orange: #F47920;
+    --dark: #111827;
+    --mid: #374151;
+    --muted: #6B7280;
+    --border: #E5E7EB;
+    --bg: #F9FAFB;
+    --white: #FFFFFF;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body { font-family: 'Inter', sans-serif; background: #ccc; color: var(--dark); }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    background: var(--white);
+    margin: 12px auto;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  }
+
+  @media print {
+    body { background: white; }
+    .page { margin: 0; box-shadow: none; page-break-after: always; }
+  }
+
+  .page::after {
+    content: 'PREVIEW COPY';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    font-family: 'Inter', sans-serif;
+    font-size: 54px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    color: rgba(255,255,255,0.1);
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* ── Shared header bar ── */
+  .page-bar { height: 5px; background: var(--cyan); }
+
+  .page-nav {
+    padding: 16px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 15px;
+    color: var(--dark);
+  }
+  .nav-logo span { color: var(--cyan); }
+
+  .nav-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ─────────────────── PAGE 1 — COVER ─────────────────── */
+  .cover {
+    background: var(--dark);
+    min-height: 297mm;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover-top-bar { height: 5px; background: var(--cyan); }
+
+  .cover-glow-1 {
+    position: absolute; top: -80px; right: -80px;
+    width: 340px; height: 340px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,174,239,0.14) 0%, transparent 70%);
+  }
+  .cover-glow-2 {
+    position: absolute; bottom: 60px; left: -80px;
+    width: 280px; height: 280px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(244,121,32,0.10) 0%, transparent 70%);
+  }
+
+  .cover-content {
+    display: flex;
+    flex: 1;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cover-left {
+    flex: 1;
+    padding: 64px 56px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .cover-eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 22px;
+  }
+
+  .cover-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 56px;
+    line-height: 1.05;
+    color: var(--white);
+    margin-bottom: 20px;
+  }
+  .cover-title em { color: var(--cyan); font-style: normal; }
+
+  .cover-rule {
+    width: 44px; height: 3px;
+    background: var(--orange);
+    margin-bottom: 22px;
+  }
+
+  .cover-sub {
+    font-size: 15px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.65;
+    max-width: 300px;
+    margin-bottom: 40px;
+  }
+
+  .cover-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0,174,239,0.1);
+    border: 1px solid rgba(0,174,239,0.28);
+    border-radius: 4px;
+    padding: 6px 14px;
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--cyan);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    width: fit-content;
+  }
+
+  .cover-right {
+    width: 42%;
+    background: rgba(255,255,255,0.03);
+    border-left: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 36px;
+  }
+
+  .cover-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    width: 100%;
+  }
+
+  .cover-stat {
+    border-left: 3px solid var(--cyan);
+    padding-left: 16px;
+  }
+
+  .cover-stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 34px;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .cover-stat-num span { color: var(--cyan); }
+
+  .cover-stat-label {
+    font-size: 10.5px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.42);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .cover-footer {
+    padding: 20px 56px;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cover-footer-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 19px;
+    color: var(--white);
+  }
+  .cover-footer-logo span { color: var(--cyan); }
+
+  .cover-footer-info {
+    font-size: 11px;
+    color: rgba(255,255,255,0.35);
+    text-align: right;
+    line-height: 1.6;
+  }
+
+  /* ─────────────────── PAGE 2 — ABOUT ─────────────────── */
+  .section-eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 34px;
+    line-height: 1.1;
+    color: var(--dark);
+    margin-bottom: 18px;
+  }
+
+  .body-text {
+    font-size: 13px;
+    color: var(--mid);
+    line-height: 1.78;
+  }
+  .body-text p { margin-bottom: 14px; }
+  .body-text p:last-child { margin-bottom: 0; }
+
+  .about-layout {
+    padding: 32px 48px 28px;
+    display: grid;
+    grid-template-columns: 1fr 188px;
+    gap: 44px;
+    align-items: start;
+  }
+
+  .stat-stack { display: flex; flex-direction: column; gap: 14px; }
+
+  .stat-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 14px;
+    text-align: center;
+  }
+
+  .stat-card-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 30px;
+    color: var(--cyan);
+    line-height: 1;
+    margin-bottom: 5px;
+  }
+
+  .stat-card-label {
+    font-size: 10.5px;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    line-height: 1.4;
+  }
+
+  .about-banner {
+    margin: 0 48px 24px;
+    background: var(--dark);
+    border-radius: 10px;
+    padding: 24px 28px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .about-banner-line {
+    width: 4px; height: 52px;
+    background: var(--cyan);
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+  .about-banner-quote {
+    font-family: 'DM Serif Display', serif;
+    font-size: 17px;
+    color: var(--white);
+    line-height: 1.45;
+  }
+  .about-banner-quote em { color: var(--cyan); font-style: normal; }
+
+  .pillars {
+    padding: 0 48px 36px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+  }
+
+  .pillar {
+    padding: 18px 16px;
+    background: var(--bg);
+    border-radius: 8px;
+    border-top: 3px solid var(--cyan);
+  }
+
+  .pillar-title {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 6px;
+  }
+
+  .pillar-desc {
+    font-size: 11.5px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ─────────────────── PAGE 3 — SERVICES ─────────────────── */
+  .dark-page {
+    background: var(--dark);
+    min-height: 297mm;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dark-page .page-nav {
+    background: transparent;
+    border-bottom-color: rgba(255,255,255,0.08);
+  }
+  .dark-page .nav-logo { color: var(--white); }
+  .dark-page .nav-label { color: rgba(255,255,255,0.35); }
+  .dark-page .section-title { color: var(--white); }
+  .dark-page .section-eyebrow { color: rgba(0,174,239,0.75); }
+
+  .services-body {
+    flex: 1;
+    padding: 28px 48px 36px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  .svc-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 10px;
+    padding: 24px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .svc-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--cyan);
+  }
+
+  .svc-card.alt::before { background: var(--orange); }
+
+  .svc-icon {
+    width: 40px; height: 40px;
+    background: rgba(0,174,239,0.1);
+    border-radius: 9px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+
+  .svc-card.alt .svc-icon { background: rgba(244,121,32,0.1); }
+
+  .svc-sub {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 8px;
+  }
+  .svc-card.alt .svc-sub { color: var(--orange); }
+
+  .svc-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 17px;
+    color: var(--white);
+    margin-bottom: 10px;
+  }
+
+  .svc-desc {
+    font-size: 12px;
+    color: rgba(255,255,255,0.52);
+    line-height: 1.7;
+  }
+
+  .pkg-section {
+    background: rgba(0,174,239,0.07);
+    border: 1px solid rgba(0,174,239,0.18);
+    border-radius: 10px;
+    padding: 24px 28px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    align-items: center;
+  }
+
+  .pkg-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    color: var(--white);
+    margin-bottom: 10px;
+  }
+
+  .pkg-desc {
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.52);
+    line-height: 1.7;
+  }
+
+  .pkg-points { display: flex; flex-direction: column; gap: 10px; }
+
+  .pkg-point {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 12px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.5;
+  }
+
+  .pkg-dot {
+    width: 5px; height: 5px;
+    background: var(--cyan);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+
+  /* ─────────────────── PAGE 4 — EXPRESS ─────────────────── */
+  .express-hero {
+    background: linear-gradient(140deg, #0a1628 0%, #111827 100%);
+    padding: 40px 48px 36px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .express-hero::after {
+    content: '';
+    position: absolute;
+    right: -50px; top: -50px;
+    width: 240px; height: 240px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,174,239,0.13) 0%, transparent 70%);
+  }
+
+  .express-eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(0,174,239,0.75);
+    margin-bottom: 10px;
+  }
+
+  .express-headline {
+    font-family: 'DM Serif Display', serif;
+    font-size: 44px;
+    line-height: 1;
+    color: var(--white);
+    margin-bottom: 28px;
+    position: relative;
+    z-index: 2;
+  }
+  .express-headline em { color: var(--cyan); font-style: normal; }
+
+  .express-stats {
+    display: flex;
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .ex-stat {
+    padding: 18px 24px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 9px;
+    text-align: center;
+  }
+
+  .ex-stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    color: var(--cyan);
+    line-height: 1;
+    margin-bottom: 5px;
+  }
+
+  .ex-stat-label {
+    font-size: 10.5px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.42);
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+  }
+
+  .express-body {
+    padding: 32px 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+    align-items: start;
+  }
+
+  .ex-block-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 19px;
+    color: var(--dark);
+    margin-bottom: 12px;
+  }
+
+  .ex-text {
+    font-size: 13px;
+    color: var(--mid);
+    line-height: 1.78;
+  }
+  .ex-text p { margin-bottom: 12px; }
+
+  .ex-modes { display: flex; flex-direction: column; gap: 10px; }
+
+  .ex-mode {
+    padding: 14px 18px;
+    border-left: 3px solid var(--cyan);
+    background: var(--bg);
+    border-radius: 0 8px 8px 0;
+  }
+  .ex-mode.hot { border-left-color: var(--orange); }
+
+  .ex-mode-name {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 4px;
+  }
+
+  .ex-mode-desc {
+    font-size: 11.5px;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  /* ─────────────────── PAGE 5 — FLEET ─────────────────── */
+  .fleet-body {
+    padding: 28px 48px 36px;
+  }
+
+  .fleet-table-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 10px;
+    margin-top: 20px;
+  }
+
+  .fleet-table-label:first-child { margin-top: 0; }
+
+  table.ft {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+    margin-bottom: 8px;
+  }
+
+  table.ft thead tr { background: var(--dark); color: var(--white); }
+
+  table.ft thead th {
+    padding: 9px 13px;
+    text-align: left;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+
+  table.ft tbody tr { border-bottom: 1px solid var(--border); }
+  table.ft tbody tr:nth-child(even) { background: var(--bg); }
+
+  table.ft tbody td {
+    padding: 9px 13px;
+    color: var(--mid);
+    font-weight: 500;
+  }
+
+  table.ft tbody td:first-child { font-weight: 700; color: var(--dark); }
+
+  table.tt {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  table.tt thead tr { background: var(--cyan); }
+
+  table.tt thead th {
+    padding: 9px 11px;
+    text-align: left;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+
+  table.tt tbody tr { border-bottom: 1px solid var(--border); }
+  table.tt tbody tr:nth-child(even) { background: var(--bg); }
+
+  table.tt tbody td {
+    padding: 8px 11px;
+    color: var(--mid);
+    font-weight: 500;
+  }
+
+  table.tt tbody td:first-child { font-weight: 700; color: var(--dark); }
+
+  .fleet-note {
+    margin-top: 18px;
+    padding: 14px 18px;
+    background: var(--bg);
+    border-left: 3px solid var(--cyan);
+    border-radius: 0 6px 6px 0;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ─────────────────── PAGE 6 — WHY FORTUNE ─────────────────── */
+  .why-body { padding: 28px 48px 32px; }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin-top: 22px;
+    margin-bottom: 24px;
+  }
+
+  .why-card {
+    padding: 20px 18px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+  }
+
+  .why-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 38px;
+    color: var(--border);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .why-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--dark);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 7px;
+  }
+
+  .why-desc {
+    font-size: 11.5px;
+    color: var(--muted);
+    line-height: 1.62;
+  }
+
+  .quality-box {
+    background: var(--bg);
+    border-radius: 10px;
+    padding: 24px 28px;
+  }
+
+  .quality-box-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 17px;
+    color: var(--dark);
+    margin-bottom: 16px;
+  }
+
+  .quality-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .quality-item {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    font-size: 12px;
+    color: var(--mid);
+    line-height: 1.5;
+  }
+
+  .qdot {
+    width: 5px; height: 5px;
+    background: var(--cyan);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+
+  /* ─────────────────── PAGE 7 — NETWORK ─────────────────── */
+  .network-body { padding: 28px 48px 36px; }
+
+  .network-map {
+    background: linear-gradient(135deg, #EEF9FF 0%, #E6F7FD 100%);
+    border: 1px solid rgba(0,174,239,0.18);
+    border-radius: 10px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .map-inner { text-align: center; }
+
+  .map-inner-label {
+    font-family: 'DM Serif Display', serif;
+    font-size: 13px;
+    color: var(--cyan-dk);
+    margin-top: 6px;
+  }
+
+  .coverage-bar {
+    background: var(--dark);
+    border-radius: 10px;
+    padding: 20px 28px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .cov-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    color: var(--cyan);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .cov-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.42);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    line-height: 1.4;
+  }
+
+  .clients-label {
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+
+  .client-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+  }
+
+  .client-box {
+    height: 56px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--mid);
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  /* ─────────────────── PAGE 8 — CONTACT ─────────────────── */
+  .contact-page {
+    background: var(--dark);
+    min-height: 297mm;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-page::before {
+    content: '';
+    position: absolute;
+    bottom: -60px; right: -60px;
+    width: 320px; height: 320px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,174,239,0.1) 0%, transparent 70%);
+  }
+
+  .contact-page::after {
+    content: '';
+    position: absolute;
+    top: 100px; left: -60px;
+    width: 220px; height: 220px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(244,121,32,0.08) 0%, transparent 70%);
+  }
+
+  .contact-page .page-nav {
+    background: transparent;
+    border-bottom-color: rgba(255,255,255,0.08);
+  }
+  .contact-page .nav-logo { color: var(--white); }
+  .contact-page .nav-label { color: rgba(255,255,255,0.35); }
+
+  .contact-body {
+    flex: 1;
+    padding: 36px 48px 40px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+  }
+
+  .contact-headline {
+    font-family: 'DM Serif Display', serif;
+    font-size: 42px;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+  .contact-headline em { color: var(--cyan); font-style: normal; }
+
+  .contact-tagline {
+    font-size: 13px;
+    color: rgba(255,255,255,0.38);
+    font-style: italic;
+    margin-bottom: 32px;
+  }
+
+  .contact-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .contact-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  .cc-label {
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 12px;
+  }
+
+  .cc-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.55;
+    margin-bottom: 10px;
+  }
+  .cc-item:last-child { margin-bottom: 0; }
+
+  .cc-icon { font-size: 13px; opacity: 0.55; flex-shrink: 0; margin-top: 1px; }
+
+  .firm-grid {
+    background: rgba(0,174,239,0.07);
+    border: 1px solid rgba(0,174,239,0.18);
+    border-radius: 10px;
+    padding: 20px 28px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+
+  .firm-row { display: flex; flex-direction: column; gap: 3px; }
+
+  .firm-label {
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+  }
+
+  .firm-value {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.75);
+  }
+
+  .contact-footer-row {
+    margin-top: auto;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .cf-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 21px;
+    color: var(--white);
+  }
+  .cf-logo span { color: var(--cyan); }
+
+  .cf-sub {
+    font-size: 11px;
+    color: rgba(255,255,255,0.28);
+    margin-top: 3px;
+  }
+
+  .cf-tag {
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.28);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: right;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════ PAGE 1 — COVER ══════════════ -->
+<div class="page">
+  <div class="cover">
+    <div class="cover-top-bar"></div>
+    <div class="cover-glow-1"></div>
+    <div class="cover-glow-2"></div>
+
+    <div class="cover-content">
+      <div class="cover-left">
+        <div class="cover-eyebrow">Transportation &amp; Packaging · India</div>
+        <h1 class="cover-title">Moving<br>freight<br>that <em>matters.</em></h1>
+        <div class="cover-rule"></div>
+        <p class="cover-sub">End-to-end logistics across India. Faster than you expect, safer than you need.</p>
+        <div class="cover-badge">ISO 9001-2015 Certified</div>
+      </div>
+
+      <div class="cover-right">
+        <div class="cover-stats">
+          <div class="cover-stat">
+            <div class="cover-stat-num">850<span>+</span></div>
+            <div class="cover-stat-label">Self-owned vehicles</div>
+          </div>
+          <div class="cover-stat">
+            <div class="cover-stat-num">5,000 <span>MT</span></div>
+            <div class="cover-stat-label">Cargo moved daily</div>
+          </div>
+          <div class="cover-stat">
+            <div class="cover-stat-num">Pan <span>India</span></div>
+            <div class="cover-stat-label">Coverage network</div>
+          </div>
+          <div class="cover-stat">
+            <div class="cover-stat-num">24<span>/7</span></div>
+            <div class="cover-stat-label">Operational, 365 days</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cover-footer">
+      <div class="cover-footer-logo">Fortune <span>Logistics</span></div>
+      <div class="cover-footer-info">fortunelogistics.org<br>Khed · Pune · Maharashtra</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ PAGE 2 — ABOUT ══════════════ -->
+<div class="page">
+  <div class="page-bar"></div>
+  <div class="page-nav">
+    <div class="nav-logo">Fortune <span>Logistics</span></div>
+    <div class="nav-label">About Us</div>
+  </div>
+
+  <div class="about-layout">
+    <div>
+      <div class="section-eyebrow">Who we are</div>
+      <h2 class="section-title">Built around a simple problem.</h2>
+      <div class="body-text">
+        <p>Fortune Logistics started with a frustration most shippers know well: freight that should take 36 hours was routinely taking three days. We built our model around fixing that — and kept everything else simple.</p>
+        <p>Founded in 2022 and headquartered in Khed, Pune, we run full-service transportation and returnable packaging operations across India. Our fleet is 100% containerized and GPS-tracked. We assign two drivers to every long-haul truck so cargo keeps moving through the night without forcing anyone to drive past their limit.</p>
+        <p>Today we move over 5,000 metric tonnes of cargo every day, 365 days a year — for clients in automotive, FMCG, pharma, industrial, and infrastructure sectors across the country.</p>
+      </div>
+    </div>
+
+    <div class="stat-stack">
+      <div class="stat-card">
+        <div class="stat-card-num">850+</div>
+        <div class="stat-card-label">Self-owned vehicles</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-num">5,000</div>
+        <div class="stat-card-label">MT cargo per day</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-num">365</div>
+        <div class="stat-card-label">Days operational</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-num">100%</div>
+        <div class="stat-card-label">GPS-tracked fleet</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-banner">
+    <div class="about-banner-line"></div>
+    <div class="about-banner-quote">"Your freight arrives on time, undamaged, with someone you can call if anything changes. <em>No exceptions.</em>"</div>
+  </div>
+
+  <div class="pillars">
+    <div class="pillar">
+      <div class="pillar-title">On-time delivery</div>
+      <div class="pillar-desc">Time-bound schedules with GPS updates at every stage of transit.</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-title">Damage-free guarantee</div>
+      <div class="pillar-desc">100% containerized fleet with professional material handling at every point.</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-title">Single point of contact</div>
+      <div class="pillar-desc">A dedicated account manager who knows your cargo and your deadlines.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ PAGE 3 — SERVICES ══════════════ -->
+<div class="page">
+  <div class="page-bar"></div>
+  <div class="dark-page">
+    <div class="page-nav">
+      <div class="nav-logo">Fortune <span style="color:var(--cyan)">Logistics</span></div>
+      <div class="nav-label">Our Services</div>
+    </div>
+
+    <div class="services-body">
+      <div class="section-eyebrow">What we do</div>
+      <h2 class="section-title">Full service logistics. No shortcuts.</h2>
+
+      <div class="services-grid">
+        <div class="svc-card">
+          <div class="svc-icon">🚛</div>
+          <div class="svc-sub">Full Truck Load</div>
+          <div class="svc-title">FTL Transport</div>
+          <div class="svc-desc">Time-bound FTL in Normal, Express, and Super Express schedules. Suitable for export, import, and 3PL consignments requiring dedicated vehicle placement.</div>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-icon">📦</div>
+          <div class="svc-sub">Part Truck Load</div>
+          <div class="svc-title">PTL Transport</div>
+          <div class="svc-desc">For freight too large for a courier but too small for a full truck. We consolidate and move your cargo on regular scheduled intervals — no waiting for a full load.</div>
+        </div>
+
+        <div class="svc-card alt">
+          <div class="svc-icon" style="background:rgba(244,121,32,0.1)">⚙️</div>
+          <div class="svc-sub">Over Dimensional</div>
+          <div class="svc-title">ODC Transport</div>
+          <div class="svc-desc">Heavy and oversized cargo handled with the right trailer type, correct routing, and all clearances. We do not subcontract — ODC moves on our own fleet.</div>
+        </div>
+      </div>
+
+      <div class="pkg-section">
+        <div>
+          <div style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(0,174,239,0.75);margin-bottom:8px;">Also available</div>
+          <div class="pkg-title">Returnable Packaging</div>
+          <div class="pkg-desc">Most packaging gets used once and discarded. Ours comes back. Returnable systems are stronger than single-use alternatives, lower your per-trip cost over time, and reduce waste — which matters to more clients every year.</div>
+        </div>
+        <div class="pkg-points">
+          <div class="pkg-point"><div class="pkg-dot"></div>Stronger than single-use — built for repeated handling</div>
+          <div class="pkg-point"><div class="pkg-dot"></div>Lower cost per trip over the life of the asset</div>
+          <div class="pkg-point"><div class="pkg-dot"></div>Works alongside transportation — one vendor, one contact</div>
+          <div class="pkg-point"><div class="pkg-dot"></div>ISO-compliant systems for regulated industries</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ PAGE 4 — EXPRESS DELIVERY ══════════════ -->
+<div class="page">
+  <div class="page-bar"></div>
+  <div class="page-nav">
+    <div class="nav-logo">Fortune <span>Logistics</span></div>
+    <div class="nav-label">Express Delivery</div>
+  </div>
+
+  <div class="express-hero">
+    <div class="express-eyebrow">Our Signature Service</div>
+    <h2 class="express-headline">Cheaper than Air.<br><em>Faster than Road.</em></h2>
+    <div class="express-stats">
+      <div class="ex-stat">
+        <div class="ex-stat-num">&lt;36</div>
+        <div class="ex-stat-label">Hours — delivery guarantee</div>
+      </div>
+      <div class="ex-stat">
+        <div class="ex-stat-num">2</div>
+        <div class="ex-stat-label">Drivers per long-haul truck</div>
+      </div>
+      <div class="ex-stat">
+        <div class="ex-stat-num">0</div>
+        <div class="ex-stat-label">Night stops on express routes</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="express-body">
+    <div>
+      <div class="ex-block-title">How it works</div>
+      <div class="ex-text">
+        <p>The idea came from our driver welfare program. The logistics industry shortens lead times by pushing drivers harder. We went the other way.</p>
+        <p>We assign two drivers to every long-haul truck. One drives, one rests. The truck does not stop — which means your freight doesn't either. Delivery in under 36 hours is not a premium tier. It is what we do by default on applicable routes.</p>
+        <p>The name is not marketing. It is what happens when you stop asking one driver to do a two-driver job.</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="ex-block-title">Delivery options</div>
+      <div class="ex-modes">
+        <div class="ex-mode">
+          <div class="ex-mode-name">Normal FTL</div>
+          <div class="ex-mode-desc">Standard time-bound delivery with GPS tracking and MIS reporting for scheduled consignments.</div>
+        </div>
+        <div class="ex-mode hot">
+          <div class="ex-mode-name">Express FTL</div>
+          <div class="ex-mode-desc">Two-driver model with continuous movement. Delivery under 36 hours on covered routes.</div>
+        </div>
+        <div class="ex-mode hot">
+          <div class="ex-mode-name">Super Express FTL</div>
+          <div class="ex-mode-desc">Time-critical consignments with priority vehicle placement and hourly location updates.</div>
+        </div>
+        <div class="ex-mode">
+          <div class="ex-mode-name">3PL Contract</div>
+          <div class="ex-mode-desc">For importers and exporters needing export/import laden consignment handling under a fixed agreement.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ PAGE 5 — FLEET ══════════════ -->
+<div class="page">
+  <div class="page-bar"></div>
+  <div class="page-nav">
+    <div class="nav-logo">Fortune <span>Logistics</span></div>
+    <div class="nav-label">Fleet &amp; Capabilities</div>
+  </div>
+
+  <div class="fleet-body">
+    <div class="section-eyebrow">Our fleet</div>
+    <h2 class="section-title" style="font-size:26px;margin-bottom:20px;">850+ self-owned vehicles. No third-party dependency.</h2>
+
+    <div class="fleet-table-label">Containerized vehicles</div>
+    <table class="ft">
+      <thead>
+        <tr><th>Type</th><th>32 MXL</th><th>32'</th><th>20'</th><th>17'</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Length</td><td>32'</td><td>32'</td><td>20'</td><td>17'</td></tr>
+        <tr><td>Height</td><td>8'</td><td>9'</td><td>7.6'</td><td>7'</td></tr>
+        <tr><td>Width</td><td>8'</td><td>8'</td><td>7.6'</td><td>7'</td></tr>
+        <tr><td>Payload</td><td>14 MT</td><td>7 MT</td><td>6.5 MT</td><td>3.5 MT</td></tr>
+      </tbody>
+    </table>
+
+    <div class="fleet-table-label">Open trucks</div>
+    <table class="ft">
+      <thead>
+        <tr><th>Type</th><th>Truck 407</th><th>Truck 909</th><th>Truck 1109</th><th>Toursh</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Length</td><td>9.5'</td><td>17'</td><td>19'</td><td>22'</td></tr>
+        <tr><td>Height</td><td>5.5'</td><td>6'</td><td>7'</td><td>7.5'</td></tr>
+        <tr><td>Width</td><td>5.5'</td><td>6'</td><td>6'</td><td>7.5'</td></tr>
+        <tr><td>Payload</td><td>2.5 MT</td><td>5 MT</td><td>7.5 MT</td><td>16 MT</td></tr>
+      </tbody>
+    </table>
+
+    <div class="fleet-table-label">Trailer size chart</div>
+    <table class="tt">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Flat Bed (Short)</th>
+          <th>Flat Bed</th>
+          <th>Semi Low Bed</th>
+          <th>Full Length</th>
+          <th>High Bed</th>
+          <th>ODC</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Length</td><td>20'</td><td>32'</td><td>40'</td><td>40'</td><td>40'</td><td>As specified</td></tr>
+        <tr><td>Height</td><td>Open</td><td>Open</td><td>Open</td><td>Open</td><td>Open</td><td>As specified</td></tr>
+        <tr><td>Width</td><td>8'</td><td>8'</td><td>8–10'</td><td>8'</td><td>8'</td><td>As specified</td></tr>
+        <tr><td>Payload (MT)</td><td>15–20</td><td>20–25</td><td>25–40</td><td>25–30</td><td>30–35</td><td>As specified</td></tr>
+      </tbody>
+    </table>
+
+    <div class="fleet-note">
+      All vehicles are 100% GPS-enabled with real-time location visibility for clients. Door seal sensors and vehicle tracking are standard on containerized operations. Fleet maintenance is handled entirely in-house.
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ PAGE 6 — WHY FORTUNE ══════════════ -->
+<div class="page">
+  <div class="page-bar"></div>
+  <div class="page-nav">
+    <div class="nav-logo">Fortune <span>Logistics</span></div>
+    <div class="nav-label">Why Fortune Logistics</div>
+  </div>
+
+  <div class="why-body">
+    <div class="section-eyebrow">What sets us apart</div>
+    <h2 class="section-title" style="font-size:26px;margin-bottom:20px;">Six reasons clients stay.</h2>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-num">01</div>
+        <div class="why-title">Pan India coverage</div>
+        <div class="why-desc">One point of contact for freight moving anywhere in the country. One relationship, one number, full accountability.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">02</div>
+        <div class="why-title">Own fleet, no outsourcing</div>
+        <div class="why-desc">We own all 850+ active vehicles. No last-minute subcontracting, no quality variation between trucks.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">03</div>
+        <div class="why-title">GPS on every vehicle</div>
+        <div class="why-desc">Full tracking visibility shared with clients. Real-time location updates. You always know where your freight is.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">04</div>
+        <div class="why-title">Dedicated account management</div>
+        <div class="why-desc">Every contract client gets a dedicated key account manager. Queries, changes, escalations — one person handles it.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">05</div>
+        <div class="why-title">24 × 7 × 365 operations</div>
+        <div class="why-desc">No blackout days, no holiday shutdowns. We operate continuously because supply chains do not pause for the calendar.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">06</div>
+        <div class="why-title">ISO 9001-2015 certified</div>
+        <div class="why-desc">Quality management processes independently certified. Damage-free delivery and on-time placement are documented standards, not aspirations.</div>
+      </div>
+    </div>
+
+    <div class="quality-box">
+      <div class="quality-box-title">Service standards — at every shipment</div>
+      <div class="quality-grid">
+        <div class="quality-item"><div class="qdot"></div>End-to-end visibility and GPS tracking</div>
+        <div class="quality-item"><div class="qdot"></div>Dedicated key account manager</div>
+        <div class="quality-item"><div class="qdot"></div>Professional material handling</div>
+        <div class="quality-item"><div class="qdot"></div>Customized MIS reporting for contract clients</div>
+        <div class="quality-item"><div class="qdot"></div>Damage-free delivery commitment</div>
+        <div class="quality-item"><div class="qdot"></div>On-time vehicle placement</div>
+        <div class="quality-item"><div class="qdot"></div>Special terms on assured monthly business</div>
+        <div class="quality-item"><div class="qdot"></div>Operational 24 × 7 × 365, no exceptions</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ PAGE 7 — NETWORK & CLIENTS ══════════════ -->
+<div class="page">
+  <div class="page-bar"></div>
+  <div class="page-nav">
+    <div class="nav-logo">Fortune <span>Logistics</span></div>
+    <div class="nav-label">Network &amp; Clients</div>
+  </div>
+
+  <div class="network-body">
+    <div class="section-eyebrow">Our reach</div>
+    <h2 class="section-title" style="font-size:26px;margin-bottom:18px;">Pan India network.</h2>
+
+    <div class="network-map">
+      <div class="map-inner">
+        <svg width="200" height="130" viewBox="0 0 200 130" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.45;">
+          <path d="M68,8 L85,6 L102,9 L118,7 L132,16 L138,26 L134,36 L142,46 L146,58 L142,70 L150,80 L146,90 L136,99 L132,112 L122,122 L112,130 L105,132 L98,130 L88,120 L78,107 L68,94 L58,82 L52,68 L48,54 L52,42 L48,30 L54,20 Z" fill="#00AEEF" stroke="none"/>
+          <path d="M52,30 L42,32 L38,42 L44,50 L48,42 Z" fill="#00AEEF" stroke="none"/>
+          <circle cx="95" cy="78" r="4" fill="#F47920"/>
+          <circle cx="72" cy="60" r="3" fill="#F47920"/>
+          <circle cx="112" cy="52" r="3" fill="#F47920"/>
+          <circle cx="102" cy="88" r="3" fill="#F47920"/>
+          <circle cx="84" cy="38" r="3" fill="#F47920"/>
+          <circle cx="124" cy="68" r="3" fill="#F47920"/>
+          <circle cx="60" cy="84" r="3" fill="#F47920"/>
+          <circle cx="100" cy="106" r="3" fill="#F47920"/>
+        </svg>
+        <div class="map-inner-label">Coverage across all major routes &amp; states</div>
+      </div>
+    </div>
+
+    <div class="coverage-bar">
+      <div>
+        <div class="cov-num">Pan India</div>
+        <div class="cov-label">Network coverage</div>
+      </div>
+      <div>
+        <div class="cov-num">850+</div>
+        <div class="cov-label">Vehicles on road</div>
+      </div>
+      <div>
+        <div class="cov-num">5,000 MT</div>
+        <div class="cov-label">Daily cargo volume</div>
+      </div>
+      <div>
+        <div class="cov-num">24/7</div>
+        <div class="cov-label">Route availability</div>
+      </div>
+    </div>
+
+    <div class="clients-label">Trusted by leading businesses</div>
+    <div class="client-grid">
+      <div class="client-box">Aberdare Technologies</div>
+      <div class="client-box">Mars</div>
+      <div class="client-box">Hira Technologies</div>
+      <div class="client-box">Enpro</div>
+      <div class="client-box">Raychem RPG</div>
+      <div class="client-box">Chloride Metals</div>
+      <div class="client-box">Deccan</div>
+      <div class="client-box">Panchshil</div>
+      <div class="client-box">Maass Global Corp</div>
+      <div class="client-box" style="background:var(--bg);border-style:dashed;color:var(--muted);font-weight:500;">+ More</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ PAGE 8 — CONTACT ══════════════ -->
+<div class="page">
+  <div class="page-bar"></div>
+  <div class="contact-page">
+    <div class="page-nav">
+      <div class="nav-logo" style="color:var(--white)">Fortune <span>Logistics</span></div>
+      <div class="nav-label">Get in touch</div>
+    </div>
+
+    <div class="contact-body">
+      <h2 class="contact-headline">Ready to move<br>your <em>freight?</em></h2>
+      <p class="contact-tagline">Better Logistics Solution for You</p>
+
+      <div class="contact-cards">
+        <div class="contact-card">
+          <div class="cc-label">Office &amp; Address</div>
+          <div class="cc-item">
+            <span class="cc-icon">📍</span>
+            <span>Shop No.13, Shree Sadguru Krupa Complex, Gosasi (Dhamantek), Khed City, Tal.Khed, Dist.Pune – 410505, Maharashtra</span>
+          </div>
+          <div class="cc-item">
+            <span class="cc-icon">🌐</span>
+            <span>fortunelogistics.org</span>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="cc-label">Phone &amp; Email</div>
+          <div class="cc-item">
+            <span class="cc-icon">📞</span>
+            <span>9657167777 &nbsp;/&nbsp; 7387648584</span>
+          </div>
+          <div class="cc-item">
+            <span class="cc-icon">📞</span>
+            <span>9763165609 &nbsp;/&nbsp; 7843067036</span>
+          </div>
+          <div class="cc-item">
+            <span class="cc-icon">✉️</span>
+            <span>pune@fortunelogistics.co</span>
+          </div>
+          <div class="cc-item">
+            <span class="cc-icon">✉️</span>
+            <span>fortunelogistics2022@gmail.com</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="firm-grid">
+        <div class="firm-row">
+          <div class="firm-label">Firm name</div>
+          <div class="firm-value">M/s. Fortune Logistics</div>
+        </div>
+        <div class="firm-row">
+          <div class="firm-label">GST number</div>
+          <div class="firm-value">27AAIFF4499G1Z0</div>
+        </div>
+        <div class="firm-row">
+          <div class="firm-label">Udyam registration</div>
+          <div class="firm-value">UDYAM-MH-26-0273282</div>
+        </div>
+        <div class="firm-row">
+          <div class="firm-label">Shop act number</div>
+          <div class="firm-value">105783972203</div>
+        </div>
+        <div class="firm-row">
+          <div class="firm-label">PAN number</div>
+          <div class="firm-value">AAIF4499G</div>
+        </div>
+        <div class="firm-row">
+          <div class="firm-label">Certification</div>
+          <div class="firm-value">ISO 9001-2015</div>
+        </div>
+      </div>
+
+      <div class="contact-footer-row">
+        <div>
+          <div class="cf-logo">Fortune <span>Logistics</span></div>
+          <div class="cf-sub">Transportation &amp; Packaging · Pune, India</div>
+        </div>
+        <div class="cf-tag">
+          Moving freight that matters.<br>
+          ISO 9001-2015 Certified
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

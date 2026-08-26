@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invoice PER-FL-0001 — Fortune Logistics</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 13px;
+    color: #1a1a1a;
+    background: #f0f0f0;
+    padding: 30px 20px;
+  }
+
+  .page {
+    background: #fff;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 40px 48px 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+  }
+
+  .logo-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .logo-icon {
+    width: 32px; height: 32px;
+    background: #1a1a2e;
+    border-radius: 7px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+  }
+  .logo-text { font-size: 18px; font-weight: 700; color: #1a1a2e; }
+  .logo-text span { color: #e8622a; }
+
+  .inv-meta { font-size: 12px; color: #333; }
+  .inv-meta .inv-row { margin-bottom: 3px; }
+  .inv-meta strong { font-weight: 600; }
+
+  .divider { border: none; border-top: 1.5px solid #ddd; margin: 18px 0; }
+
+  .to-block { margin-bottom: 22px; }
+  .to-label { font-size: 11px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 6px; }
+  .client-name { font-size: 14px; font-weight: 700; color: #1a1a1a; margin-bottom: 3px; }
+  .client-detail { font-size: 12px; color: #444; line-height: 1.65; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  thead tr { background: #1a1a2e; color: #fff; }
+  thead th {
+    padding: 9px 14px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+  thead th:last-child { text-align: right; }
+  tbody tr { border-bottom: 1px solid #eee; }
+  tbody tr:last-child { border-bottom: 2px solid #ddd; }
+  tbody td { padding: 11px 14px; color: #333; vertical-align: top; line-height: 1.55; }
+  tbody td:last-child { text-align: right; white-space: nowrap; font-weight: 600; color: #1a1a1a; }
+  .item-title { font-weight: 600; color: #1a1a1a; margin-bottom: 4px; }
+  .item-desc { font-size: 11.5px; color: #666; line-height: 1.6; }
+  .free-tag {
+    display: inline-block;
+    background: #e8f5e9; color: #2e7d32;
+    font-size: 9.5px; font-weight: 700;
+    padding: 1px 6px; border-radius: 100px;
+    letter-spacing: .04em; text-transform: uppercase;
+    vertical-align: middle; margin-left: 6px;
+  }
+
+  .totals { display: flex; justify-content: flex-end; }
+  .totals-table { width: 260px; border-collapse: collapse; font-size: 13px; }
+  .totals-table td { padding: 7px 14px; border-bottom: 1px solid #eee; }
+  .totals-table td:last-child { text-align: right; font-weight: 600; }
+  .totals-table tr.total-row { background: #1a1a2e; }
+  .totals-table tr.total-row td {
+    color: #fff; font-weight: 700; font-size: 14px;
+    border-bottom: none; padding: 10px 14px;
+  }
+
+  .bottom-section {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-top: 28px;
+  }
+  .signature-block { text-align: right; }
+  .sig-line {
+    font-size: 26px;
+    font-family: Georgia, serif;
+    color: #1a1a2e;
+    margin-bottom: 3px;
+    font-style: italic;
+    line-height: 1.2;
+  }
+  .sig-name { font-size: 13px; font-weight: 700; color: #1a1a1a; }
+  .sig-title { font-size: 11px; color: #666; }
+
+  .footer {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-thanks { font-size: 12px; font-weight: 600; font-style: italic; color: #555; text-transform: uppercase; letter-spacing: .08em; }
+  .footer-company { text-align: right; font-size: 11px; color: #888; line-height: 1.6; }
+  .footer-company strong { font-weight: 600; color: #555; font-size: 11.5px; }
+
+  @media print {
+    body { background: #fff; padding: 0; }
+    .page { box-shadow: none; padding: 28px 40px; }
+    .print-btn { display: none; }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div>
+      <img src="../../Perfect Skills/Assets/perfectskills_logo.png" alt="Perfect Skills" style="height:48px; display:block; margin-bottom:6px;">
+      <div style="font-size:11.5px; color:#555;">Perfskills Private Limited</div>
+    </div>
+    <div class="inv-meta" style="text-align:right;">
+      <div class="inv-row" style="font-size:20px; font-weight:700; color:#1a1a2e; margin-bottom:6px;">INVOICE</div>
+      <div class="inv-row"><strong>Invoice No:</strong> PER-FL-0001</div>
+      <div class="inv-row"><strong>Date:</strong> 21-08-2026</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- TO -->
+  <div class="to-block">
+    <div class="to-label">Bill To</div>
+    <div class="client-name">M/s. Fortune Logistics</div>
+  </div>
+
+  <!-- LINE ITEMS -->
+  <table>
+    <thead>
+      <tr>
+        <th style="width:46px;">#</th>
+        <th>Description</th>
+        <th style="width:130px; text-align:right;">Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <td style="color:#888; font-weight:600;">01</td>
+        <td>
+          <div class="item-title">Website Design & Development</div>
+          <div class="item-desc">
+            Custom B2B corporate website designed and developed end-to-end for Fortune Logistics.<br><br>
+            <strong style="color:#333;">Pages delivered:</strong> Homepage · Solutions & Services · Fleet &amp; Capabilities · Industries Served · Our Network · Why Fortune · About Us · Contact &amp; RFQ<br><br>
+            <strong style="color:#333;">Features included:</strong><br>
+            · Brand-accurate design system (colors, typography, logo usage guidelines applied)<br>
+            · Fully responsive layout — desktop, tablet, and mobile<br>
+            · Request-a-Quote / enquiry form with email notification on submission<br>
+            · WhatsApp click-to-chat and direct call integration<br>
+            · Interactive fleet &amp; route/network section<br>
+            · Industry-specific content sections (Automotive, FMCG, Pharma, Industrial)<br>
+            · On-page SEO — meta titles, descriptions, structured headings, sitemap.xml, robots.txt<br>
+            · Google Analytics 4 integration for traffic tracking<br>
+            · SSL-ready deployment with performance optimization (compressed assets, lazy loading)<br>
+            · Admin handover with basic CMS access for content edits<br>
+            · 30-day post-launch support for bugs and minor content changes
+          </div>
+        </td>
+        <td>₹ 30,000.00</td>
+      </tr>
+
+      <tr>
+        <td style="color:#888; font-weight:600;">02</td>
+        <td>
+          <div class="item-title">Website Hosting + Domain Registration — Annual Plan (Hostinger)</div>
+          <div class="item-desc">
+            12-month shared hosting — SSL certificate, business email hosting, daily backups, 99.9% uptime. Includes free domain registration for 1 year (fortunelogistics.in or similar). Renewal due: August 2027.
+          </div>
+        </td>
+        <td>₹ 4,800.00</td>
+      </tr>
+
+
+</tbody>
+  </table>
+
+  <!-- TOTALS -->
+  <div class="totals" style="margin-top:0;">
+    <table class="totals-table">
+      <tr class="total-row">
+        <td><strong>TOTAL DUE</strong></td>
+        <td><strong>₹ 34,800.00</strong></td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- SIGNATURE -->
+  <div class="bottom-section">
+    <div class="signature-block">
+      <div class="sig-line">Pratik Gade</div>
+      <div class="sig-name">Pratik Gade</div>
+      <div class="sig-title">Authorized Signatory</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-thanks">Thank you for your business!</div>
+    <div class="footer-company">
+      <strong>Perfskills Private Limited</strong><br>
+      CIN – U74910PN2019PTC188663
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
