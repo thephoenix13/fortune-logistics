@@ -40,21 +40,6 @@
     .page { margin: 0; box-shadow: none; page-break-after: always; }
   }
 
-  .page::after {
-    content: 'PREVIEW COPY';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-45deg);
-    font-family: 'Inter', sans-serif;
-    font-size: 54px;
-    font-weight: 800;
-    letter-spacing: 0.14em;
-    color: rgba(0,0,0,0.07);
-    white-space: nowrap;
-    pointer-events: none;
-    z-index: 9999;
-  }
 
   /* ── Shared header bar ── */
   .page-bar { height: 5px; background: var(--cyan); }
@@ -72,7 +57,11 @@
     font-family: 'DM Serif Display', serif;
     font-size: 15px;
     color: var(--dark);
+    display: flex;
+    align-items: center;
+    gap: 7px;
   }
+  .nav-logo img { height: 22px; width: 22px; object-fit: contain; }
   .nav-logo span { color: var(--cyan); }
 
   .nav-label {
@@ -213,13 +202,15 @@
   .cover-footer {
     padding: 20px 56px;
     border-top: 1px solid var(--border);
-    background: var(--bg);
+    background: #ffffff;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
     z-index: 2;
   }
+
+  .cover-footer-logo img { height: 28px; width: 28px; object-fit: contain; vertical-align: middle; margin-right: 8px; }
 
   .cover-footer-logo {
     font-family: 'DM Serif Display', serif;
@@ -234,6 +225,24 @@
     text-align: right;
     line-height: 1.6;
   }
+
+  .cover-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+  .cover-brand-img {
+    height: 64px;
+    width: 64px;
+    object-fit: contain;
+  }
+  .cover-brand-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 30px;
+    color: var(--dark);
+  }
+  .cover-brand-accent { color: var(--cyan); }
 
   /* ─────────────────── PAGE 2 — ABOUT ─────────────────── */
   .section-eyebrow {
@@ -747,21 +756,13 @@
     background: linear-gradient(135deg, #EEF9FF 0%, #E6F7FD 100%);
     border: 1px solid rgba(0,174,239,0.18);
     border-radius: 10px;
-    height: 160px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 580px;
+    position: relative;
     margin-bottom: 20px;
+    overflow: hidden;
   }
 
-  .map-inner { text-align: center; }
-
-  .map-inner-label {
-    font-family: 'DM Serif Display', serif;
-    font-size: 13px;
-    color: var(--cyan-dk);
-    margin-top: 6px;
-  }
+  .map-inner { width: 100%; height: 100%; position: relative; }
 
   /* coverage-bar stays dark — accent strip */
   .coverage-bar {
@@ -956,7 +957,11 @@
     font-family: 'DM Serif Display', serif;
     font-size: 21px;
     color: var(--dark);
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
+  .cf-logo img { height: 28px; width: 28px; object-fit: contain; }
   .cf-logo span { color: var(--cyan); }
 
   .cf-sub {
@@ -974,6 +979,116 @@
     text-align: right;
     line-height: 1.6;
   }
+
+  /* ─────────────────── PAGE 7 — NETWORK & CLIENTS (MERGED) ─────────────────── */
+  .netclient-body {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    min-height: 0;
+  }
+  .netclient-left {
+    flex: 0 0 56%;
+    padding: 20px 18px 20px 48px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--border);
+  }
+  .netclient-right {
+    flex: 0 0 44%;
+    padding: 20px 36px 20px 22px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ─────────────────── CLIENT LOGO PAGE ─────────────────── */
+  .clients-page-body {
+    padding: 32px 48px 40px;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(297mm - 5px - 56px);
+  }
+
+  .clients-intro {
+    margin-bottom: 32px;
+  }
+
+  .clients-intro p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 520px;
+    margin-top: 10px;
+  }
+
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .logo-cell {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 18px;
+    height: 90px;
+    transition: border-color 0.2s;
+  }
+
+  .logo-cell img {
+    max-width: 100%;
+    max-height: 50px;
+    object-fit: contain;
+    filter: grayscale(30%);
+  }
+
+  .clients-banner {
+    margin-top: auto;
+    background: var(--cyan-lt);
+    border: 1px solid rgba(0,174,239,0.2);
+    border-radius: 10px;
+    padding: 20px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .clients-banner-quote {
+    font-family: 'DM Serif Display', serif;
+    font-size: 16px;
+    color: var(--dark);
+    line-height: 1.4;
+    flex: 1;
+  }
+
+  .clients-banner-quote em { color: var(--cyan); font-style: normal; }
+
+  .clients-banner-stat {
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .clients-banner-stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px;
+    color: var(--cyan-dk);
+    line-height: 1;
+  }
+
+  .clients-banner-stat-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 4px;
+  }
 </style>
 </head>
 <body>
@@ -987,8 +1102,12 @@
 
     <div class="cover-content">
       <div class="cover-left">
+        <div class="cover-brand">
+          <img src="fl_logo.jpeg" alt="Fortune Logistics" class="cover-brand-img">
+          <span class="cover-brand-name">Fortune <span class="cover-brand-accent">Logistics</span></span>
+        </div>
         <div class="cover-eyebrow">Transportation &amp; Packaging · India</div>
-        <h1 class="cover-title">Moving<br>freight<br>that <em>matters.</em></h1>
+        <h1 class="cover-title">Better<br>logistics<br><em>solution</em></h1>
         <div class="cover-rule"></div>
         <p class="cover-sub">End-to-end logistics across India. Faster than you expect, safer than you need.</p>
         <div class="cover-badge">ISO 9001-2015 Certified</div>
@@ -997,8 +1116,8 @@
       <div class="cover-right">
         <div class="cover-stats">
           <div class="cover-stat">
-            <div class="cover-stat-num">850<span>+</span></div>
-            <div class="cover-stat-label">Self-owned vehicles</div>
+            <div class="cover-stat-num">100<span>%</span></div>
+            <div class="cover-stat-label">GPS-tracked fleet</div>
           </div>
           <div class="cover-stat">
             <div class="cover-stat-num">5,000 <span>MT</span></div>
@@ -1017,8 +1136,8 @@
     </div>
 
     <div class="cover-footer">
-      <div class="cover-footer-logo">Fortune <span>Logistics</span></div>
-      <div class="cover-footer-info">fortunelogistics.org<br>Khed · Pune · Maharashtra</div>
+      <div class="cover-footer-logo"><img src="fl_logo.jpeg" alt="Fortune Logistics">Fortune <span>Logistics</span></div>
+      <div class="cover-footer-info">www.fortunelogistics.co<br>Khed · Pune · Maharashtra</div>
     </div>
   </div>
 </div>
@@ -1027,7 +1146,7 @@
 <div class="page">
   <div class="page-bar"></div>
   <div class="page-nav">
-    <div class="nav-logo">Fortune <span>Logistics</span></div>
+    <div class="nav-logo"><img src="fl_logo.jpeg" alt="Fortune Logistics">Fortune <span>Logistics</span></div>
     <div class="nav-label">About Us</div>
   </div>
 
@@ -1044,8 +1163,8 @@
 
     <div class="stat-stack">
       <div class="stat-card">
-        <div class="stat-card-num">850+</div>
-        <div class="stat-card-label">Self-owned vehicles</div>
+        <div class="stat-card-num">100%</div>
+        <div class="stat-card-label">GPS-tracked fleet</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-num">5,000</div>
@@ -1081,6 +1200,7 @@
       <div class="pillar-desc">A dedicated account manager who knows your cargo and your deadlines.</div>
     </div>
   </div>
+
 </div>
 
 <!-- ══════════════ PAGE 3 — SERVICES ══════════════ -->
@@ -1088,7 +1208,7 @@
   <div class="page-bar"></div>
   <div class="light-services-page">
     <div class="page-nav">
-      <div class="nav-logo">Fortune <span>Logistics</span></div>
+      <div class="nav-logo"><img src="fl_logo.jpeg" alt="Fortune Logistics">Fortune <span>Logistics</span></div>
       <div class="nav-label">Our Services</div>
     </div>
 
@@ -1134,13 +1254,14 @@
       </div>
     </div>
   </div>
+
 </div>
 
 <!-- ══════════════ PAGE 4 — EXPRESS DELIVERY ══════════════ -->
 <div class="page">
   <div class="page-bar"></div>
   <div class="page-nav">
-    <div class="nav-logo">Fortune <span>Logistics</span></div>
+    <div class="nav-logo"><img src="fl_logo.jpeg" alt="Fortune Logistics">Fortune <span>Logistics</span></div>
     <div class="nav-label">Express Delivery</div>
   </div>
 
@@ -1195,19 +1316,20 @@
       </div>
     </div>
   </div>
+
 </div>
 
 <!-- ══════════════ PAGE 5 — FLEET ══════════════ -->
 <div class="page">
   <div class="page-bar"></div>
   <div class="page-nav">
-    <div class="nav-logo">Fortune <span>Logistics</span></div>
+    <div class="nav-logo"><img src="fl_logo.jpeg" alt="Fortune Logistics">Fortune <span>Logistics</span></div>
     <div class="nav-label">Fleet &amp; Capabilities</div>
   </div>
 
   <div class="fleet-body">
     <div class="section-eyebrow">Our fleet</div>
-    <h2 class="section-title" style="font-size:26px;margin-bottom:20px;">850+ self-owned vehicles. No third-party dependency.</h2>
+    <h2 class="section-title" style="font-size:26px;margin-bottom:20px;">Own fleet. No third-party dependency.</h2>
 
     <div class="fleet-table-label">Containerized vehicles</div>
     <table class="ft">
@@ -1260,13 +1382,14 @@
       All vehicles are 100% GPS-enabled with real-time location visibility for clients. Door seal sensors and vehicle tracking are standard on containerized operations. Fleet maintenance is handled entirely in-house.
     </div>
   </div>
+
 </div>
 
 <!-- ══════════════ PAGE 6 — WHY FORTUNE ══════════════ -->
 <div class="page">
   <div class="page-bar"></div>
   <div class="page-nav">
-    <div class="nav-logo">Fortune <span>Logistics</span></div>
+    <div class="nav-logo"><img src="fl_logo.jpeg" alt="Fortune Logistics">Fortune <span>Logistics</span></div>
     <div class="nav-label">Why Fortune Logistics</div>
   </div>
 
@@ -1283,7 +1406,7 @@
       <div class="why-card">
         <div class="why-num">02</div>
         <div class="why-title">Own fleet, no outsourcing</div>
-        <div class="why-desc">We own all 850+ active vehicles. No last-minute subcontracting, no quality variation between trucks.</div>
+        <div class="why-desc">We own our entire active fleet. No last-minute subcontracting, no quality variation between trucks.</div>
       </div>
       <div class="why-card">
         <div class="why-num">03</div>
@@ -1327,73 +1450,97 @@
 <div class="page">
   <div class="page-bar"></div>
   <div class="page-nav">
-    <div class="nav-logo">Fortune <span>Logistics</span></div>
+    <div class="nav-logo"><img src="fl_logo.jpeg" alt="Fortune Logistics">Fortune <span>Logistics</span></div>
     <div class="nav-label">Network &amp; Clients</div>
   </div>
 
   <div class="network-body">
-    <div class="section-eyebrow">Our reach</div>
-    <h2 class="section-title" style="font-size:26px;margin-bottom:18px;">Pan India network.</h2>
-
-    <div class="network-map">
+    <div class="network-map" style="height:370px;margin-bottom:12px;">
       <div class="map-inner">
-        <svg width="200" height="130" viewBox="0 0 200 130" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.45;">
-          <path d="M68,8 L85,6 L102,9 L118,7 L132,16 L138,26 L134,36 L142,46 L146,58 L142,70 L150,80 L146,90 L136,99 L132,112 L122,122 L112,130 L105,132 L98,130 L88,120 L78,107 L68,94 L58,82 L52,68 L48,54 L52,42 L48,30 L54,20 Z" fill="#00AEEF" stroke="none"/>
-          <path d="M52,30 L42,32 L38,42 L44,50 L48,42 Z" fill="#00AEEF" stroke="none"/>
-          <circle cx="95" cy="78" r="4" fill="#F47920"/>
-          <circle cx="72" cy="60" r="3" fill="#F47920"/>
-          <circle cx="112" cy="52" r="3" fill="#F47920"/>
-          <circle cx="102" cy="88" r="3" fill="#F47920"/>
-          <circle cx="84" cy="38" r="3" fill="#F47920"/>
-          <circle cx="124" cy="68" r="3" fill="#F47920"/>
-          <circle cx="60" cy="84" r="3" fill="#F47920"/>
-          <circle cx="100" cy="106" r="3" fill="#F47920"/>
+        <img src="india_map.webp"
+             alt="India map"
+             style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain;object-position:center;mix-blend-mode:multiply;">
+        <svg viewBox="0 0 960 1120"
+             xmlns="http://www.w3.org/2000/svg"
+             preserveAspectRatio="xMidYMid meet"
+             style="position:absolute;top:0;left:0;width:100%;height:100%;">
+          <line x1="231" y1="711" x2="201" y2="690" stroke="#00AEEF" stroke-width="3" stroke-dasharray="10,6" opacity="0.7"/>
+          <line x1="231" y1="711" x2="334" y2="334" stroke="#00AEEF" stroke-width="3" stroke-dasharray="10,6" opacity="0.7"/>
+          <line x1="231" y1="711" x2="191" y2="542" stroke="#00AEEF" stroke-width="3" stroke-dasharray="10,6" opacity="0.7"/>
+          <line x1="231" y1="711" x2="290" y2="397" stroke="#00AEEF" stroke-width="3" stroke-dasharray="10,6" opacity="0.7"/>
+          <line x1="231" y1="711" x2="449" y2="399" stroke="#00AEEF" stroke-width="3" stroke-dasharray="10,6" opacity="0.7"/>
+          <line x1="231" y1="711" x2="392" y2="612" stroke="#00AEEF" stroke-width="3" stroke-dasharray="10,6" opacity="0.7"/>
+          <line x1="231" y1="711" x2="373" y2="753" stroke="#00AEEF" stroke-width="3" stroke-dasharray="10,6" opacity="0.7"/>
+          <line x1="231" y1="711" x2="346" y2="918" stroke="#00AEEF" stroke-width="3" stroke-dasharray="10,6" opacity="0.7"/>
+          <line x1="231" y1="711" x2="429" y2="913" stroke="#00AEEF" stroke-width="3" stroke-dasharray="10,6" opacity="0.7"/>
+          <line x1="231" y1="711" x2="600" y2="648" stroke="#00AEEF" stroke-width="3" stroke-dasharray="10,6" opacity="0.7"/>
+          <line x1="231" y1="711" x2="678" y2="559" stroke="#00AEEF" stroke-width="3" stroke-dasharray="10,6" opacity="0.7"/>
+          <line x1="231" y1="711" x2="783" y2="424" stroke="#00AEEF" stroke-width="3" stroke-dasharray="10,6" opacity="0.7"/>
+          <circle cx="201" cy="690" r="10" fill="#374151"/>
+          <circle cx="334" cy="334" r="10" fill="#374151"/>
+          <circle cx="191" cy="542" r="10" fill="#374151"/>
+          <circle cx="290" cy="397" r="10" fill="#374151"/>
+          <circle cx="449" cy="399" r="10" fill="#374151"/>
+          <circle cx="392" cy="612" r="10" fill="#374151"/>
+          <circle cx="373" cy="753" r="10" fill="#374151"/>
+          <circle cx="346" cy="918" r="10" fill="#374151"/>
+          <circle cx="429" cy="913" r="10" fill="#374151"/>
+          <circle cx="600" cy="648" r="10" fill="#374151"/>
+          <circle cx="678" cy="559" r="10" fill="#374151"/>
+          <circle cx="783" cy="424" r="10" fill="#374151"/>
+          <text x="188" y="673" font-family="Inter,sans-serif" font-size="24" fill="#111827" text-anchor="end">Mumbai</text>
+          <text x="334" y="313" font-family="Inter,sans-serif" font-size="24" fill="#111827" text-anchor="middle">Delhi</text>
+          <text x="178" y="528" font-family="Inter,sans-serif" font-size="24" fill="#111827" text-anchor="end">Ahmedabad</text>
+          <text x="277" y="382" font-family="Inter,sans-serif" font-size="24" fill="#111827" text-anchor="end">Jaipur</text>
+          <text x="462" y="382" font-family="Inter,sans-serif" font-size="24" fill="#111827" text-anchor="start">Lucknow</text>
+          <text x="406" y="598" font-family="Inter,sans-serif" font-size="24" fill="#111827" text-anchor="start">Nagpur</text>
+          <text x="386" y="738" font-family="Inter,sans-serif" font-size="24" fill="#111827" text-anchor="start">Hyderabad</text>
+          <text x="333" y="944" font-family="Inter,sans-serif" font-size="24" fill="#111827" text-anchor="end">Bengaluru</text>
+          <text x="442" y="944" font-family="Inter,sans-serif" font-size="24" fill="#111827" text-anchor="start">Chennai</text>
+          <text x="614" y="635" font-family="Inter,sans-serif" font-size="24" fill="#111827" text-anchor="start">Bhubaneswar</text>
+          <text x="692" y="544" font-family="Inter,sans-serif" font-size="24" fill="#111827" text-anchor="start">Kolkata</text>
+          <text x="783" y="408" font-family="Inter,sans-serif" font-size="24" fill="#111827" text-anchor="middle">Guwahati</text>
+          <circle cx="231" cy="711" r="24" fill="#F47920" opacity="0.18"/>
+          <circle cx="231" cy="711" r="13" fill="#F47920"/>
+          <text x="231" y="755" font-family="Inter,sans-serif" font-size="26" font-weight="700" fill="#F47920" text-anchor="middle">Pune</text>
         </svg>
-        <div class="map-inner-label">Coverage across all major routes &amp; states</div>
       </div>
     </div>
 
-    <div class="coverage-bar">
-      <div>
-        <div class="cov-num">Pan India</div>
-        <div class="cov-label">Network coverage</div>
-      </div>
-      <div>
-        <div class="cov-num">850+</div>
-        <div class="cov-label">Vehicles on road</div>
-      </div>
-      <div>
-        <div class="cov-num">5,000 MT</div>
-        <div class="cov-label">Daily cargo volume</div>
-      </div>
-      <div>
-        <div class="cov-num">24/7</div>
-        <div class="cov-label">Route availability</div>
-      </div>
+    <div class="coverage-bar" style="margin-bottom:16px;">
+      <div><div class="cov-num">Pan India</div><div class="cov-label">Network coverage</div></div>
+      <div><div class="cov-num">100%</div><div class="cov-label">GPS-tracked fleet</div></div>
+      <div><div class="cov-num">5,000 MT</div><div class="cov-label">Daily cargo volume</div></div>
+      <div><div class="cov-num">24/7</div><div class="cov-label">Route availability</div></div>
     </div>
 
-    <div class="clients-label">Trusted by leading businesses</div>
-    <div class="client-grid">
-      <div class="client-box">Aberdare Technologies</div>
-      <div class="client-box">Mars</div>
-      <div class="client-box">Hira Technologies</div>
-      <div class="client-box">Enpro</div>
-      <div class="client-box">Raychem RPG</div>
-      <div class="client-box">Chloride Metals</div>
-      <div class="client-box">Deccan</div>
-      <div class="client-box">Panchshil</div>
-      <div class="client-box">Maass Global Corp</div>
-      <div class="client-box" style="background:var(--bg);border-style:dashed;color:var(--muted);font-weight:500;">+ More</div>
+    <div class="logo-grid" style="grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:0;">
+      <div class="logo-cell"><img src="var_a/fortune-logistics-site-main/fortune-logistics-site-main/client_logos/aberdare.png" alt="Aberdare Technologies"></div>
+      <div class="logo-cell"><img src="var_a/fortune-logistics-site-main/fortune-logistics-site-main/client_logos/raychem_rpg.png" alt="Raychem RPG"></div>
+      <div class="logo-cell"><img src="var_a/fortune-logistics-site-main/fortune-logistics-site-main/client_logos/hira.png" alt="Hira Technologies"></div>
+      <div class="logo-cell"><img src="var_a/fortune-logistics-site-main/fortune-logistics-site-main/client_logos/valmet.png" alt="Valmet"></div>
+      <div class="logo-cell"><img src="var_a/fortune-logistics-site-main/fortune-logistics-site-main/client_logos/enpro.png" alt="Enpro"></div>
+      <div class="logo-cell"><img src="var_a/fortune-logistics-site-main/fortune-logistics-site-main/client_logos/chloride_metals.png" alt="Chloride Metals"></div>
+      <div class="logo-cell"><img src="var_a/fortune-logistics-site-main/fortune-logistics-site-main/client_logos/galcons_india.png" alt="Galcons India"></div>
+      <div class="logo-cell"><img src="var_a/fortune-logistics-site-main/fortune-logistics-site-main/client_logos/great_weld.png" alt="Great Weld"></div>
+      <div class="logo-cell"><img src="var_a/fortune-logistics-site-main/fortune-logistics-site-main/client_logos/panchshil.webp" alt="Panchshil"></div>
+      <div class="logo-cell"><img src="var_a/fortune-logistics-site-main/fortune-logistics-site-main/client_logos/maas_global_group.jpg" alt="Maas Global Group"></div>
+      <div class="logo-cell"><img src="var_a/fortune-logistics-site-main/fortune-logistics-site-main/client_logos/ravin.png" alt="Ravin"></div>
+      <div class="logo-cell"><img src="var_a/fortune-logistics-site-main/fortune-logistics-site-main/client_logos/schindler.jfif" alt="Schindler"></div>
+      <div class="logo-cell"><img src="var_a/fortune-logistics-site-main/fortune-logistics-site-main/client_logos/zoomlion.jpg" alt="Zoomlion"></div>
+      <div class="logo-cell"><img src="var_a/fortune-logistics-site-main/fortune-logistics-site-main/client_logos/mars-wrigley.png" alt="Mars Wrigley"></div>
+      <div class="logo-cell"><img src="var_a/fortune-logistics-site-main/fortune-logistics-site-main/client_logos/yongsan.png" alt="Yongsan Automotive Interior Parts"></div>
     </div>
   </div>
+
 </div>
 
-<!-- ══════════════ PAGE 8 — CONTACT ══════════════ -->
+<!-- ══════════════ PAGE 9 — CONTACT ══════════════ -->
 <div class="page">
   <div class="page-bar"></div>
   <div class="contact-page">
     <div class="page-nav">
-      <div class="nav-logo">Fortune <span>Logistics</span></div>
+      <div class="nav-logo"><img src="fl_logo.jpeg" alt="Fortune Logistics">Fortune <span>Logistics</span></div>
       <div class="nav-label">Get in touch</div>
     </div>
 
@@ -1410,7 +1557,7 @@
           </div>
           <div class="cc-item">
             <span class="cc-icon">🌐</span>
-            <span>fortunelogistics.org</span>
+            <span>www.fortunelogistics.co</span>
           </div>
         </div>
 
@@ -1426,11 +1573,7 @@
           </div>
           <div class="cc-item">
             <span class="cc-icon">✉️</span>
-            <span>pune@fortunelogistics.co</span>
-          </div>
-          <div class="cc-item">
-            <span class="cc-icon">✉️</span>
-            <span>fortunelogistics2022@gmail.com</span>
+            <span>info@fortunelogistics.co</span>
           </div>
         </div>
       </div>
@@ -1464,16 +1607,17 @@
 
       <div class="contact-footer-row">
         <div>
-          <div class="cf-logo">Fortune <span>Logistics</span></div>
+          <div class="cf-logo"><img src="fl_logo.jpeg" alt="Fortune Logistics">Fortune <span>Logistics</span></div>
           <div class="cf-sub">Transportation &amp; Packaging · Pune, India</div>
         </div>
         <div class="cf-tag">
-          Moving freight that matters.<br>
+          Better logistics solution for you<br>
           ISO 9001-2015 Certified
         </div>
       </div>
     </div>
   </div>
+
 </div>
 
 </body>
